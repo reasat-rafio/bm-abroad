@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { renderStudio, defineConfig, type StudioProps } from "sanity";
-  import { onMount } from "svelte";
+  import { renderStudio, defineConfig, type StudioProps } from 'sanity';
+  import { onMount } from 'svelte';
 
-  export let config: StudioProps["config"];
+  export let config: StudioProps['config'];
 
   let studioEl: HTMLDivElement;
-
 
   onMount(() => {
     if (studioEl) {
@@ -14,9 +13,6 @@
       renderStudio(studioEl, sanityConfig);
     }
   });
-
-
-
 </script>
 
 <svelte:head>
