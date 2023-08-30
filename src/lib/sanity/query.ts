@@ -12,14 +12,6 @@ export const siteQuery = groq`{
     },
     "contact": *[_type == "site.contact"][0] {
       ...,
-      address{
-        ...,
-        ${asset('logo')},
-      },
-      socialsWithVisibleLinks[]{
-        ...,
-        ${asset('icon')},
-      },
       socials[]{
         ...,
         ${asset('icon')},
