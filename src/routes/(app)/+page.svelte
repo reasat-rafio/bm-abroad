@@ -3,4 +3,4 @@
   $: ({ page } = data);
 </script>
 
-<main>Hi</main>
+<main class="container"></main>
