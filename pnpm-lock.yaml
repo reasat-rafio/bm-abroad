@@ -92,6 +92,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.4.3
     version: 3.5.1(@babel/core@7.22.11)(postcss@8.4.29)(svelte@4.2.0)
+  svelte-seo:
+    specifier: ^1.5.3
+    version: 1.5.3
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -7549,6 +7552,10 @@ packages:
       strip-indent: 3.0.0
       svelte: 4.2.0
       typescript: 5.2.2
+    dev: true
+
+  /svelte-seo@1.5.3:
+    resolution: {integrity: sha512-xkaVGNaQOWiNYApx6ehFSEVfdpfzy4pJLKWqQucFepl4SxJWcKDugCcND2k8bF4FskQ1M/4v4/Js35dDE/xFjg==}
     dev: true
 
   /svelte@4.2.0:

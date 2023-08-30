@@ -55,6 +55,12 @@ export interface Menu {
 export interface SocialProps {
   _key: string;
   _type: string;
-  icon: SanityAsset;
+  icon: SanityImageAssetDocument;
   link: string;
+}
+export interface SeoProps {
+  _type: 'seo';
+  title: string;
+  description: string;
+  ogImage: SanityImageAssetDocument;
 }
