@@ -1,4 +1,5 @@
 import type { SanityImageAssetDocument } from '@sanity/client';
+import type { Slug } from 'sanity';
 
 export interface PageProps<T> {
   site: SiteProps;
@@ -48,8 +49,8 @@ export interface Menu {
   _key: string;
   _type: string;
   title: string;
-  pageUrl?: string;
-  externalUrl?: string;
+  pageUrl?: Slug;
+  highlight?: boolean;
 }
 
 export interface SocialProps {

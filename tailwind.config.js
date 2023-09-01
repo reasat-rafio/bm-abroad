@@ -5,7 +5,10 @@ export default {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      keyframes: {},
+      animation: {},
+    },
   },
   plugins: [],
 };

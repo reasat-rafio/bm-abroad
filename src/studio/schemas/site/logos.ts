@@ -8,20 +8,11 @@ const logos = {
   icon: FaRegStar,
   fields: [
     {
-      name: 'logoLight',
+      name: 'logo',
       type: 'image',
       validation: (Rule: Rule) => Rule.required(),
     },
-    {
-      name: 'logoDark',
-      type: 'image',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: 'mobileLogo',
-      type: 'image',
-      validation: (Rule: Rule) => Rule.required(),
-    },
+
     {
       name: 'favicon',
       title: 'Favicon',

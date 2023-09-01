@@ -1,37 +1,37 @@
 import { MdLink } from 'react-icons/md';
-import type { Rule } from 'sanity';
+import type { Rule, SlugSourceContext } from 'sanity';
 
 const menuItem = {
   name: 'menuItem',
   title: 'Menu Item',
   type: 'object',
   icon: MdLink,
-  validation: (Rule: Rule) =>
-    Rule.custom((content: any) => {
-      const pageUrlAndExternalURlBothPresent =
-        !!content?.pageUrl && !!content?.externalUrl;
-      if (pageUrlAndExternalURlBothPresent)
-        return 'There should be only one page url or external url set. Please remove the unwanted one';
-      else if (!content?.pageUrl && !content?.externalUrl) {
-        return 'You must provide page url or external url';
-      } else {
-        return true;
-      }
-    }),
   fields: [
     {
       name: 'title',
       type: 'string',
       validation: (Rule: Rule) => Rule.required(),
     },
-    { name: 'pageUrl', type: 'string' },
-    { name: 'externalUrl', type: 'url' },
+    {
+      name: 'pageUrl',
+      type: 'slug',
+      validation: (Rule: Rule) => Rule.required(),
+      options: {
+        source: (
+          _: unknown,
+          context: SlugSourceContext & { parent: { title: string } },
+        ) => context.parent.title,
+      },
+    },
+    {
+      name: 'highlight',
+      type: 'boolean',
+    },
   ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'href',
-      highlight: 'highlight',
+      subtitle: 'pageUrl.current',
     },
   },
 };
