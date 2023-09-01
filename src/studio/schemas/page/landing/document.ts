@@ -15,7 +15,11 @@ const landingPage = {
       name: 'sections',
       title: 'Sections',
       type: 'array',
-      of: [{ type: 'landingPage.hero' }, { type: 'landingPage.tagline' }],
+      of: [
+        { type: 'landingPage.hero' },
+        { type: 'landingPage.tagline' },
+        { type: 'landingPage.about' },
+      ],
     },
   ],
   preview: {
