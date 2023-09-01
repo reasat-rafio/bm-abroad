@@ -1,11 +1,11 @@
-import type { StructureBuilder } from "sanity/desk";
+import type { StructureBuilder } from 'sanity/desk';
 import type { IconType } from 'react-icons/lib';
-import type { ConfigContext } from "sanity";
-import { FaSitemap,} from "react-icons/fa"
-import { FcHome,} from "react-icons/fc"
-import { GrEdit} from "react-icons/gr"
-import { RiPagesLine} from "react-icons/ri"
-
+import { FaSitemap } from 'react-icons/fa';
+import { FcHome, FcServices } from 'react-icons/fc';
+import { GrEdit } from 'react-icons/gr';
+import { RiPagesLine } from 'react-icons/ri';
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
+import type { ConfigContext } from 'sanity';
 
 interface PageItemProps {
   schemaType: string;
@@ -14,8 +14,6 @@ interface PageItemProps {
   icon?: IconType;
   slug?: string;
 }
-
-
 
 const pageItem = (
   S: StructureBuilder,
@@ -33,9 +31,9 @@ const singleItem = (
 ) =>
   S.listItem({ schemaType, title, id, icon }).child(
     S.editor().id(id).title(title).schemaType(schemaType),
-    );
+  );
 
-export const AppStructure = (S: StructureBuilder) =>
+export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
   S.list()
     .title('Content')
     .id('__root__')
@@ -86,4 +84,12 @@ export const AppStructure = (S: StructureBuilder) =>
               }),
             ]),
         ),
+      S.divider(),
+      orderableDocumentListDeskItem({
+        type: 'service',
+        S,
+        context,
+        title: 'Services',
+        icon: FcServices,
+      }),
     ]);

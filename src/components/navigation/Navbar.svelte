@@ -10,7 +10,7 @@
 
   let windowWidth = 0;
   let scrollY = 0;
-  $: yPosition = scrollY > 0 ? 'translate-y-0' : 'translate-y-[25px]';
+  $: yPosition = scrollY > 25 ? 'translate-y-0' : 'translate-y-[25px]';
 
   const navAction = (node: HTMLElement, _: number) => {
     const navbarHeight = node.getBoundingClientRect().height;
@@ -25,7 +25,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY />
-<nav use:navAction={windowWidth} class="fixed top-0 left-0 z-50 w-full">
+<nav use:navAction={windowWidth} class="fixed left-0 top-0 z-50 w-full">
   <div
     style="box-shadow: 0px 8px 20px -5px rgba(0, 0, 0, 0.10);"
     class="container rounded-lg bg-white/50 px-[32px] py-[14px] backdrop-blur-2xl transition-transform duration-500 ease-in-out {yPosition}"
@@ -33,7 +33,7 @@
     <div class="flex items-center justify-between">
       <a class="h-[69px]" href="/">
         <SanityImage
-          class="object-cover h-full w-fit"
+          class="h-full w-fit object-cover"
           src={logo}
           sizes="100px"
           imageUrlBuilder={imageBuilder}

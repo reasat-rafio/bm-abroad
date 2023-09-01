@@ -2,10 +2,15 @@
   import SectionHeader from '@/components/SectionHeader.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
-  import type { AboutProps } from '@/lib/types/landing';
+  import type {
+    AboutProps,
+    Service as ServiceProps,
+  } from '@/lib/types/landing';
   import IntersectionObserver from 'svelte-intersection-observer';
+  import Service from './Service.svelte';
 
   export let props: AboutProps;
+  export let services: ServiceProps[];
   $: ({ title, subtitle, description, image, decoration } = props);
 
   let sectionEl: HTMLElement;
@@ -13,7 +18,7 @@
 </script>
 
 <IntersectionObserver element={sectionEl} bind:intersecting threshold={0.25}>
-  <section bind:this={sectionEl} class="relative">
+  <section bind:this={sectionEl} class="relative mb-[48px]">
     <figure
       class="absolute left-0 top-0 w-1/2 translate-x-1/2 transition-transform duration-500 ease-in-out {intersecting
         ? '-translate-y-full'
@@ -48,3 +53,5 @@
     </article>
   </section>
 </IntersectionObserver>
+
+<Service {services} />

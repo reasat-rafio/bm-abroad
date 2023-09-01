@@ -15,7 +15,11 @@ const q = groq`*[_id == "landingPage"][0]{
       ...,
       ${asset('image')}
     }
-   }
+   },
+  "services": *[_type == "service"]|order(orderRank){
+    ...,
+    ${asset('image')}
+  }
 }`;
 
 export const load: ServerLoad = async () => {

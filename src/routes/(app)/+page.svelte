@@ -5,7 +5,7 @@
 
   export let data;
   $: ({
-    page: { sections },
+    page: { sections, services },
   } = data);
 </script>
 
@@ -15,6 +15,6 @@
   {:else if props._type === 'landingPage.tagline'}
     <Tagline {props} />
   {:else if props._type === 'landingPage.about'}
-    <About {props} />
+    <About {props} {services} />
   {/if}
 {/each}

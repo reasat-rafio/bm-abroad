@@ -4,10 +4,18 @@ import type { PortableTextBlock } from 'sanity';
 
 export type LandingPageProps = {
   seo: SeoProps;
+  services: Service[];
   sections: Section[];
 };
 
 type Section = HeroProps | TaglineProps | AboutProps;
+
+export type Service = {
+  _id: string;
+  name: string;
+  description: string;
+  image: SanityImageAssetDocument;
+};
 
 export type HeroProps = {
   _type: 'landingPage.hero';
