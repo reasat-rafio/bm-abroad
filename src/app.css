@@ -7,3 +7,9 @@
     @apply font-poppins;
   }
 }
+
+@layer utilities {
+  .gradient-purple-blue {
+    background: linear-gradient(90deg, #764af1 0%, #290886 127.39%);
+  }
+}

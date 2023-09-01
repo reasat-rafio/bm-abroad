@@ -3,6 +3,7 @@
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { SiteProps } from '@/lib/types/common';
   import uiStore from '@/stores/ui';
+  import Cta from '../ui/Cta.svelte';
 
   export let nav: SiteProps['nav'];
   export let logo: SiteProps['logos']['logo'];
@@ -41,12 +42,18 @@
       <ul class="flex space-x-[46px]">
         {#each nav.menu as { title, highlight, pageUrl }}
           <li class="uppercase">
-            <a
-              class="text-[16px] font-medium tracking-[0.48px]"
-              href={pageUrl.current}
-            >
-              {title}
-            </a>
+            {#if !!highlight}
+              <Cta href={pageUrl.current}>
+                {title}
+              </Cta>
+            {:else}
+              <a
+                class="text-[16px] font-medium tracking-[0.48px]"
+                href={pageUrl.current}
+              >
+                {title}
+              </a>
+            {/if}
           </li>
         {/each}
       </ul>
