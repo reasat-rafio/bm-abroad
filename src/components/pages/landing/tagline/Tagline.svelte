@@ -11,7 +11,7 @@
   $: [decor1, decor2] = decorators;
 </script>
 
-<section>
+<section class="pb-[410px]">
   <div class="container relative">
     <H1>
       <PortableText
@@ -25,9 +25,9 @@
     </H1>
 
     {#if !!decor1}
-      <figure class="absolute bottom-0 left-0">
+      <figure class="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2">
         <SanityImage
-          class="h-full max-h-[337px] w-full -translate-x-1/2 translate-y-1/2 object-contain"
+          class="animate-floating h-full w-full max-w-[337px] object-contain"
           sizes="300px"
           src={decor1}
           imageUrlBuilder={imageBuilder}
@@ -37,9 +37,9 @@
     {/if}
 
     {#if !!decor2}
-      <figure class="absolute bottom-0 right-0">
+      <figure class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2">
         <SanityImage
-          class="h-full max-h-[337px] w-full translate-x-1/2 translate-y-1/2 object-contain"
+          class="animate-floating-reverse h-full w-full max-w-[262px] object-contain"
           sizes="300px"
           src={decor2}
           imageUrlBuilder={imageBuilder}
