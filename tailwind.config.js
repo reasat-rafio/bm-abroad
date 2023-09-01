@@ -6,6 +6,13 @@ export default {
       center: true,
     },
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      borderRadius: {
+        md: '20px',
+        lg: '25px',
+      },
       keyframes: {},
       animation: {},
     },

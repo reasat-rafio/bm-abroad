@@ -9,10 +9,8 @@ export interface PageProps<T> {
 export interface SiteProps {
   logos: {
     favicon: SanityImageAssetDocument;
-    mobileLogo: SanityImageAssetDocument;
+    logo: SanityImageAssetDocument;
     ogImage: SanityImageAssetDocument;
-    logoDark: SanityImageAssetDocument;
-    logoLight: SanityImageAssetDocument;
   };
   nav: NavProps;
   contact: ContactProps;
@@ -49,7 +47,7 @@ export interface Menu {
   _key: string;
   _type: string;
   title: string;
-  pageUrl?: Slug;
+  pageUrl: Slug;
   highlight?: boolean;
 }
 

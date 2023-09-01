@@ -1,6 +1,14 @@
 <script lang="ts">
+  import Hero from '@/components/pages/landing/Hero.svelte';
+
   export let data;
-  $: ({ page } = data);
+  $: ({
+    page: { sections },
+  } = data);
 </script>
 
-<!-- <main class="container"></main> -->
+{#each sections as s}
+  {#if s._type === 'landingPage.hero'}
+    <!-- <Hero props={s} /> -->
+  {/if}
+{/each}

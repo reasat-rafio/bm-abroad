@@ -10,7 +10,7 @@ type Section = HeroProps;
 
 export type HeroProps = {
   _type: 'landingPage.hero';
-  banners: HeroBanner;
+  banners: HeroBanner[];
 };
 
 export type HeroBanner = {
