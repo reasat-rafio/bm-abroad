@@ -7,7 +7,7 @@ export type LandingPageProps = {
   sections: Section[];
 };
 
-type Section = HeroProps | TaglineProps;
+type Section = HeroProps | TaglineProps | AboutProps;
 
 export type HeroProps = {
   _type: 'landingPage.hero';
@@ -25,4 +25,13 @@ export type TaglineProps = {
   _type: 'landingPage.tagline';
   title: PortableTextBlock[];
   decorators: [SanityImageAssetDocument, SanityImageAssetDocument];
+};
+
+export type AboutProps = {
+  _type: 'landingPage.about';
+  title: string;
+  subtitle: string;
+  description: string;
+  image: SanityImageAssetDocument;
+  decoration: SanityImageAssetDocument;
 };

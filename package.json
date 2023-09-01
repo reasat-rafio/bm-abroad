@@ -46,6 +46,7 @@
     "styled-components": "^6.0.7",
     "svelte": "^4.2.0",
     "svelte-check": "^3.5.1",
+    "svelte-intersection-observer": "^0.10.1",
     "svelte-seo": "^1.5.3",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.3",

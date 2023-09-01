@@ -7,7 +7,7 @@
 <svelte:element
   this={el}
   class={twMerge(
-    'font-oswald text-center text-[64px] font-semibold uppercase',
+    'font-oswald text-[64px] font-semibold uppercase',
     $$props.class ?? '',
   )}
 >

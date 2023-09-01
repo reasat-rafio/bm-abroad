@@ -1,4 +1,5 @@
 <script lang="ts">
+  import About from '@/components/pages/landing/About.svelte';
   import Hero from '@/components/pages/landing/Hero.svelte';
   import Tagline from '@/components/pages/landing/tagline/Tagline.svelte';
 
@@ -13,5 +14,7 @@
     <Hero {props} />
   {:else if props._type === 'landingPage.tagline'}
     <Tagline {props} />
+  {:else if props._type === 'landingPage.about'}
+    <About {props} />
   {/if}
 {/each}

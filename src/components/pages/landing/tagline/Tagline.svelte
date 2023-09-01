@@ -13,7 +13,7 @@
 
 <section class="pb-[410px]">
   <div class="container relative">
-    <H1>
+    <H1 class="text-center">
       <PortableText
         value={title}
         components={{

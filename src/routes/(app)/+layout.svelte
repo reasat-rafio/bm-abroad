@@ -1,6 +1,7 @@
 <script lang="ts">
   import Navbar from '@/components/navigation/Navbar.svelte';
   import { urlFor } from '@/lib/sanity/sanityClient.js';
+  import '@fontsource/poppins/300.css';
   import '@fontsource/poppins/400.css';
   import '@fontsource/poppins/500.css';
   import '@fontsource/oswald/600.css';
