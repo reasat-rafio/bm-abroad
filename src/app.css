@@ -9,7 +9,10 @@
 }
 
 @layer utilities {
-  .gradient-purple-blue {
+  .gradient-purple-blue-90 {
     background: linear-gradient(90deg, #764af1 0%, #290886 127.39%);
+  }
+  .gradient-purple-blue-180 {
+    background: linear-gradient(180deg, #764af1 0%, #290886 127.39%);
   }
 }

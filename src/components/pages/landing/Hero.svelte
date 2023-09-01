@@ -18,7 +18,7 @@
   let emblaApi: EmblaCarouselType;
 </script>
 
-<section style="margin-top: {$uiStore.navbarHeight + 50}px;" class="">
+<section style="margin-top: {$uiStore.navbarHeight + 50}px;" class="mb-[160px]">
   <div class="container overflow-hidden">
     <div use:emblaCarouselSvelte={{ plugins, options }}>
       <div class="relative flex space-x-10">
@@ -28,7 +28,7 @@
             class="h-[70vh] flex-[0_0_100%]"
           >
             <SanityImage
-              class="object-cover w-full h-full rounded-lg"
+              class="h-full w-full rounded-lg object-cover"
               src={image}
               sizes="80vw"
               imageUrlBuilder={imageBuilder}

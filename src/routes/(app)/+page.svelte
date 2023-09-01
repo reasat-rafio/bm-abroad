@@ -1,6 +1,6 @@
 <script lang="ts">
   import Hero from '@/components/pages/landing/Hero.svelte';
-  import Tagline from '@/components/pages/landing/Tagline.svelte';
+  import Tagline from '@/components/pages/landing/tagline/Tagline.svelte';
 
   export let data;
   $: ({

@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        oswald: ['Oswald', 'sans-serif'],
       },
       borderRadius: {
         md: '20px',
