@@ -9,6 +9,10 @@ const q = groq`*[_id == "landingPage"][0]{
    sections[]{
     ...,
     ${asset('image')},
+    banners[]{
+      ...,
+      ${asset('image')}
+    }
    }
 }`;
 

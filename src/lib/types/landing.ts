@@ -1,3 +1,4 @@
+import type { SanityImageAssetDocument } from '@sanity/client';
 import type { SeoProps } from './common';
 
 export type LandingPageProps = {
@@ -9,4 +10,12 @@ type Section = HeroProps;
 
 export type HeroProps = {
   _type: 'landingPage.hero';
+  banners: HeroBanner;
+};
+
+export type HeroBanner = {
+  _key: string;
+  _type: string;
+  image: SanityImageAssetDocument;
+  url?: string;
 };
