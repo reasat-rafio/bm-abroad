@@ -1,0 +1,6 @@
+const PUBLIC_SANITY_DATASET = "production";
+const PUBLIC_SANITY_PROJECT_ID = "wg8puenh";
+export {
+  PUBLIC_SANITY_PROJECT_ID as P,
+  PUBLIC_SANITY_DATASET as a
+};

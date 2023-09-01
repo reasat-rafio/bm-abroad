@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { TaglineProps } from '@/lib/types/landing';
-  import { PortableText } from '@portabletext/svelte';
+  import { PortableText } from '@/lib/@portabletext/index';
   import GradientPurpleBlue from './GradientPurpleBlue.svelte';
   import H1 from '@/components/ui/H1.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
@@ -27,7 +27,7 @@
     {#if !!decor1}
       <figure class="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2">
         <SanityImage
-          class="animate-floating h-full w-full max-w-[337px] object-contain"
+          class="h-full w-full max-w-[337px] animate-floating object-contain"
           sizes="300px"
           src={decor1}
           imageUrlBuilder={imageBuilder}
@@ -39,7 +39,7 @@
     {#if !!decor2}
       <figure class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2">
         <SanityImage
-          class="animate-floating-reverse h-full w-full max-w-[262px] object-contain"
+          class="h-full w-full max-w-[262px] animate-floating-reverse object-contain"
           sizes="300px"
           src={decor2}
           imageUrlBuilder={imageBuilder}

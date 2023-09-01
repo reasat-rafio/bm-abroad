@@ -11,9 +11,9 @@ devDependencies:
   '@fontsource/poppins':
     specifier: ^5.0.8
     version: 5.0.8
-  '@portabletext/svelte':
-    specifier: ^2.0.0
-    version: 2.1.1(svelte@4.2.0)
+  '@portabletext/toolkit':
+    specifier: ^2.0.8
+    version: 2.0.8
   '@sanity/client':
     specifier: ^6.4.9
     version: 6.4.9
@@ -2325,15 +2325,6 @@ packages:
 
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
-    dev: true
-
-  /@portabletext/svelte@2.1.1(svelte@4.2.0):
-    resolution: {integrity: sha512-HLA3Rx3UlRq20SLF70xJiK+lGaPCgDVFWIWj87lqz9oY0qDDsWGD+yiNYjAKCMsv4nakb1eskxXhWzSti0QIsg==}
-    peerDependencies:
-      svelte: '>=3.47.0 <5.0.0'
-    dependencies:
-      '@portabletext/toolkit': 2.0.8
-      svelte: 4.2.0
     dev: true
 
   /@portabletext/toolkit@2.0.8:
