@@ -1,4 +1,5 @@
 import landingPage from './document';
 import hero from './hero';
+import tagline from './tagline';
 
-export default [landingPage, hero];
+export default [landingPage, hero, tagline];
