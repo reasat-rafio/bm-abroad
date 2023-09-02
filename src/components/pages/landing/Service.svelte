@@ -26,7 +26,7 @@
   }
 </script>
 
-<section bind:this={sectionEl} class="">
+<section bind:this={sectionEl} class="mb-[160px]">
   <div class="container grid grid-cols-4 gap-[24px]">
     {#each services as { name, image, description }}
       <article

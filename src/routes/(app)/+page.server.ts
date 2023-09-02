@@ -14,6 +14,10 @@ const q = groq`*[_id == "landingPage"][0]{
     banners[]{
       ...,
       ${asset('image')}
+    },
+    testimonials[]{
+      ...,
+      ${asset('image')}
     }
    },
   "services": *[_type == "service"]|order(orderRank){

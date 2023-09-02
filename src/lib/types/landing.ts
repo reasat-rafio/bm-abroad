@@ -8,7 +8,7 @@ export type LandingPageProps = {
   sections: Section[];
 };
 
-type Section = HeroProps | TaglineProps | AboutProps;
+type Section = HeroProps | TaglineProps | AboutProps | TestimonialProps;
 
 export type Service = {
   _id: string;
@@ -42,4 +42,19 @@ export type AboutProps = {
   description: string;
   image: SanityImageAssetDocument;
   decoration: SanityImageAssetDocument;
+};
+
+export type TestimonialProps = {
+  _type: 'landingPage.testimonial';
+  title: string;
+  subtitle: string;
+  testimonials: Testimonial[];
+};
+
+export type Testimonial = {
+  image: SanityImageAssetDocument;
+  name: string;
+  role: string;
+  header: string;
+  testimony: string;
 };
