@@ -10,6 +10,7 @@ const hero = {
     {
       name: 'banners',
       type: 'array',
+      validation: (Rule: Rule) => Rule.required(),
       of: [
         {
           name: 'banner',
