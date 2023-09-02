@@ -6,7 +6,7 @@
 <a
   {href}
   class={twMerge(
-    'gradient-purple-blue-90 rounded-[12px] px-[32px] py-[13px] text-[16px] font-medium tracking-[0.48px] text-white',
+    'gradient-purple-blue-90 block w-fit rounded-[12px] px-[32px] py-[13px] text-[16px] font-medium tracking-[0.48px] text-white',
     $$props.class ?? '',
   )}
 >

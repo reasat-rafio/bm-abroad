@@ -1,6 +1,7 @@
 <script lang="ts">
   import About from '@/components/pages/landing/About.svelte';
   import Hero from '@/components/pages/landing/Hero.svelte';
+  import Journey from '@/components/pages/landing/Journey.svelte';
   import Testimonial from '@/components/pages/landing/Testimonial.svelte';
   import Tagline from '@/components/pages/landing/tagline/Tagline.svelte';
 
@@ -19,5 +20,7 @@
     <About {props} {services} />
   {:else if props._type === 'landingPage.testimonial'}
     <Testimonial {props} />
+  {:else if props._type === 'landingPage.journey'}
+    <Journey {props} />
   {/if}
 {/each}

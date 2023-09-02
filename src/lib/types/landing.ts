@@ -1,5 +1,5 @@
 import type { SanityImageAssetDocument } from '@sanity/client';
-import type { SeoProps } from './common';
+import type { Link, SeoProps } from './common';
 import type { PortableTextBlock } from 'sanity';
 
 export type LandingPageProps = {
@@ -8,7 +8,12 @@ export type LandingPageProps = {
   sections: Section[];
 };
 
-type Section = HeroProps | TaglineProps | AboutProps | TestimonialProps;
+type Section =
+  | HeroProps
+  | TaglineProps
+  | AboutProps
+  | TestimonialProps
+  | JourneyProps;
 
 export type Service = {
   _id: string;
@@ -57,4 +62,12 @@ export type Testimonial = {
   role: string;
   header: string;
   testimony: string;
+};
+
+export type JourneyProps = {
+  _type: 'landingPage.journey';
+  title: PortableTextBlock[];
+  description: string;
+  link: Link;
+  image: SanityImageAssetDocument;
 };

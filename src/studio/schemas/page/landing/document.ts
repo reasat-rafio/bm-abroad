@@ -20,6 +20,7 @@ const landingPage = {
         { type: 'landingPage.tagline' },
         { type: 'landingPage.about' },
         { type: 'landingPage.testimonial' },
+        { type: 'landingPage.journey' },
       ],
     },
   ],

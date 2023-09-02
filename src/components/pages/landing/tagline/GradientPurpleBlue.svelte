@@ -1,3 +1,7 @@
+<script lang="ts">
+  import type { BlockComponentProps } from '@/lib/@portabletext';
+</script>
+
 <span
   class="relative bg-gradient-to-b from-[#764af1] to-[#290886] bg-clip-text text-transparent"
 >
