@@ -13,7 +13,8 @@ type Section =
   | TaglineProps
   | AboutProps
   | TestimonialProps
-  | JourneyProps;
+  | JourneyProps
+  | ProcessProps;
 
 export type Service = {
   _id: string;
@@ -70,4 +71,18 @@ export type JourneyProps = {
   description: string;
   link: Link;
   image: SanityImageAssetDocument;
+};
+
+export type ProcessProps = {
+  _type: 'landingPage.process';
+  title: string;
+  subtitle: string;
+  decoration: SanityImageAssetDocument;
+  steps: Step[];
+};
+
+export type Step = {
+  _key: string;
+  title: string;
+  description: string;
 };

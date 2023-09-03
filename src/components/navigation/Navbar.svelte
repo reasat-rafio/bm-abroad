@@ -41,7 +41,7 @@
       </a>
       <ul class="flex space-x-[46px]">
         {#each nav.menu as { title, highlight, pageUrl }}
-          <li class="uppercase">
+          <li class="my-auto uppercase">
             {#if !!highlight}
               <Cta href={pageUrl.current}>
                 {title}
