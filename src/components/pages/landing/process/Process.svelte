@@ -13,7 +13,12 @@
 
     <div class="mx-auto mb-[176px] mt-[128px] max-w-3xl">
       {#each steps as { title, description }, index}
-        <Step {title} {description} {index} />
+        <Step
+          {title}
+          {description}
+          {index}
+          isLast={index === steps.length - 1}
+        />
       {/each}
     </div>
   </div>
