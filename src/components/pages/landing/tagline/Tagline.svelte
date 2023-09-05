@@ -11,7 +11,7 @@
   $: [decor1, decor2] = decorators;
 </script>
 
-<section class="pb-[130px] md:pb-[200px] xl:pb-[410px]">
+<section class="overflow-hidden pb-[130px] md:pb-[200px] xl:pb-[410px]">
   <div class="container relative">
     <H1 class="text-center">
       <PortableText

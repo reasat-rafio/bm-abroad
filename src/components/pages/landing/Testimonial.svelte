@@ -15,7 +15,7 @@
   $: ({ title, subtitle, testimonials } = props);
 
   export let plugins: EmblaPluginType[] = [];
-  export let options: Partial<EmblaOptionsType> = {};
+  export let options: Partial<EmblaOptionsType> = { align: 'start' };
 
   let emblaApi: EmblaCarouselType;
 
@@ -27,28 +27,32 @@
   const slidePrev = () => emblaApi.scrollPrev();
 </script>
 
-<section class="mb-[270px]">
+<section class="md:mb-xl mb-lg">
   <div class="container">
     <SectionHeader {title} {subtitle} />
 
-    <div class="mt-[80px] grid grid-cols-12">
-      <div class="col-span-2 flex items-center justify-center">
-        <button class="translate-x-full" on:click={slidePrev}>
+    <div class="mt-[50px] grid grid-cols-12 md:mt-[80px]">
+      <div
+        class="col-span-1 hidden items-center justify-center lg:flex xl:col-span-2"
+      >
+        <button class="xl:translate-x-full" on:click={slidePrev}>
           <ChevronLeftRounded />
         </button>
       </div>
       <div
-        class="col-span-8 overflow-hidden"
+        class="col-span-12 overflow-hidden lg:col-span-10 xl:col-span-8"
         use:emblaCarouselSvelte={{ plugins, options }}
         on:emblaInit={onInit}
       >
-        <div class="relative flex space-x-10">
+        <div class="relative flex space-x-5 md:space-x-10">
           {#each testimonials as { image, name, role, header, testimony }}
             <article
               style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-              class="grid min-h-[500px] flex-[0_0_100%] grid-cols-8 overflow-hidden rounded-[16px] bg-white"
+              class="grid min-h-[500px] flex-[0_0_90%] grid-cols-8 overflow-hidden rounded-[16px] bg-white sm:flex-[0_0_100%]"
             >
-              <div class="relative col-span-3 flex justify-end">
+              <div
+                class="relative col-span-8 flex h-[250px] justify-end sm:h-[350px] md:col-span-3 md:h-full"
+              >
                 <div
                   class="relative z-10 mt-auto w-full space-y-[16px] px-[30px] py-[33px] text-white"
                 >
@@ -61,7 +65,7 @@
                 </div>
                 <figure class="absolute inset-0 h-full w-full">
                   <SanityImage
-                    sizes="30vw"
+                    sizes="(min-width: 768px) 30vw, 80vw"
                     src={image}
                     alt={name}
                     class="h-full w-full object-cover"
@@ -70,7 +74,7 @@
                 </figure>
               </div>
               <div
-                class="col-span-5 my-auto space-y-[48px] px-[68px] py-[30px]"
+                class="col-span-8 my-auto space-y-[24px] px-[20px] py-[16px] md:col-span-5 lg:space-y-[48px] lg:px-[68px] lg:py-[30px]"
               >
                 <h5 class="text-[32px] font-medium text-[#1B1464]">{header}</h5>
                 <p
@@ -83,8 +87,10 @@
           {/each}
         </div>
       </div>
-      <div class="col-span-2 flex items-center justify-center">
-        <button class="-translate-x-full" on:click={slideNext}>
+      <div
+        class="hidden items-center justify-center lg:col-span-1 lg:flex xl:col-span-2"
+      >
+        <button class="xl:-translate-x-full" on:click={slideNext}>
           <ChevronRightRounded />
         </button>
       </div>

@@ -26,14 +26,14 @@
   }
 </script>
 
-<section bind:this={sectionEl} class="mb-[160px]">
+<section bind:this={sectionEl} class="mb-2xl md:mb-xl">
   <div
-    class="container grid grid-cols-2 gap-[24px] lg:grid-cols-3 xl:grid-cols-4"
+    class="container grid grid-cols-2 gap-[20px] lg:grid-cols-3 lg:gap-[24px] 2xl:grid-cols-4"
   >
     {#each services as { name, image, description }}
       <article
         style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-        class="landing-service__card grid h-[150px] translate-y-[60px] grid-rows-2 rounded-[24px] bg-white px-[36px] py-[29px] md:h-[430px]"
+        class="landing-service__card grid h-[150px] translate-y-[60px] grid-rows-2 gap-1 rounded-[24px] bg-white px-[20px] py-[20px] md:h-[430px] md:gap-5 md:px-[36px] md:py-[29px]"
       >
         <figure>
           <SanityImage
@@ -41,13 +41,13 @@
             src={image}
             alt={name}
             imageUrlBuilder={imageBuilder}
-            sizes="20vw"
+            sizes="(min-width: 1024px) 30vw, 50vw"
           />
         </figure>
 
         <div class="flex flex-col justify-center space-y-[24px] text-center">
           <h4
-            class="font-oswald text-[16px] font-semibold uppercase leading-none text-[#1B1464] lg:text-[32px]"
+            class="font-oswald text-[16px] font-semibold uppercase leading-none text-[#1B1464] md:text-[24px] xl:text-[32px]"
           >
             {name}
           </h4>

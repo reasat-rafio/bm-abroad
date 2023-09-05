@@ -7,10 +7,8 @@
     Service as ServiceProps,
   } from '@/lib/types/landing';
   import IntersectionObserver from 'svelte-intersection-observer';
-  import Service from './Service.svelte';
 
   export let props: AboutProps;
-  export let services: ServiceProps[];
   $: ({ title, subtitle, description, image, decoration } = props);
 
   let sectionEl: HTMLElement;
@@ -20,7 +18,7 @@
 <IntersectionObserver element={sectionEl} bind:intersecting threshold={0.25}>
   <section bind:this={sectionEl} class="relative mb-[48px]">
     <figure
-      class="absolute left-0 top-0 w-1/2 translate-x-1/2 transition-transform duration-500 ease-in-out {intersecting
+      class="absolute left-0 top-0 w-full transition-transform duration-500 ease-in-out max-sm:px-10 sm:w-1/2 sm:translate-x-1/2 {intersecting
         ? '-translate-y-full'
         : 'translate-y-0'}"
     >
@@ -28,34 +26,34 @@
         class="h-full w-full object-contain"
         src={decoration}
         alt={decoration.alt}
-        sizes="50vw"
+        sizes="(min-width: 640px) 50vw, 100vw"
         imageUrlBuilder={imageBuilder}
       />
     </figure>
 
-    <article
-      style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-      class="container relative z-10 grid grid-cols-1 gap-5 rounded-[32px] bg-white px-[20px] py-[44px] md:px-[40px] md:py-[70px] lg:grid-cols-2 xl:px-[111px] xl:py-[83px]"
-    >
-      <div class="space-y-[36px] lg:space-y-[65px]">
-        <SectionHeader {title} {subtitle} />
-        <p
-          class="text-[14px] font-light leading-[160%] max-md:tracking-[0.28px] md:text-[18px]"
-        >
-          {description}
-        </p>
-      </div>
-      <figure class="">
-        <SanityImage
-          class="h-full w-full object-contain"
-          src={image}
-          alt={image.alt}
-          sizes="(min-width: 1024px) 50vw, 80vw"
-          imageUrlBuilder={imageBuilder}
-        />
-      </figure>
-    </article>
+    <div class="container">
+      <article
+        style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
+        class="relative z-10 grid grid-cols-1 gap-5 rounded-[32px] bg-white px-[20px] py-[44px] md:px-[40px] md:py-[70px] lg:grid-cols-2 xl:px-[111px] xl:py-[83px]"
+      >
+        <div class="space-y-[36px] lg:space-y-[65px]">
+          <SectionHeader {title} {subtitle} />
+          <p
+            class="text-[14px] font-light leading-[160%] max-md:tracking-[0.28px] md:text-[18px]"
+          >
+            {description}
+          </p>
+        </div>
+        <figure class="">
+          <SanityImage
+            class="h-full w-full object-contain"
+            src={image}
+            alt={image.alt}
+            sizes="(min-width: 1024px) 50vw, 80vw"
+            imageUrlBuilder={imageBuilder}
+          />
+        </figure>
+      </article>
+    </div>
   </section>
 </IntersectionObserver>
-
-<Service {services} />
