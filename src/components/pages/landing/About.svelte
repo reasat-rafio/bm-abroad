@@ -13,23 +13,27 @@
 
   let sectionEl: HTMLElement;
   let intersecting = false;
+  let windowWidth = 0;
 </script>
 
+<svelte:window bind:innerWidth={windowWidth} />
 <IntersectionObserver element={sectionEl} bind:intersecting threshold={0.25}>
   <section bind:this={sectionEl} class="relative mb-[48px]">
-    <figure
-      class="absolute left-0 top-0 w-full transition-transform duration-500 ease-in-out max-sm:px-10 sm:w-1/2 sm:translate-x-1/2 {intersecting
-        ? '-translate-y-full'
-        : 'translate-y-0'}"
-    >
-      <SanityImage
-        class="h-full w-full object-contain"
-        src={decoration}
-        alt={decoration.alt}
-        sizes="(min-width: 640px) 50vw, 100vw"
-        imageUrlBuilder={imageBuilder}
-      />
-    </figure>
+    {#key windowWidth}
+      <figure
+        class="absolute left-0 top-0 w-full transition-transform duration-500 ease-in-out max-sm:px-10 sm:w-1/2 sm:translate-x-1/2 {intersecting
+          ? '-translate-y-full'
+          : 'translate-y-0'}"
+      >
+        <SanityImage
+          class="h-full w-full object-contain"
+          src={decoration}
+          alt={decoration.alt}
+          sizes="(min-width: 640px) 50vw, 100vw"
+          imageUrlBuilder={imageBuilder}
+        />
+      </figure>
+    {/key}
 
     <div class="container">
       <article
