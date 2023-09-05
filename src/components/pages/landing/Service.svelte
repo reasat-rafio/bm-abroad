@@ -33,11 +33,11 @@
     {#each services as { name, image, description }}
       <article
         style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-        class="landing-service__card grid h-[150px] translate-y-[60px] grid-rows-2 gap-1 rounded-[24px] bg-white px-[20px] py-[20px] md:h-[430px] md:gap-5 md:px-[36px] md:py-[29px]"
+        class="landing-service__card group grid h-[150px] translate-y-[60px] grid-rows-2 gap-1 rounded-[24px] bg-white px-[20px] py-[20px] transition-colors duration-500 hover:bg-[#764AF1] md:h-[430px] md:gap-[20px] md:px-[36px] md:py-[29px]"
       >
         <figure>
           <SanityImage
-            class="h-full w-full object-contain"
+            class="h-[90%] w-full object-contain transition-transform duration-500 group-hover:scale-110"
             src={image}
             alt={name}
             imageUrlBuilder={imageBuilder}
@@ -47,12 +47,12 @@
 
         <div class="flex flex-col justify-center space-y-[24px] text-center">
           <h4
-            class="font-oswald text-[16px] font-semibold uppercase leading-none text-[#1B1464] md:text-[24px] xl:text-[32px]"
+            class="font-oswald text-[16px] font-semibold uppercase leading-none text-[#1B1464] group-hover:text-white md:text-[24px] xl:text-[32px]"
           >
             {name}
           </h4>
           <p
-            class="hidden text-[16px] font-light leading-[160%] tracking-[0.4px] md:block"
+            class="hidden text-[16px] font-light leading-[160%] tracking-[0.4px] group-hover:text-white md:block"
           >
             {description}
           </p>

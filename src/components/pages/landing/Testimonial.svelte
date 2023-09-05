@@ -3,6 +3,7 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { TestimonialProps } from '@/lib/types/landing';
+  import Autoplay from 'embla-carousel-autoplay';
   import emblaCarouselSvelte, {
     type EmblaCarouselType,
     type EmblaOptionsType,
@@ -15,7 +16,7 @@
   $: ({ title, subtitle, testimonials } = props);
 
   let emblaApi: EmblaCarouselType;
-  let plugins: EmblaPluginType[] = [];
+  let plugins: EmblaPluginType[] = [Autoplay()];
   let options: Partial<EmblaOptionsType> = { align: 'start' };
 
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
@@ -26,7 +27,7 @@
   const slidePrev = () => emblaApi.scrollPrev();
 </script>
 
-<section class="md:mb-xl mb-lg">
+<section class="mb-lg md:mb-xl">
   <div class="container">
     <SectionHeader {title} {subtitle} />
 

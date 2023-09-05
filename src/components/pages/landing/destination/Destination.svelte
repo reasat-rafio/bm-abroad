@@ -59,10 +59,11 @@
               alt={image.alt}
               imageUrlBuilder={imageBuilder}
             />
+
             <div
               style="background: {hoverdCardKey === _key && !isSm
                 ? 'linear-gradient(180deg, rgba(3, 3, 3, 0.40) 0%, #502CB5 100%)'
-                : ''};"
+                : 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50%, #000 100%)'};"
               class="absolute inset-0 flex h-full w-full flex-col items-center justify-end p-[35px] text-white transition-all duration-300 {hoverdCardKey ===
                 _key && !isSm
                 ? 'backdrop-blur-lg'

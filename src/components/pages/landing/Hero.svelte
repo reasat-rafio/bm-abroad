@@ -3,6 +3,7 @@
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { HeroProps } from '@/lib/types/landing';
   import uiStore from '@/stores/ui';
+  import Autoplay from 'embla-carousel-autoplay';
   import emblaCarouselSvelte, {
     type EmblaOptionsType,
     type EmblaPluginType,
@@ -11,13 +12,13 @@
   export let props: HeroProps;
   $: ({ banners } = props);
 
-  export let plugins: EmblaPluginType[] = [];
+  export let plugins: EmblaPluginType[] = [Autoplay()];
   export let options: Partial<EmblaOptionsType> = {};
 </script>
 
 <section
   style="margin-top: {$uiStore.navbarHeight + 50}px;"
-  class="lg:mb-2xl mb-lg"
+  class="mb-lg lg:mb-2xl"
 >
   <div class="overflow-hidden lg:container">
     <div use:emblaCarouselSvelte={{ plugins, options }}>
