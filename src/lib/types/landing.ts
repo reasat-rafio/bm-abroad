@@ -86,3 +86,17 @@ export type Step = {
   title: string;
   description: string;
 };
+
+export type DestinationsProps = {
+  _type: 'landingPage.destination';
+  title: string;
+  subtitle: string;
+  destinations: Destination[];
+};
+
+export type Destination = {
+  _key: string;
+  name: string;
+  description: string;
+  image: SanityImageAssetDocument;
+};
