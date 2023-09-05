@@ -14,6 +14,7 @@ type Section =
   | AboutProps
   | TestimonialProps
   | JourneyProps
+  | DestinationsProps
   | ProcessProps;
 
 export type Service = {

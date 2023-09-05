@@ -14,10 +14,9 @@
   export let props: TestimonialProps;
   $: ({ title, subtitle, testimonials } = props);
 
-  export let plugins: EmblaPluginType[] = [];
-  export let options: Partial<EmblaOptionsType> = { align: 'start' };
-
   let emblaApi: EmblaCarouselType;
+  let plugins: EmblaPluginType[] = [];
+  let options: Partial<EmblaOptionsType> = { align: 'start' };
 
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
     emblaApi = event.detail;
