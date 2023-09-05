@@ -21,6 +21,7 @@ const landingPage = {
         { type: 'landingPage.about' },
         { type: 'landingPage.testimonial' },
         { type: 'landingPage.journey' },
+        { type: 'landingPage.destination' },
         { type: 'landingPage.process' },
       ],
     },

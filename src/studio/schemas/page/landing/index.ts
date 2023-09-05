@@ -5,6 +5,7 @@ import tagline from './tagline';
 import testimonial from './testimonial';
 import journey from './journey';
 import process from './process';
+import destination from './destination';
 
 export default [
   landingPage,
@@ -14,4 +15,5 @@ export default [
   testimonial,
   journey,
   process,
+  destination,
 ];

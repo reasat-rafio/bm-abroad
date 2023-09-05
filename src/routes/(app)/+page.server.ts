@@ -18,7 +18,11 @@ const q = groq`*[_id == "landingPage"][0]{
     testimonials[]{
       ...,
       ${asset('image')}
-    }
+    },
+    destinations[]{
+      ...,
+      ${asset('image')}
+    },
    },
   "services": *[_type == "service"]|order(orderRank){
     ...,
