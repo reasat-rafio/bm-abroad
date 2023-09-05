@@ -26,5 +26,5 @@
   <link rel="icon" type="image/png" href={faviconImage} />
 </svelte:head>
 
-<Navbar {nav} {logo} />
+<!-- <Navbar {nav} {logo} /> -->
 <slot />

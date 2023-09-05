@@ -19,18 +19,18 @@
 </script>
 
 <section style="margin-top: {$uiStore.navbarHeight + 50}px;" class="mb-[160px]">
-  <div class="container overflow-hidden">
+  <div class="overflow-hidden lg:container">
     <div use:emblaCarouselSvelte={{ plugins, options }}>
-      <div class="relative flex space-x-10">
+      <div class="relative flex space-x-5 lg:space-x-10">
         {#each banners as { image, url }}
           <svelte:element
             this={!!url ? 'a' : 'figure'}
-            class="h-[70vh] flex-[0_0_100%]"
+            class="aspect-video max-h-[70vh] flex-[0_0_100%]"
           >
             <SanityImage
-              class="h-full w-full rounded-lg object-cover"
+              class="h-full w-full object-cover lg:rounded-lg"
               src={image}
-              sizes="80vw"
+              sizes="100vw"
               imageUrlBuilder={imageBuilder}
             />
           </svelte:element>
