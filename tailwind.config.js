@@ -6,6 +6,10 @@ export default {
       center: true,
     },
     extend: {
+      spacing: {
+        lg: '64px',
+        '2xl': '160px',
+      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         oswald: ['Oswald', 'sans-serif'],

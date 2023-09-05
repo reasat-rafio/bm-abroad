@@ -4,7 +4,6 @@
   import type { HeroProps } from '@/lib/types/landing';
   import uiStore from '@/stores/ui';
   import emblaCarouselSvelte, {
-    type EmblaCarouselType,
     type EmblaOptionsType,
     type EmblaPluginType,
   } from 'embla-carousel-svelte';
@@ -14,11 +13,12 @@
 
   export let plugins: EmblaPluginType[] = [];
   export let options: Partial<EmblaOptionsType> = {};
-
-  let emblaApi: EmblaCarouselType;
 </script>
 
-<section style="margin-top: {$uiStore.navbarHeight + 50}px;" class="mb-[160px]">
+<section
+  style="margin-top: {$uiStore.navbarHeight + 50}px;"
+  class="lg:mb-2xl mb-lg"
+>
   <div class="overflow-hidden lg:container">
     <div use:emblaCarouselSvelte={{ plugins, options }}>
       <div class="relative flex space-x-5 lg:space-x-10">
@@ -30,7 +30,7 @@
             <SanityImage
               class="h-full w-full object-cover lg:rounded-lg"
               src={image}
-              sizes="100vw"
+              sizes="(min-width: 1024px) 90vw, 100vw"
               imageUrlBuilder={imageBuilder}
             />
           </svelte:element>

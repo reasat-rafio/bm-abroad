@@ -7,7 +7,7 @@
 
 <header class="relative space-y-[12px] pl-[25px]">
   <H1 class="leading-none" el="h2">{title}</H1>
-  <h3 class="text-[16px] text-[#A8A8A8]">{subtitle}</h3>
+  <h3 class="text-[12px] text-[#A8A8A8] md:text-[16px]">{subtitle}</h3>
 </header>
 
 <style>

@@ -27,11 +27,13 @@
 </script>
 
 <section bind:this={sectionEl} class="mb-[160px]">
-  <div class="container grid grid-cols-4 gap-[24px]">
+  <div
+    class="container grid grid-cols-2 gap-[24px] lg:grid-cols-3 xl:grid-cols-4"
+  >
     {#each services as { name, image, description }}
       <article
         style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-        class="landing-service__card grid h-[430px] translate-y-[60px] grid-rows-2 rounded-[24px] bg-white px-[36px] py-[29px]"
+        class="landing-service__card grid h-[150px] translate-y-[60px] grid-rows-2 rounded-[24px] bg-white px-[36px] py-[29px] md:h-[430px]"
       >
         <figure>
           <SanityImage
@@ -45,11 +47,13 @@
 
         <div class="flex flex-col justify-center space-y-[24px] text-center">
           <h4
-            class="font-oswald text-[32px] font-semibold uppercase leading-none text-[#1B1464]"
+            class="font-oswald text-[16px] font-semibold uppercase leading-none text-[#1B1464] lg:text-[32px]"
           >
             {name}
           </h4>
-          <p class="text-[16px] font-light leading-[160%] tracking-[0.4px]">
+          <p
+            class="hidden text-[16px] font-light leading-[160%] tracking-[0.4px] md:block"
+          >
             {description}
           </p>
         </div>

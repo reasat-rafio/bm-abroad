@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { BlockComponentProps } from '@/lib/@portabletext';
+  import type { MarkComponentProps } from '@/lib/@portabletext';
 </script>
 
 <span

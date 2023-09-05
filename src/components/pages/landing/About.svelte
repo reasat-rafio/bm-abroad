@@ -35,18 +35,22 @@
 
     <article
       style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-      class="container relative z-10 grid grid-cols-2 gap-5 rounded-[32px] bg-white px-[111px] py-[83px]"
+      class="container relative z-10 grid grid-cols-1 gap-5 rounded-[32px] bg-white px-[20px] py-[44px] md:px-[40px] md:py-[70px] lg:grid-cols-2 xl:px-[111px] xl:py-[83px]"
     >
-      <div class="space-y-[65px]">
+      <div class="space-y-[36px] lg:space-y-[65px]">
         <SectionHeader {title} {subtitle} />
-        <p class="text-[18px] font-light leading-[160%]">{description}</p>
+        <p
+          class="text-[14px] font-light leading-[160%] max-md:tracking-[0.28px] md:text-[18px]"
+        >
+          {description}
+        </p>
       </div>
       <figure class="">
         <SanityImage
           class="h-full w-full object-contain"
           src={image}
           alt={image.alt}
-          sizes="50vw"
+          sizes="(min-width: 1024px) 50vw, 80vw"
           imageUrlBuilder={imageBuilder}
         />
       </figure>
