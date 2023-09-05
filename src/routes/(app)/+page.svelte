@@ -5,6 +5,7 @@
   import Service from '@/components/pages/landing/Service.svelte';
   import Testimonial from '@/components/pages/landing/Testimonial.svelte';
   import Destination from '@/components/pages/landing/destination/Destination.svelte';
+  import Process from '@/components/pages/landing/process/Process.svelte';
   import Tagline from '@/components/pages/landing/tagline/Tagline.svelte';
 
   export let data;
@@ -23,6 +24,8 @@
     <Service {services} />
   {:else if props._type === 'landingPage.testimonial'}
     <Testimonial {props} />
+  {:else if props._type === 'landingPage.process'}
+    <Process {props} />
   {:else if props._type === 'landingPage.destination'}
     <Destination {props} />
   {:else if props._type === 'landingPage.journey'}
