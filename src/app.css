@@ -9,10 +9,6 @@
 }
 
 @layer utilities {
-  /* .body-1 {
-    @apply
-  } */
-
   .gradient-purple-blue-90 {
     background: linear-gradient(90deg, #764af1 0%, #290886 127.39%);
   }

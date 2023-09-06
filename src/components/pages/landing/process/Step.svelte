@@ -7,6 +7,7 @@
   export let description: string;
   export let isLast: boolean;
   export let index: number;
+  export let allStepsComplete: boolean;
 
   let stepEl: HTMLDivElement;
   let windowHeight = 0;
@@ -14,6 +15,11 @@
   $: isIntersecting = scrollPercentage > 0;
   $: textColor = (color: string = 'text-black') =>
     isIntersecting ? color : 'text-black/10';
+  $: if (isLast) {
+    if (scrollPercentage > 0) allStepsComplete = true;
+  } else {
+    if (scrollPercentage < 100) allStepsComplete = false;
+  }
 
   const scrollAction = () => {
     let elBottomPosition =
