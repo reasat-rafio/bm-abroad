@@ -4,12 +4,15 @@
   import type { SiteProps } from '@/lib/types/common';
   import uiStore from '@/stores/ui';
   import Cta from '../ui/Cta.svelte';
+  import Hamburger from './Hamburger.svelte';
+  import Dropdown from './Dropdown.svelte';
 
   export let nav: SiteProps['nav'];
   export let logo: SiteProps['logos']['logo'];
 
   let windowWidth = 0;
   let scrollY = 0;
+  let dropdown: 'active' | 'inactive' = 'inactive';
   $: yPosition = scrollY > 25 ? 'translate-y-0' : 'translate-y-[25px]';
 
   const navAction = (node: HTMLElement, _: number) => {
@@ -28,10 +31,10 @@
 <nav use:navAction={windowWidth} class="fixed left-0 top-0 z-50 w-full">
   <div
     style="box-shadow: 0px 8px 20px -5px rgba(0, 0, 0, 0.10);"
-    class="container rounded-lg bg-white/50 px-[32px] py-[14px] backdrop-blur-2xl transition-transform duration-500 ease-in-out {yPosition}"
+    class="container rounded-[10px] bg-white/50 px-[32px] py-[14px] backdrop-blur-2xl transition-transform duration-500 ease-in-out lg:rounded-lg {yPosition} relative"
   >
-    <div class="flex items-center justify-between">
-      <a class="h-[69px]" href="/">
+    <div class="flex items-center justify-between space-x-5">
+      <a class="h-[50px] 2xl:h-[69px]" href="/">
         <SanityImage
           class="h-full w-fit object-cover"
           src={logo}
@@ -39,7 +42,7 @@
           imageUrlBuilder={imageBuilder}
         />
       </a>
-      <ul class="flex space-x-[46px]">
+      <ul class="hidden space-x-[20px] lg:flex 2xl:space-x-[46px]">
         {#each nav.menu as { title, highlight, pageUrl }}
           <li class="my-auto uppercase">
             {#if !!highlight}
@@ -48,7 +51,7 @@
               </Cta>
             {:else}
               <a
-                class="text-[16px] font-medium tracking-[0.48px]"
+                class="text-[12px] font-medium tracking-[0.48px] transition-colors duration-300 hover:text-[#764AF1] xl:text-[16px]"
                 href={pageUrl.current}
               >
                 {title}
@@ -57,6 +60,9 @@
           </li>
         {/each}
       </ul>
+
+      <Hamburger bind:dropdown class="block lg:hidden" />
     </div>
+    <Dropdown {dropdown} menu={nav.menu} />
   </div>
 </nav>
