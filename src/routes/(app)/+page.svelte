@@ -7,13 +7,18 @@
   import Destination from '@/components/pages/landing/destination/Destination.svelte';
   import Process from '@/components/pages/landing/process/Process.svelte';
   import Tagline from '@/components/pages/landing/tagline/Tagline.svelte';
+  import Seo from '@/components/Seo.svelte';
 
   export let data;
   $: ({
-    page: { sections, services },
+    site: {
+      logos: { ogImage },
+    },
+    page: { sections, services, seo },
   } = data);
 </script>
 
+<Seo {seo} siteOgImg={ogImage} />
 {#each sections as props}
   {#if props._type === 'landingPage.hero'}
     <Hero {props} />
