@@ -14,6 +14,7 @@
   let scrollY = 0;
   let dropdown: 'active' | 'inactive' = 'inactive';
   $: yPosition = scrollY > 25 ? 'translate-y-0' : 'translate-y-[25px]';
+  $: if (windowWidth >= 1024) dropdown = 'inactive';
 
   const navAction = (node: HTMLElement, _: number) => {
     const navbarHeight = node.getBoundingClientRect().height;

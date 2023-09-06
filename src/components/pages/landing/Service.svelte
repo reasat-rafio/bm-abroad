@@ -56,7 +56,7 @@
           <Typography
             el="p"
             variant="sm"
-            class="transition-colors duration-500 group-hover:text-white"
+            class="hidden transition-colors duration-500 group-hover:text-white md:block"
           >
             {description}
           </Typography>
