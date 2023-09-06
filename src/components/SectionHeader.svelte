@@ -1,5 +1,5 @@
 <script lang="ts">
-  import H1 from './ui/H1.svelte';
+  import Heading from './ui/Heading.svelte';
   import { twMerge } from 'tailwind-merge';
 
   export let title: string;
@@ -9,8 +9,8 @@
 <header
   class={twMerge('relative space-y-[12px] pl-[25px]', $$props.class ?? '')}
 >
-  <H1 class="leading-none" el="h2">{title}</H1>
-  <h3 class="text-[12px] text-[#A8A8A8] md:text-[16px]">{subtitle}</h3>
+  <Heading el="h2" variant="2xl" class="leading-none">{title}</Heading>
+  <h3 class="text-dark-gray text-[12px] md:text-[16px]">{subtitle}</h3>
 </header>
 
 <style>

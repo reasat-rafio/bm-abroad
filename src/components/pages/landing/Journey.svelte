@@ -1,11 +1,12 @@
 <script lang="ts">
   import Cta from '@/components/ui/Cta.svelte';
-  import H1 from '@/components/ui/H1.svelte';
+  import H1 from '@/components/ui/Heading.svelte';
   import PortableText from '@/lib/@portabletext/PortableText.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { JourneyProps } from '@/lib/types/landing';
-  import GradientPurpleBlue from './tagline/GradientPurpleBlue.svelte';
+  import GradientPurpleBlue from '../../GradientPurpleBlue.svelte';
+  import Typography from '@/components/ui/Typography.svelte';
 
   export let props: JourneyProps;
   $: ({ title, description, link, image } = props);
@@ -17,11 +18,12 @@
     class=" relative z-10 grid grid-cols-1 gap-5 rounded-[32px] bg-white px-[20px] py-[44px] md:px-[40px] md:py-[70px] lg:grid-cols-2 xl:px-[111px] xl:py-[83px]"
   >
     <div class="space-y-[32px] md:space-y-[64px]">
-      <H1 class="max-lg:text-center">
+      <H1 class="max-lg:text-center" variant="2xl">
         <PortableText
           value={title}
           components={{
             marks: {
+              // @ts-ignore
               gradientPurpleBlue: GradientPurpleBlue,
             },
           }}
@@ -38,7 +40,7 @@
         />
       </figure>
 
-      <p class="text-[18px] font-light leading-[160%]">{description}</p>
+      <Typography variant="lg">{description}</Typography>
       <Cta class="max-lg:mx-auto" href={link.href}>{link.title}</Cta>
     </div>
 

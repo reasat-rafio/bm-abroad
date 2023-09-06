@@ -7,10 +7,34 @@ export default {
       padding: '20px',
     },
     extend: {
+      colors: {
+        'space-blue': '#1B1464',
+        'dark-gray': '#A8A8A8',
+      },
+      letterSpacing: {
+        sm: '0.28px',
+        md: '0.4px',
+      },
+      lineHeight: {
+        md: '160%',
+        lg: '180%',
+      },
       spacing: {
         lg: '64px',
         xl: '92px',
         '2xl': '160px',
+      },
+      fontSize: {
+        h1: '64px',
+        'h1-md': '47px',
+        'h1-sm': '32px',
+        h2: '32px',
+        'h2-md': '28px',
+        'h2-sm': '24px',
+        p1: '18px',
+        'p1-sm': '14px',
+        p2: '16px',
+        'p2-sm': '14px',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

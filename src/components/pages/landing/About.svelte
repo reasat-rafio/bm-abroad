@@ -1,11 +1,9 @@
 <script lang="ts">
   import SectionHeader from '@/components/SectionHeader.svelte';
+  import Typography from '@/components/ui/Typography.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
-  import type {
-    AboutProps,
-    Service as ServiceProps,
-  } from '@/lib/types/landing';
+  import type { AboutProps } from '@/lib/types/landing';
   import IntersectionObserver from 'svelte-intersection-observer';
 
   export let props: AboutProps;
@@ -42,11 +40,9 @@
       >
         <div class="space-y-[36px] lg:space-y-[65px]">
           <SectionHeader {title} {subtitle} />
-          <p
-            class="text-[14px] font-light leading-[160%] max-md:tracking-[0.28px] md:text-[18px]"
-          >
+          <Typography el="p" variant="lg">
             {description}
-          </p>
+          </Typography>
         </div>
         <figure class="">
           <SanityImage

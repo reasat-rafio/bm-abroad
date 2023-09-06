@@ -77,7 +77,7 @@
               {#if hoverdCardKey === _key && !isSm}
                 <p
                   transition:slide={{ duration: 600 }}
-                  class="mt-[30%] text-center"
+                  class="mt-[30%] text-center text-[16px] font-light leading-md"
                 >
                   {description}
                 </p>
@@ -93,7 +93,7 @@
         <p
           in:fade={{ duration: 600 }}
           out:fade={{ duration: 0 }}
-          class="mt-[32px] text-[16px] font-light leading-[160%] tracking-[0.4px]"
+          class="mt-[32px] text-[16px] font-light leading-md tracking-sm"
         >
           {activeSlideDescription}
         </p>

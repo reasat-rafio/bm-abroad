@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fade, blur, draw } from 'svelte/transition';
+  import { fade, draw } from 'svelte/transition';
 
   export let isIntersecting: boolean;
   export let isLast: boolean;

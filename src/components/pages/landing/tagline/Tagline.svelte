@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { TaglineProps } from '@/lib/types/landing';
   import { PortableText } from '@/lib/@portabletext/index';
-  import GradientPurpleBlue from './GradientPurpleBlue.svelte';
-  import H1 from '@/components/ui/H1.svelte';
+  import GradientPurpleBlue from '../../../GradientPurpleBlue.svelte';
+  import Heading from '@/components/ui/Heading.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
 
@@ -13,16 +13,17 @@
 
 <section class="overflow-hidden pb-[130px] md:pb-[200px] xl:pb-[410px]">
   <div class="container relative">
-    <H1 class="text-center">
+    <Heading class="text-center" el="h1" variant="2xl">
       <PortableText
         value={title}
         components={{
           marks: {
+            // @ts-ignore
             gradientPurpleBlue: GradientPurpleBlue,
           },
         }}
       />
-    </H1>
+    </Heading>
 
     {#if !!decor1}
       <figure

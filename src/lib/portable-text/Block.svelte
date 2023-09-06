@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { BlockComponentProps } from '@portabletext/svelte';
   import { DefaultBlock } from '@portabletext/svelte';
-  import H1 from '@/components/ui/H1.svelte';
+  import H1 from '@/components/ui/Heading.svelte';
   import H2 from '@/components/ui/H2.svelte';
   import H3 from '@/components/ui/H3.svelte';
   import H4 from '@/components/ui/H4.svelte';

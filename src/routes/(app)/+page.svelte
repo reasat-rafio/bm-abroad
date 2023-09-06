@@ -3,7 +3,7 @@
   import Hero from '@/components/pages/landing/Hero.svelte';
   import Journey from '@/components/pages/landing/Journey.svelte';
   import Service from '@/components/pages/landing/Service.svelte';
-  import Testimonial from '@/components/pages/landing/Testimonial.svelte';
+  import Testimonial from '@/components/pages/landing/testimonial/Testimonial.svelte';
   import Destination from '@/components/pages/landing/destination/Destination.svelte';
   import Process from '@/components/pages/landing/process/Process.svelte';
   import Tagline from '@/components/pages/landing/tagline/Tagline.svelte';

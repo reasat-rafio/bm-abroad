@@ -1,5 +1,7 @@
 <script lang="ts">
+  import Heading from '@/components/ui/Heading.svelte';
   import Indicator from './Indicator.svelte';
+  import Typography from '@/components/ui/Typography.svelte';
 
   export let title: string;
   export let description: string;
@@ -36,20 +38,20 @@
   >
     <div
       class="{textColor(
-        'text-[#A0A1A3]',
-      )} text-[16px] uppercase transition-colors duration-500"
+        'text-dark-gray',
+      )} text-[12px] uppercase transition-colors duration-500 lg:text-[16px]"
     >
       Step {index + 1} :
     </div>
-    <h5
-      class="{textColor()} font-oswald text-[24px] font-semibold uppercase transition-colors duration-500 lg:text-[32px]"
+    <Heading
+      el="h5"
+      variant="xl"
+      class="{textColor()} transition-colors duration-500"
     >
       {title}
-    </h5>
-    <p
-      class="{textColor()} text-[12px] font-light leading-[160%] transition-colors duration-500 lg:text-[18px]"
+    </Heading>
+    <Typography variant="lg" class="{textColor()} text-[12px]"
+      >{description}</Typography
     >
-      {description}
-    </p>
   </div>
 </div>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Typography from '@/components/ui/Typography.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { Service } from '@/lib/types/landing';
@@ -47,15 +48,18 @@
 
         <div class="flex flex-col justify-center space-y-[24px] text-center">
           <h4
-            class="font-oswald text-[16px] font-semibold uppercase leading-none text-[#1B1464] group-hover:text-white md:text-[24px] xl:text-[32px]"
+            class="font-oswald text-[16px] font-semibold uppercase leading-none text-space-blue transition-colors duration-500 group-hover:text-white md:text-[24px] xl:text-h2"
           >
             {name}
           </h4>
-          <p
-            class="hidden text-[16px] font-light leading-[160%] tracking-[0.4px] group-hover:text-white md:block"
+
+          <Typography
+            el="p"
+            variant="sm"
+            class="transition-colors duration-500 group-hover:text-white"
           >
             {description}
-          </p>
+          </Typography>
         </div>
       </article>
     {/each}
