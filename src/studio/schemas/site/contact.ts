@@ -8,6 +8,21 @@ const contact = {
   type: 'document',
   fields: [
     {
+      name: 'contactNumber',
+      type: 'string',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: 'address',
+      type: 'text',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: 'email',
+      type: 'string',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: 'socials',
       type: 'array',
       of: [

@@ -42,6 +42,9 @@ export interface ContactProps {
   _updatedAt: Date;
   _createdAt: Date;
   socials: SocialProps[];
+  contactNumber: string;
+  address: string;
+  email: string;
 }
 export interface Menu {
   _key: string;

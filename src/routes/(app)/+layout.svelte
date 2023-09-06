@@ -6,6 +6,7 @@
   import '@fontsource/poppins/500.css';
   import '@fontsource/poppins/600.css';
   import '@fontsource/oswald/600.css';
+  import Footer from '@/components/footer/Footer.svelte';
 
   export let data;
   $: ({
@@ -28,3 +29,4 @@
 
 <Navbar {nav} {logo} />
 <slot />
+<Footer {footer} {contact} {logo} />
