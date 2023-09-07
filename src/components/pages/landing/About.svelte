@@ -15,7 +15,12 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<IntersectionObserver element={sectionEl} bind:intersecting threshold={0.25}>
+<IntersectionObserver
+  element={sectionEl}
+  bind:intersecting
+  threshold={0.25}
+  once
+>
   <section bind:this={sectionEl} class="relative mb-[48px]">
     {#key windowWidth}
       <figure
