@@ -29,8 +29,9 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY />
-<nav use:navAction={windowWidth} class="fixed left-0 top-0 z-50 w-full">
+<nav class="fixed left-0 top-0 z-50 w-full">
   <div
+    use:navAction={windowWidth}
     style="box-shadow: 0px 8px 20px -5px rgba(0, 0, 0, 0.10);"
     class="container rounded-[10px] bg-white/50 px-[32px] py-[14px] backdrop-blur-2xl transition-transform duration-500 ease-in-out lg:rounded-lg {yPosition} relative"
   >
