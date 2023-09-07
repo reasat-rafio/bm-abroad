@@ -31,11 +31,13 @@
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY />
 <nav class="fixed left-0 top-0 z-50 w-full">
   <div
-    use:navAction={windowWidth}
     style="box-shadow: 0px 8px 20px -5px rgba(0, 0, 0, 0.10);"
     class="container rounded-[10px] bg-white/50 px-[32px] py-[14px] backdrop-blur-2xl transition-transform duration-500 ease-in-out lg:rounded-lg {yPosition} relative"
   >
-    <div class="flex items-center justify-between space-x-5">
+    <div
+      use:navAction={windowWidth}
+      class="flex items-center justify-between space-x-5"
+    >
       <a class="h-[50px] 2xl:h-[69px]" href="/">
         <SanityImage
           class="h-full w-fit object-cover"
