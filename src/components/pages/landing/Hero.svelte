@@ -15,7 +15,7 @@
   export let options: Partial<EmblaOptionsType> = {};
 </script>
 
-<section class="mb-lg mt-[130px] lg:mb-2xl lg:mt-[150px]">
+<section class="mb-lg mt-[90px] sm:mt-[130px] lg:mb-2xl lg:mt-[150px]">
   <div class="overflow-hidden lg:container">
     <div use:emblaCarouselSvelte={{ plugins, options }}>
       <div class="relative flex space-x-5 lg:space-x-10">

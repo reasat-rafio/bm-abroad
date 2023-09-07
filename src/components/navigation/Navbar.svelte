@@ -2,7 +2,7 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { SiteProps } from '@/lib/types/common';
-  import uiStore from '@/stores/ui';
+  // import uiStore from '@/stores/ui';
   import Cta from '../ui/Cta.svelte';
   import Hamburger from './Hamburger.svelte';
   import Dropdown from './Dropdown.svelte';
@@ -13,7 +13,7 @@
   let windowWidth = 0;
   let scrollY = 0;
   let dropdown: 'active' | 'inactive' = 'inactive';
-  $: yPosition = scrollY > 25 ? 'translate-y-0' : 'translate-y-[25px]';
+  $: yPosition = scrollY > 25 ? 'translate-y-0' : 'sm:translate-y-[25px]';
   $: if (windowWidth >= 1024) dropdown = 'inactive';
 
   // const navAction = (node: HTMLElement, _: number) => {
@@ -32,7 +32,7 @@
 <nav class="fixed left-0 top-0 z-50 w-full">
   <div
     style="box-shadow: 0px 8px 20px -5px rgba(0, 0, 0, 0.10);"
-    class="container rounded-[10px] bg-white/50 px-[32px] py-[14px] backdrop-blur-2xl transition-transform duration-500 ease-in-out lg:rounded-lg {yPosition} relative"
+    class="container bg-white/50 px-[32px] py-[14px] backdrop-blur-2xl transition-transform duration-500 ease-in-out sm:rounded-[10px] lg:rounded-lg {yPosition} relative"
   >
     <div class="flex items-center justify-between space-x-5">
       <a class="h-[50px] 2xl:h-[69px]" href="/">
