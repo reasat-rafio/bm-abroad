@@ -2,7 +2,6 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { HeroProps } from '@/lib/types/landing';
-  import uiStore from '@/stores/ui';
   import Autoplay from 'embla-carousel-autoplay';
   import emblaCarouselSvelte, {
     type EmblaOptionsType,
@@ -16,10 +15,7 @@
   export let options: Partial<EmblaOptionsType> = {};
 </script>
 
-<section
-  style="margin-top: {$uiStore.navbarHeight + 50}px;"
-  class="mb-lg lg:mb-2xl"
->
+<section class="mb-lg mt-[130px] lg:mb-2xl lg:mt-[150px]">
   <div class="overflow-hidden lg:container">
     <div use:emblaCarouselSvelte={{ plugins, options }}>
       <div class="relative flex space-x-5 lg:space-x-10">
