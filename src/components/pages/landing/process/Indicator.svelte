@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="col-span-1 flex translate-y-[35px] flex-col items-center justify-center lg:translate-y-[41px]"
+  class="col-span-1 flex translate-y-[23px] flex-col items-center justify-center md:translate-y-[32px] lg:translate-y-[41px]"
 >
   <div class="my-2">
     {#if isIntersecting}
