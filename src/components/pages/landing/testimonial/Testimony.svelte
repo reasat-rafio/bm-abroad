@@ -9,21 +9,22 @@
 </script>
 
 <article
-  style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
   class="grid min-h-[500px] flex-[0_0_90%] grid-cols-8 overflow-hidden rounded-[16px] bg-white sm:flex-[0_0_100%]"
 >
   <div
     class="relative col-span-8 flex h-[250px] justify-end sm:h-[350px] md:col-span-3 md:h-full"
   >
     <div
-      class="relative z-10 mt-auto w-full space-y-[16px] px-[30px] py-[33px] text-white"
+      class="relative z-10 mt-auto w-full space-y-[12px] px-[30px] py-[33px] text-white"
     >
       <h6
         class="text-[18px] font-semibold leading-none tracking-[0.4px] lg:text-[20px]"
       >
         {name}
       </h6>
-      <p class="text-[12px] text-white/70 lg:text-[14px]">{role}</p>
+      <p class="text-[12px] leading-none text-white/70 lg:text-[14px]">
+        {role}
+      </p>
     </div>
     <figure class="absolute inset-0 h-full w-full">
       <SanityImage
