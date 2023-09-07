@@ -19,7 +19,7 @@
   } = data);
 
   $: faviconImage = favicon
-    ? urlFor(favicon).size(256, 256).ignoreImageParams().url()
+    ? urlFor(favicon).format('png').size(256, 256).ignoreImageParams().url()
     : null;
 </script>
 

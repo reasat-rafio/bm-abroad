@@ -56,7 +56,7 @@
       class="h-full w-fit object-contain"
       src={decoration}
       alt={decoration.alt}
-      sizes="400px"
+      sizes="20vw"
       imageUrlBuilder={imageBuilder}
     />
   </figure>
