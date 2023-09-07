@@ -22,6 +22,8 @@
   }
 
   const scrollAction = () => {
+    if (scrollPercentage === 100) return;
+
     let elBottomPosition =
       stepEl.getBoundingClientRect().top - windowHeight / 2;
     let elHeight = stepEl.getBoundingClientRect().height;
