@@ -18,14 +18,10 @@
       animate(
         decorEl,
         { x: ['-50%', `${windowWidth}px`], y: ['0%', '250%'] },
-        { duration: 1.8 },
+        { duration: 0.9 },
       );
     } else
-      animate(
-        decorEl,
-        { x: [`${windowWidth}px`, '-50%'], y: ['250%', '0%'] },
-        { duration: 1.2 },
-      );
+      animate(decorEl, { x: [`${windowWidth}px`, '-50%'], y: ['250%', '0%'] });
   }
 </script>
 
