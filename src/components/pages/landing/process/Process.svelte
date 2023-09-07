@@ -18,7 +18,7 @@
       animate(
         decorEl,
         { x: ['-50%', `${windowWidth}px`], y: ['0%', '250%'] },
-        { duration: 3.2 },
+        { duration: 2 },
       );
     } else
       animate(
