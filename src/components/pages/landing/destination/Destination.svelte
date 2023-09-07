@@ -91,7 +91,7 @@
     <div class="md:hidden">
       {#key activeSlide}
         <p
-          in:fade={{ duration: 600 }}
+          in:fade={{ duration: 1000 }}
           out:fade={{ duration: 0 }}
           class="mt-[32px] text-[16px] font-light leading-md tracking-sm"
         >
