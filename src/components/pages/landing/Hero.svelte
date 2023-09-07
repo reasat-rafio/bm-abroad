@@ -29,6 +29,7 @@
             class="aspect-video max-h-[70vh] flex-[0_0_100%]"
           >
             <SanityImage
+              lqip
               class="h-full w-full object-cover lg:rounded-lg"
               src={image}
               sizes="(min-width: 1024px) 90vw, 100vw"

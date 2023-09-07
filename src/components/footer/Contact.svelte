@@ -17,18 +17,18 @@
         class="flex space-x-[9px] transition-colors duration-500 hover:text-[#764AF1]"
         href="tel:{contactNumber}"
       >
-        <img src="/icons/mobile.svg" alt="mobile" />
+        <img sizes="20px" src="/icons/mobile.svg" alt="mobile" />
         <span>{contactNumber} </span>
       </a>
       <div class="flex space-x-[9px]">
-        <img src="/icons/location.svg" alt="location" />
+        <img sizes="20px" src="/icons/location.svg" alt="location" />
         <span>{address} </span>
       </div>
       <a
         class="flex space-x-[9px] transition-colors duration-500 hover:text-[#764AF1]"
         href="mailto:{email}"
       >
-        <img src="/icons/mail.svg" alt="email" />
+        <img sizes="20px" src="/icons/mail.svg" alt="email" />
         <span>{email} </span>
       </a>
     </div>
