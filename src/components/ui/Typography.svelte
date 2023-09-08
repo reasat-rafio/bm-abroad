@@ -19,6 +19,7 @@
 <svelte:element
   this={el}
   class={twMerge('font-light', style(), $$props.class ?? '')}
+  {...$$restProps}
 >
   <slot />
 </svelte:element>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Heading from '@/components/ui/Heading.svelte';
   import Typography from '@/components/ui/Typography.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
@@ -39,9 +40,7 @@
   <div
     class="col-span-8 my-auto space-y-[24px] px-[20px] py-[16px] md:col-span-5 lg:space-y-[48px] lg:px-[68px] lg:py-[30px]"
   >
-    <h5 class="text-[24px] font-medium text-space-blue lg:text-[32px]">
-      {header}
-    </h5>
+    <Heading variant="lg">{header}</Heading>
     <Typography variant="sm">{t}</Typography>
   </div>
 </article>

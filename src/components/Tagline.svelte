@@ -5,13 +5,19 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { TaglineProps } from '@/lib/types/common';
+  import { twMerge } from 'tailwind-merge';
 
   export let props: TaglineProps;
   $: ({ title, decorators } = props);
   $: [decor1, decor2] = decorators;
 </script>
 
-<section class="overflow-hidden pb-[130px] md:pb-[200px] xl:pb-[410px]">
+<section
+  class="{twMerge(
+    'overflow-hidden pb-[130px] md:pb-[200px] xl:pb-[410px]',
+    $$props.class ?? '',
+  )} "
+>
   <div class="container relative">
     <Heading class="text-center" el="h1" variant="2xl">
       <PortableText
