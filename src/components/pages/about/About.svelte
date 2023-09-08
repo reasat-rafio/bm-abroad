@@ -1,20 +1,23 @@
 <script lang="ts">
   import type { AboutProps } from '@/lib/types/about';
-  import HalfImageVariant from './HalfImageVariant.svelte';
-  import FullImageVariant from './FullImageVariant.svelte';
+  import HalfImageVariantDesktop from './HalfImageVariantDesktop.svelte';
+  import FullImageVariantDesktop from './FullImageVariantDesktop.svelte';
 
   export let props: AboutProps;
   $: ({ abouts } = props);
+
+  let windowWidth = 0;
 </script>
 
+<svelte:window bind:innerWidth={windowWidth} />
 <section>
   <div class="container">
     <div class="">
       {#each abouts as about, index (about._key)}
         {#if index % 2 === 0}
-          <FullImageVariant {about} />
+          <FullImageVariantDesktop {about} />
         {:else}
-          <HalfImageVariant {about} />
+          <HalfImageVariantDesktop {about} />
         {/if}
       {/each}
     </div>
