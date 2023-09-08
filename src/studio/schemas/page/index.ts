@@ -1,3 +1,4 @@
-import landing from "./landing"
+import about from './about';
+import landing from './landing';
 
-export default [...landing]
+export default [...landing, ...about];

@@ -4,11 +4,11 @@
   import PortableText from '@/lib/@portabletext/PortableText.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
-  import type { JourneyProps } from '@/lib/types/landing';
-  import GradientPurpleBlue from '../../GradientPurpleBlue.svelte';
+  import GradientPurpleBlue from './GradientPurpleBlue.svelte';
   import Typography from '@/components/ui/Typography.svelte';
+  import type { CtaProps } from '@/lib/types/common';
 
-  export let props: JourneyProps;
+  export let props: CtaProps;
   $: ({ title, description, link, image } = props);
 </script>
 

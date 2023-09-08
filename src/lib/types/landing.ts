@@ -1,6 +1,5 @@
 import type { SanityImageAssetDocument } from '@sanity/client';
-import type { Link, SeoProps } from './common';
-import type { PortableTextBlock } from 'sanity';
+import type { CtaProps, SeoProps, TaglineProps } from './common';
 
 export type LandingPageProps = {
   seo: SeoProps;
@@ -13,7 +12,7 @@ type Section =
   | TaglineProps
   | AboutProps
   | TestimonialProps
-  | JourneyProps
+  | CtaProps
   | DestinationsProps
   | ProcessProps;
 
@@ -34,12 +33,6 @@ export type HeroBanner = {
   _type: string;
   image: SanityImageAssetDocument;
   url?: string;
-};
-
-export type TaglineProps = {
-  _type: 'landingPage.tagline';
-  title: PortableTextBlock[];
-  decorators: [SanityImageAssetDocument, SanityImageAssetDocument];
 };
 
 export type AboutProps = {
@@ -64,14 +57,6 @@ export type Testimonial = {
   role: string;
   header: string;
   testimony: string;
-};
-
-export type JourneyProps = {
-  _type: 'landingPage.journey';
-  title: PortableTextBlock[];
-  description: string;
-  link: Link;
-  image: SanityImageAssetDocument;
 };
 
 export type ProcessProps = {

@@ -1,13 +1,13 @@
 import React from 'react';
-import { GiJourney } from 'react-icons/gi';
+import { LuSubtitles } from 'react-icons/lu';
 import { AiFillHighlight } from 'react-icons/ai';
 import type { Rule } from 'sanity';
 
-const journey = {
-  title: 'Journey',
-  name: 'landingPage.journey',
+const tagline = {
+  title: 'Tagline',
+  name: 'common.tagline',
   type: 'object',
-  icon: GiJourney,
+  icon: LuSubtitles,
   fields: [
     {
       name: 'title',
@@ -43,38 +43,31 @@ const journey = {
       ],
     },
     {
-      name: 'description',
-      type: 'text',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: 'link',
-      type: 'link',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
-      name: 'image',
-      type: 'image',
-      validation: (Rule: Rule) => Rule.required(),
-      options: { hotspot: true },
-      fields: [
+      name: 'decorators',
+      type: 'array',
+      validation: (Rule: Rule) => Rule.length(2).required(),
+      options: {
+        layout: 'grid',
+      },
+      of: [
         {
-          name: 'alt',
-          title: 'Alternative Text',
-          description: 'Important for SEO and accessibility',
-          type: 'string',
-          validation: (Rule: Rule) => Rule.required(),
+          name: 'image',
+          type: 'image',
+          title: 'Image',
+          options: { hotspot: true },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alternative Text',
+              description: 'Important for SEO and accessibility',
+              type: 'string',
+              validation: (Rule: Rule) => Rule.required(),
+            },
+          ],
         },
       ],
     },
   ],
-  perview: {
-    select: {
-      title: 'title',
-      subtitle: 'description',
-      media: 'image',
-    },
-  },
 };
 
-export default journey;
+export default tagline;

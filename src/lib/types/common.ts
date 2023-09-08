@@ -1,5 +1,5 @@
 import type { SanityImageAssetDocument } from '@sanity/client';
-import type { Slug } from 'sanity';
+import type { PortableTextBlock, Slug } from 'sanity';
 
 export interface PageProps<T> {
   site: SiteProps;
@@ -71,5 +71,19 @@ export interface Link {
   title: string;
   href: string;
 }
+
+export type TaglineProps = {
+  _type: 'common.tagline';
+  title: PortableTextBlock[];
+  decorators: [SanityImageAssetDocument, SanityImageAssetDocument];
+};
+
+export type CtaProps = {
+  _type: 'common.cta';
+  title: PortableTextBlock[];
+  description: string;
+  link: Link;
+  image: SanityImageAssetDocument;
+};
 
 export type Heading = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

@@ -1,12 +1,12 @@
 <script lang="ts">
   import About from '@/components/pages/landing/About.svelte';
   import Hero from '@/components/pages/landing/Hero.svelte';
-  import Journey from '@/components/pages/landing/Journey.svelte';
+  import Cta from '@/components/Cta.svelte';
   import Service from '@/components/pages/landing/Service.svelte';
   import Testimonial from '@/components/pages/landing/testimonial/Testimonial.svelte';
   import Destination from '@/components/pages/landing/destination/Destination.svelte';
   import Process from '@/components/pages/landing/process/Process.svelte';
-  import Tagline from '@/components/pages/landing/tagline/Tagline.svelte';
+  import Tagline from '@/components/Tagline.svelte';
   import Seo from '@/components/Seo.svelte';
 
   export let data;
@@ -22,7 +22,7 @@
 {#each sections as props}
   {#if props._type === 'landingPage.hero'}
     <Hero {props} />
-  {:else if props._type === 'landingPage.tagline'}
+  {:else if props._type === 'common.tagline'}
     <Tagline {props} />
   {:else if props._type === 'landingPage.about'}
     <About {props} />
@@ -33,7 +33,7 @@
     <Process {props} />
   {:else if props._type === 'landingPage.destination'}
     <Destination {props} />
-  {:else if props._type === 'landingPage.journey'}
-    <Journey {props} />
+  {:else if props._type === 'common.cta'}
+    <Cta {props} />
   {/if}
 {/each}

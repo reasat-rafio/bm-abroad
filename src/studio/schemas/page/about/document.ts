@@ -1,10 +1,10 @@
-import { FcHome } from 'react-icons/fc';
+import { FcAbout } from 'react-icons/fc';
 
-const landingPage = {
-  name: 'landingPage',
-  title: 'Landing Page',
+const aboutPage = {
+  name: 'aboutPage',
+  title: 'About Page',
   type: 'document',
-  icon: FcHome,
+  icon: FcAbout,
   fields: [
     {
       name: 'seo',
@@ -16,13 +16,9 @@ const landingPage = {
       title: 'Sections',
       type: 'array',
       of: [
-        { type: 'landingPage.hero' },
         { type: 'common.tagline' },
-        { type: 'landingPage.about' },
-        { type: 'landingPage.testimonial' },
+        { type: 'aboutPage.about' },
         { type: 'common.cta' },
-        { type: 'landingPage.destination' },
-        { type: 'landingPage.process' },
       ],
     },
   ],
@@ -34,4 +30,4 @@ const landingPage = {
   },
 };
 
-export default landingPage;
+export default aboutPage;

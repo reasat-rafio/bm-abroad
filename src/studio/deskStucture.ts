@@ -1,7 +1,7 @@
 import type { StructureBuilder } from 'sanity/desk';
 import type { IconType } from 'react-icons/lib';
 import { FaSitemap } from 'react-icons/fa';
-import { FcHome, FcServices } from 'react-icons/fc';
+import { FcAbout, FcHome, FcServices } from 'react-icons/fc';
 import { GrEdit } from 'react-icons/gr';
 import { RiPagesLine } from 'react-icons/ri';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
@@ -81,6 +81,12 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
                 id: 'landingPage',
                 title: 'Landing',
                 icon: FcHome,
+              }),
+              pageItem(S, {
+                schemaType: 'aboutPage',
+                id: 'aboutPage',
+                title: 'About Us',
+                icon: FcAbout,
               }),
             ]),
         ),

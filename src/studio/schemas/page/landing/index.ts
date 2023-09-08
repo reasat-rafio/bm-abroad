@@ -1,19 +1,8 @@
 import about from './about';
 import landingPage from './document';
 import hero from './hero';
-import tagline from './tagline';
 import testimonial from './testimonial';
-import journey from './journey';
 import process from './process';
 import destination from './destination';
 
-export default [
-  landingPage,
-  hero,
-  tagline,
-  about,
-  testimonial,
-  journey,
-  process,
-  destination,
-];
+export default [landingPage, hero, about, testimonial, process, destination];

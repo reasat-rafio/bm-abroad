@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { TaglineProps } from '@/lib/types/landing';
   import { PortableText } from '@/lib/@portabletext/index';
-  import GradientPurpleBlue from '../../../GradientPurpleBlue.svelte';
+  import GradientPurpleBlue from './GradientPurpleBlue.svelte';
   import Heading from '@/components/ui/Heading.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
+  import type { TaglineProps } from '@/lib/types/common';
 
   export let props: TaglineProps;
   $: ({ title, decorators } = props);
