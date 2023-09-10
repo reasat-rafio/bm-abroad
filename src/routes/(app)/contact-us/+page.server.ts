@@ -1,20 +1,16 @@
 import { asset } from '@/lib/sanity/sanity-image';
 import { sanityClient } from '@/lib/sanity/sanityClient';
-import type { AboutPageProps } from '@/lib/types/about';
+import type { ContactUsPageProps } from '@/lib/types/contact-us';
 import { error, type ServerLoad } from '@sveltejs/kit';
 import groq from 'groq';
 
-const q = groq`*[_id == "aboutPage"][0]{
+const q = groq`*[_id == "contactUsPage"][0]{
     ...,
     sections[]{
         ...,
         ${asset('image')},
         ${asset('decorators[]', { as: 'decorators' })},
         ${asset('decoration')},
-        abouts[]{
-            ...,
-            ${asset('image')}
-        }
     }
 }`;
 
@@ -23,6 +19,6 @@ export const load: ServerLoad = async () => {
   if (!data) throw error(404, { message: 'Not found' });
 
   return {
-    page: data as AboutPageProps,
+    page: data as ContactUsPageProps,
   };
 };
