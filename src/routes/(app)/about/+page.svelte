@@ -16,7 +16,10 @@
 <Seo {seo} siteOgImg={ogImage} />
 {#each sections as props}
   {#if props._type === 'common.tagline'}
-    <Tagline class="py-[169px] md:py-[180px]  xl:py-[208px]" {props} />
+    <Tagline
+      class="max-md:pb-[102px] max-md:pt-[169px] md:py-[180px] xl:py-[208px]"
+      {props}
+    />
   {:else if props._type === 'aboutPage.about'}
     <About {props} />
   {:else if props._type === 'common.cta'}

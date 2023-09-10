@@ -2,6 +2,7 @@
   import type { AboutProps } from '@/lib/types/about';
   import HalfImageVariantDesktop from './HalfImageVariantDesktop.svelte';
   import FullImageVariantDesktop from './FullImageVariantDesktop.svelte';
+  import SimpleVariantMobile from './SimpleVariantMobile.svelte';
 
   export let props: AboutProps;
   $: ({ abouts } = props);
@@ -12,12 +13,16 @@
 <svelte:window bind:innerWidth={windowWidth} />
 <section>
   <div class="container">
-    <div class="">
+    <div class="max-lg:space-y-[90px]">
       {#each abouts as about, index (about._key)}
-        {#if index % 2 === 0}
-          <FullImageVariantDesktop {about} />
+        {#if windowWidth >= 1024}
+          {#if index % 2 === 0}
+            <FullImageVariantDesktop {about} />
+          {:else}
+            <HalfImageVariantDesktop {about} />
+          {/if}
         {:else}
-          <HalfImageVariantDesktop {about} />
+          <SimpleVariantMobile {about} />
         {/if}
       {/each}
     </div>
