@@ -6,10 +6,10 @@ export type ContactUsPageProps = {
   sections: Section[];
 };
 
-type Section = TaglineProps;
+type Section = TaglineProps | ContactForm;
 
 export type ContactForm = {
-  _key: 'contactUsPage.contactForm';
+  _type: 'contactForm';
   title: string;
   subtitle: string;
   decoration: SanityImageAssetDocument;
