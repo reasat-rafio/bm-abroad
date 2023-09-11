@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Heading from '@/components/ui/Heading.svelte';
   import type { ContactForm } from '@/lib/types/contact-us';
 
   export let props: ContactForm;
@@ -10,9 +9,9 @@
 <section>
   <div class="container grid grid-cols-12">
     <div class="col-span-6">
-      <Heading variant="lg">
+      <h2 class="heading-lg">
         {title}
-      </Heading>
+      </h2>
     </div>
     <div></div>
   </div>

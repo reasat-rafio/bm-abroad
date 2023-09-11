@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Heading from '@/components/ui/Heading.svelte';
-  import Typography from '@/components/ui/Typography.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { Testimonial } from '@/lib/types/landing';
@@ -18,11 +16,11 @@
     <div
       class="relative z-10 mt-auto w-full space-y-[12px] px-[30px] py-[33px] text-white"
     >
-      <h6
+      <h4
         class="text-[18px] font-semibold leading-none tracking-[0.4px] lg:text-[20px]"
       >
         {name}
-      </h6>
+      </h4>
       <p class="text-[12px] leading-none text-white/70 lg:text-[14px]">
         {role}
       </p>
@@ -40,7 +38,9 @@
   <div
     class="col-span-8 my-auto space-y-[24px] px-[20px] py-[16px] md:col-span-5 lg:space-y-[48px] lg:px-[68px] lg:py-[30px]"
   >
-    <Heading variant="lg">{header}</Heading>
-    <Typography variant="sm">{t}</Typography>
+    <h5 class="heading-lg-secondary">
+      {header}
+    </h5>
+    <p class="body-2">{t}</p>
   </div>
 </article>

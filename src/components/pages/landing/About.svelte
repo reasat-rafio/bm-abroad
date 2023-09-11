@@ -1,6 +1,5 @@
 <script lang="ts">
   import SectionHeader from '@/components/SectionHeader.svelte';
-  import Typography from '@/components/ui/Typography.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { AboutProps } from '@/lib/types/landing';
@@ -45,11 +44,9 @@
       >
         <div class="space-y-[36px] lg:space-y-[65px]">
           <SectionHeader {title} {subtitle} />
-          <Typography el="p" variant="lg">
-            {description}
-          </Typography>
+          <p class="body-1">{description}</p>
         </div>
-        <figure class="">
+        <figure>
           <SanityImage
             class="h-full w-full object-contain"
             src={image}

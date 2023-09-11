@@ -1,7 +1,6 @@
 <script lang="ts">
   import { PortableText } from '@/lib/@portabletext/index';
   import GradientPurpleBlue from './GradientPurpleBlue.svelte';
-  import Heading from '@/components/ui/Heading.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { TaglineProps } from '@/lib/types/common';
@@ -19,7 +18,7 @@
   )} "
 >
   <div class="container relative">
-    <Heading class="text-center" el="h1" variant="2xl">
+    <h1 class="heading-2xl text-center">
       <PortableText
         value={title}
         components={{
@@ -29,7 +28,7 @@
           },
         }}
       />
-    </Heading>
+    </h1>
 
     {#if !!decor1}
       <figure

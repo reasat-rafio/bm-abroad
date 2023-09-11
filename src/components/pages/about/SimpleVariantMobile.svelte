@@ -1,12 +1,9 @@
 <script lang="ts">
-  import Heading from '@/components/ui/Heading.svelte';
-  import Typography from '@/components/ui/Typography.svelte';
   import PortableText from '@/lib/@portabletext/PortableText.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
-  import gsap from 'gsap';
-  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+  import { gsap } from '@/lib/gsap';
   import { onMount } from 'svelte';
 
   export let about: About;
@@ -16,7 +13,6 @@
   let contentContainerEl: HTMLElement;
 
   const triggerAnimation = () => {
-    gsap.registerPlugin(ScrollTrigger);
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: rootContainereEl,
@@ -49,16 +45,16 @@
 
   <div bind:this={contentContainerEl} class="space-y-[48px]">
     <header class="space-y-[24px]">
-      <h3
+      <h2
         data-animate
         class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-[#764AF1]"
       >
         {title}
-      </h3>
-      <Heading data-animate variant="lg">{subtitle}</Heading>
+      </h2>
+      <h3 class="heading-lg-secondary" data-animate>{subtitle}</h3>
     </header>
-    <Typography data-animate>
+    <div class="text-1 font-light" data-animate>
       <PortableText value={description} />
-    </Typography>
+    </div>
   </div>
 </article>

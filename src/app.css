@@ -6,9 +6,41 @@
   body {
     @apply bg-[#F4F8FF] font-poppins;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-oswald;
+  }
 }
 
 @layer utilities {
+  .heading-2xl {
+    @apply text-h1-sm font-semibold uppercase md:text-h1-md xl:text-h1;
+  }
+
+  .heading-xl {
+    @apply text-h2-sm font-semibold uppercase text-space-blue md:text-h2-md xl:text-h2;
+  }
+
+  .heading-lg {
+    @apply text-[24px] font-semibold uppercase text-space-blue lg:text-[32px];
+  }
+  .heading-lg-secondary {
+    @apply font-poppins text-[24px] font-medium text-space-blue lg:text-[32px];
+  }
+
+  .body-1 {
+    @apply text-p1-sm leading-lg max-sm:tracking-sm md:text-p1 md:leading-md;
+  }
+
+  .body-2 {
+    @apply text-p2-sm leading-md tracking-[0.35px] md:text-p2 md:tracking-md;
+  }
+
   .gradient-purple-blue-90 {
     background: linear-gradient(90deg, #764af1 0%, #290886 127.39%);
   }

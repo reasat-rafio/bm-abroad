@@ -1,12 +1,11 @@
 <script lang="ts">
   import Cta from '@/components/ui/Cta.svelte';
-  import H1 from '@/components/ui/Heading.svelte';
   import PortableText from '@/lib/@portabletext/PortableText.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import GradientPurpleBlue from './GradientPurpleBlue.svelte';
-  import Typography from '@/components/ui/Typography.svelte';
   import type { CtaProps } from '@/lib/types/common';
+  import { twMerge } from 'tailwind-merge';
 
   export let props: CtaProps;
   $: ({ title, description, link, image } = props);
@@ -18,7 +17,7 @@
     class=" relative z-10 grid grid-cols-1 gap-5 rounded-[32px] bg-white px-[20px] py-[44px] md:px-[40px] md:py-[70px] lg:grid-cols-2 xl:px-[111px] xl:py-[83px]"
   >
     <div class="space-y-[32px] md:space-y-[64px]">
-      <H1 class="max-lg:text-center" variant="2xl">
+      <h2 class={twMerge('heading-2xl', 'max-lg:text-center')}>
         <PortableText
           value={title}
           components={{
@@ -28,7 +27,7 @@
             },
           }}
         />
-      </H1>
+      </h2>
 
       <figure class="block lg:hidden">
         <SanityImage
@@ -40,7 +39,7 @@
         />
       </figure>
 
-      <Typography variant="lg">{description}</Typography>
+      <p class="body-1">{description}</p>
       <Cta class="max-lg:mx-auto" href={link.href}>{link.title}</Cta>
     </div>
 

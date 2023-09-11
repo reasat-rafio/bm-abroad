@@ -1,30 +1,21 @@
 <script lang="ts">
-  import Typography from '@/components/ui/Typography.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { Service } from '@/lib/types/landing';
-  import { inView, animate, stagger } from 'motion';
+  import { onMount } from 'svelte';
+  import { gsap } from '@/lib/gsap';
 
   export let services: Service[];
   let sectionEl: HTMLElement;
 
-  $: if (sectionEl) {
-    inView(
-      sectionEl,
-      () => {
-        animate(
-          '.landing-service__card',
-          { y: ['60px', 0] },
-          {
-            delay: stagger(0.1),
-            easing: 'ease-in-out',
-            duration: 0.6,
-          },
-        );
-      },
-      { amount: 0.25 },
-    );
-  }
+  onMount(() => {
+    gsap.from('.landing-service__card', {
+      y: '60px',
+      stagger: 0.1,
+      duration: 0.6,
+      scrollTrigger: sectionEl,
+    });
+  });
 </script>
 
 <section bind:this={sectionEl} class="mb-2xl md:mb-xl">
@@ -34,7 +25,7 @@
     {#each services as { name, image, description }}
       <article
         style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-        class="landing-service__card group grid h-[150px] translate-y-[60px] grid-rows-2 gap-1 rounded-[24px] bg-white px-[20px] py-[20px] transition-colors duration-500 hover:bg-[#764AF1] md:h-[430px] md:gap-[20px] md:px-[36px] md:py-[29px]"
+        class="landing-service__card group grid h-[150px] grid-rows-2 gap-1 rounded-[24px] bg-white px-[20px] py-[20px] transition-colors duration-500 hover:bg-[#764AF1] md:h-[430px] md:gap-[20px] md:px-[36px] md:py-[29px]"
       >
         <figure>
           <SanityImage
@@ -53,13 +44,11 @@
             {name}
           </h4>
 
-          <Typography
-            el="p"
-            variant="sm"
-            class="hidden transition-colors duration-500 group-hover:text-white md:block"
+          <p
+            class="body-2 hidden transition-colors duration-500 group-hover:text-white md:block"
           >
             {description}
-          </Typography>
+          </p>
         </div>
       </article>
     {/each}

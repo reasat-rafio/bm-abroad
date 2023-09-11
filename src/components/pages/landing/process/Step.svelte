@@ -1,7 +1,6 @@
 <script lang="ts">
-  import Heading from '@/components/ui/Heading.svelte';
   import Indicator from './Indicator.svelte';
-  import Typography from '@/components/ui/Typography.svelte';
+  import { twMerge } from 'tailwind-merge';
 
   export let title: string;
   export let description: string;
@@ -51,15 +50,11 @@
     >
       Step {index + 1} :
     </div>
-    <Heading
-      el="h5"
-      variant="xl"
-      class="{textColor()} transition-colors duration-500"
-    >
+
+    <h4 class="{textColor()} heading-xl transition-colors duration-500">
       {title}
-    </Heading>
-    <Typography variant="lg" class="{textColor()} text-[12px]"
-      >{description}</Typography
-    >
+    </h4>
+
+    <p class={twMerge(`${textColor()} body-2`, 'text-[12px]')}>{description}</p>
   </div>
 </div>

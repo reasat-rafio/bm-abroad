@@ -4,7 +4,6 @@
   import Step from './Step.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
-  import { animate } from 'motion';
 
   export let props: ProcessProps;
   $: ({ title, subtitle, decoration, steps } = props);
@@ -13,20 +12,20 @@
   let decorEl: HTMLElement;
   let windowWidth = 0;
 
-  $: if (decorEl) {
-    if (allStepsComplete) {
-      animate(
-        decorEl,
-        { x: ['-50%', `${windowWidth}px`], y: ['0%', '250%'] },
-        { duration: 2 },
-      );
-    } else
-      animate(
-        decorEl,
-        { x: [`${windowWidth}px`, '-50%'], y: ['250%', '0%'] },
-        { duration: 1.2 },
-      );
-  }
+  // $: if (decorEl) {
+  //   if (allStepsComplete) {
+  //     animate(
+  //       decorEl,
+  //       { x: ['-50%', `${windowWidth}px`], y: ['0%', '250%'] },
+  //       { duration: 2 },
+  //     );
+  //   } else
+  //     animate(
+  //       decorEl,
+  //       { x: [`${windowWidth}px`, '-50%'], y: ['250%', '0%'] },
+  //       { duration: 1.2 },
+  //     );
+  // }
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
