@@ -2,6 +2,8 @@
   import Seo from '@/components/Seo.svelte';
   import Tagline from '@/components/Tagline.svelte';
   import ContactForm from '@/components/pages/contact-us/ContactForm.svelte';
+  import { emailSchema } from '@/lib/helpers.js';
+  import { superForm } from 'sveltekit-superforms/client';
 
   export let data;
   $: ({
@@ -10,6 +12,11 @@
     },
     page: { sections, seo },
   } = data);
+
+  const form = superForm(data.form, {
+    taintedMessage: 'Are you sure you want leave?',
+    validators: emailSchema,
+  });
 </script>
 
 <Seo {seo} siteOgImg={ogImage} />
@@ -20,6 +27,6 @@
       {props}
     />
   {:else if props._type === 'contactForm'}
-    <ContactForm {props} />
+    <ContactForm {props} {form} />
   {/if}
 {/each}

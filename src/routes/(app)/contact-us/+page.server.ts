@@ -1,8 +1,10 @@
 import { asset } from '@/lib/sanity/sanity-image';
 import { sanityClient } from '@/lib/sanity/sanityClient';
 import type { ContactUsPageProps } from '@/lib/types/contact-us';
-import { error, type ServerLoad } from '@sveltejs/kit';
+import { error, fail, type Actions, type ServerLoad } from '@sveltejs/kit';
 import groq from 'groq';
+import { superValidate } from 'sveltekit-superforms/server';
+import { emailSchema } from '@/lib/helpers';
 
 const q = groq`*[_id == "contactUsPage"][0]{
     ...,
@@ -14,11 +16,28 @@ const q = groq`*[_id == "contactUsPage"][0]{
     }
 }`;
 
-export const load: ServerLoad = async () => {
+export const load: ServerLoad = async (event) => {
   const data = await sanityClient.fetch(q);
   if (!data) throw error(404, { message: 'Not found' });
+  const form = await superValidate(event, emailSchema);
 
   return {
     page: data as ContactUsPageProps,
+    form,
   };
+};
+
+export const actions: Actions = {
+  default: async (event) => {
+    const form = await superValidate(event, emailSchema);
+    console.log(form);
+
+    if (!form.valid) {
+      return fail(400, {
+        form,
+      });
+    }
+
+    return { form };
+  },
 };

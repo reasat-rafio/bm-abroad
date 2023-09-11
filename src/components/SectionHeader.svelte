@@ -5,9 +5,7 @@
   export let subtitle: string;
 </script>
 
-<header
-  class={twMerge('relative space-y-[12px] pl-[25px]', $$props.class ?? '')}
->
+<header class={twMerge('relative space-y-[12px] pl-[25px]', $$props.class)}>
   <h2 class="heading-2xl leading-none">{title}</h2>
   <h3 class="font-poppins text-[12px] text-dark-gray md:text-[16px]">
     {subtitle}

@@ -14,7 +14,7 @@
 <section
   class="{twMerge(
     'overflow-hidden pb-[130px] md:pb-[200px] xl:pb-[410px]',
-    $$props.class ?? '',
+    $$props.class,
   )} "
 >
   <div class="container relative">
