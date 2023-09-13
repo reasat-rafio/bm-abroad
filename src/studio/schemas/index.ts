@@ -6,6 +6,7 @@ import pages from './page';
 import service from './service';
 import tagline from './tagline';
 import cta from './cta';
+import blog from './blog';
 
 export const schemaTypes = [
   ...site,
@@ -16,4 +17,5 @@ export const schemaTypes = [
   service,
   tagline,
   cta,
+  blog,
 ];

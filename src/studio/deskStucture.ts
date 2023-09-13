@@ -1,7 +1,13 @@
 import type { StructureBuilder } from 'sanity/desk';
 import type { IconType } from 'react-icons/lib';
 import { FaSitemap } from 'react-icons/fa';
-import { FcAbout, FcContacts, FcHome, FcServices } from 'react-icons/fc';
+import {
+  FcAbout,
+  FcContacts,
+  FcHome,
+  FcNews,
+  FcServices,
+} from 'react-icons/fc';
 import { GrEdit } from 'react-icons/gr';
 import { RiPagesLine } from 'react-icons/ri';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
@@ -103,5 +109,12 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
         context,
         title: 'Services',
         icon: FcServices,
+      }),
+      orderableDocumentListDeskItem({
+        type: 'blog',
+        S,
+        context,
+        title: 'Blog',
+        icon: FcNews,
       }),
     ]);
