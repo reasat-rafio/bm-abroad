@@ -4,8 +4,11 @@
   import ContactForm from '@/components/pages/contact-us/ContactForm.svelte';
   import { emailSchema } from '@/lib/helpers.js';
   import { superForm } from 'sveltekit-superforms/client';
+  import type { ActionData } from './$types.js';
 
   export let data;
+  export let form: ActionData;
+
   $: ({
     site: {
       logos: { ogImage },
@@ -13,7 +16,7 @@
     page: { sections, seo },
   } = data);
 
-  const form = superForm(data.form, {
+  const f = superForm(data.form, {
     taintedMessage: 'Are you sure you want leave?',
     validators: emailSchema,
     resetForm: true,
@@ -28,6 +31,6 @@
       {props}
     />
   {:else if props._type === 'contactForm'}
-    <ContactForm {props} {form} />
+    <ContactForm {props} form={f} formMessage={form?.formMessage} />
   {/if}
 {/each}

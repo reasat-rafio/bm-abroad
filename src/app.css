@@ -49,6 +49,6 @@
   }
 
   .cta-btn {
-    @apply gradient-purple-blue-90 hover:shadow-cta block w-fit rounded-[12px] bg-[length:125%] bg-left px-[32px] py-[13px] text-[16px] font-medium tracking-[0.48px] text-white transition-all duration-300 hover:scale-[1.01] hover:bg-right;
+    @apply gradient-purple-blue-90 block w-fit rounded-[12px] bg-left px-[18px] py-[13px] text-[16px] font-medium tracking-[0.48px] text-white transition-all duration-300 hover:scale-[1.01] hover:bg-right hover:shadow-cta md:px-[32px];
   }
 }

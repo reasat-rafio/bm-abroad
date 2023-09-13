@@ -1,11 +1,23 @@
 <script lang="ts">
   import Input from '@/components/ui/Input.svelte';
   import type { emailSchema } from '@/lib/helpers';
+  import { fade } from 'svelte/transition';
   import type { SuperForm } from 'sveltekit-superforms/client';
   import { twMerge } from 'tailwind-merge';
 
   export let form: SuperForm<typeof emailSchema>;
+  export let formMessage: undefined | string;
+
   const { form: f, errors, enhance, delayed } = form;
+  let successEl: HTMLElement;
+
+  $: if (delayed) {
+    if (successEl)
+      window.scrollTo({
+        top: successEl.getBoundingClientRect().top,
+        behavior: 'smooth',
+      });
+  }
 
   const clearForm = () =>
     f.update(() => ({
@@ -17,13 +29,22 @@
     }));
 </script>
 
+{#if !!formMessage}
+  <p
+    bind:this={successEl}
+    transition:fade
+    class="body-1 max-w-full rounded-[12px] bg-green-600/40 p-5 text-white lg:max-w-lg"
+  >
+    {formMessage}
+  </p>
+{/if}
+
 <form
   method="POST"
   use:enhance
-  class="w-full max-w-lg space-y-[32px] rounded-[12px] bg-white p-[50px]"
+  class="w-full max-w-full space-y-[32px] rounded-[12px] bg-white max-lg:px-[20px] max-lg:py-[50px] lg:max-w-lg lg:p-[50px]"
   style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
 >
-  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
   <Input
     label="Name"
     name="name"
@@ -71,11 +92,11 @@
     </div>
   </div>
 
-  <div class="flex space-x-[32px]">
+  <div class="flex space-x-[16px] lg:space-x-[32px]">
     <button
       disabled={$delayed}
       type="submit"
-      class={twMerge('cta-btn space-x-[10px]')}
+      class={twMerge('cta-btn flex-1 space-x-[10px]')}
     >
       {#if $delayed}
         <div
@@ -98,7 +119,8 @@
     </button>
     <button
       on:click={clearForm}
-      class="block w-fit rounded-[12px] border border-black/20 bg-[length:125%] bg-left px-[32px] py-[13px] text-[16px] font-medium tracking-[0.48px] text-black/20 transition-all duration-300 hover:scale-[1.01] hover:border-red-600 hover:bg-right hover:text-red-600 hover:shadow-xl"
+      disabled={$delayed}
+      class="block w-fit rounded-[12px] border border-black/20 bg-[length:125%] bg-left px-[18px] py-[13px] text-[16px] font-medium tracking-[0.48px] text-black/20 transition-all duration-300 hover:scale-[1.01] hover:border-red-600 hover:bg-right hover:text-red-600 hover:shadow-xl md:px-[32px]"
       >Clear</button
     >
   </div>

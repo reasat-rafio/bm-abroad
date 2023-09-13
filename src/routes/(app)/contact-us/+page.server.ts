@@ -50,10 +50,12 @@ export const actions: Actions = {
     });
 
     const result = await response.json();
-    if (result.success) {
-      console.log(result);
+
+    let formMessage = null;
+    if (result?.success) {
+      formMessage = result.message;
     }
 
-    return { form };
+    return { form, formMessage };
   },
 };

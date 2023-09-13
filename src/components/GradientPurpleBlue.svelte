@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { MarkComponentProps } from '@/lib/@portabletext';
-  export let portableText: MarkComponentProps;
+  export const portableText: MarkComponentProps;
 </script>
 
 <span
