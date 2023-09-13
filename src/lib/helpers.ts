@@ -5,11 +5,13 @@ export const phoneRegex = new RegExp(
 );
 
 export const emailSchema = z.object({
-  name: z.string().min(1),
+  name: z.string().min(1, 'Name is required').max(50),
+  access_key: z.string().optional(),
+  from_name: z.string().optional(),
   email: z.string().email(),
   phone: z.string().regex(phoneRegex),
-  inquery: z.string().min(1),
-  message: z.string().min(1),
+  subject: z.string().min(1, 'Subject is required').max(150),
+  message: z.string().min(1, 'Message is required').max(300),
 });
 
 export type EmailModel = z.infer<typeof emailSchema>;

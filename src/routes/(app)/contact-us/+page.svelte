@@ -16,6 +16,7 @@
   const form = superForm(data.form, {
     taintedMessage: 'Are you sure you want leave?',
     validators: emailSchema,
+    resetForm: true,
   });
 </script>
 

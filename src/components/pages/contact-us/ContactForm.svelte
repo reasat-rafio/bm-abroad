@@ -7,13 +7,12 @@
   import Form from './Form.svelte';
   import type { SuperForm } from 'sveltekit-superforms/client';
 
-  type T = $$Generic;
   export let props: ContactForm;
   export let form: SuperForm<typeof emailSchema>;
   $: ({ title, subtitle, decoration } = props);
 </script>
 
-<section>
+<section class="pb-[160px]">
   <div class="mx-auto grid max-w-screen-xl grid-cols-12">
     <div class="col-span-6">
       <div class="max-w-lg space-y-[72px]">
@@ -25,6 +24,7 @@
         </header>
 
         <SanityImage
+          class="h-full w-full object-cover"
           src={decoration}
           alt={decoration.alt}
           sizes="(min-width: 1024px) 40vw, 70vw"
@@ -32,7 +32,7 @@
         />
       </div>
     </div>
-    <div class="col-span-6">
+    <div class="col-span-6 flex justify-end">
       <Form {form} />
     </div>
   </div>

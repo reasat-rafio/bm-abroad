@@ -44,6 +44,9 @@ export default {
         md: '20px',
         lg: '25px',
       },
+      boxShadow: {
+        cta: '0px 18px 40px -1px rgba(118, 74, 241, 0.35)',
+      },
       keyframes: {
         floating: {
           '0%': {

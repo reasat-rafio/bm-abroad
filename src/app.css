@@ -47,4 +47,8 @@
   .gradient-purple-blue-180 {
     background-image: linear-gradient(180deg, #764af1 0%, #290886 127.39%);
   }
+
+  .cta-btn {
+    @apply gradient-purple-blue-90 hover:shadow-cta block w-fit rounded-[12px] bg-[length:125%] bg-left px-[32px] py-[13px] text-[16px] font-medium tracking-[0.48px] text-white transition-all duration-300 hover:scale-[1.01] hover:bg-right;
+  }
 }
