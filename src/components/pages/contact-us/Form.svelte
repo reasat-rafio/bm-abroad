@@ -33,7 +33,7 @@
   <p
     bind:this={successEl}
     transition:fade
-    class="body-1 max-w-full rounded-[12px] bg-green-600/40 p-5 text-white lg:max-w-lg"
+    class="body-1 w-full rounded-[12px] bg-green-600/40 p-5 text-white lg:max-w-lg"
   >
     {formMessage}
   </p>

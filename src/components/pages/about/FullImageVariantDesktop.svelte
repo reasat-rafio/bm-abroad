@@ -3,8 +3,9 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
-  import { gsap } from '@/lib/gsap';
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
+  import { gsap } from 'gsap';
+  import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
   export let about: About;
   $: ({ title, subtitle, image, description } = about);
@@ -17,13 +18,18 @@
     contentContaineElHeight = contentContainerEl.getBoundingClientRect().height;
   };
 
-  const triggerAnimation = () => {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: contentContainerEl,
-      },
-    });
+  const triggerAnimation = () => {};
 
+  onMount(() => {
+    upateExtraSpacing();
+    gsap.registerPlugin(ScrollTrigger);
+    tick();
+
+    // triggerAnimation();
+
+    const timeline = gsap.timeline({
+      scrollTrigger: contentContainerEl,
+    });
     timeline
       .from(contentContainerEl, { y: '100%' })
       .from(contentContainerEl.querySelectorAll('[data-animate]'), {
@@ -31,11 +37,11 @@
         y: 15,
         stagger: 0.1,
       });
-  };
 
-  onMount(() => {
-    upateExtraSpacing();
-    triggerAnimation();
+    return () => {
+      const t = ScrollTrigger.getAll();
+      t.forEach((t) => t.kill());
+    };
   });
 </script>
 
@@ -47,7 +53,7 @@
   <figure class="aspect-video max-h-[906px] overflow-hidden rounded-lg">
     <SanityImage
       lqip
-      class="h-full w-full object-cover"
+      class="object-cover w-full h-full"
       sizes="80vw"
       src={image}
       alt={image.alt}
@@ -62,13 +68,13 @@
     <header class="space-y-[24px]">
       <h2
         data-animate
-        class="text-slate-blue font-oswald text-[16px] font-semibold uppercase tracking-[1.28px]"
+        class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-slate-blue"
       >
         {title}
       </h2>
       <h3 class="heading-lg-secondary" data-animate>{subtitle}</h3>
     </header>
-    <div class="body-1 font-light" data-animate>
+    <div class="font-light body-1" data-animate>
       <PortableText value={description} />
     </div>
   </div>
