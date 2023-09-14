@@ -35,6 +35,6 @@
     out:fly={{ x: 200, duration: 300 }}
   >
     <slot />
-    <Footer {footer} {contact} {logo} />
   </div>
 {/key}
+<Footer {footer} {contact} {logo} />

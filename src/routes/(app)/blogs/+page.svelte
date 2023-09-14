@@ -1,5 +1,6 @@
 <script lang="ts">
   import Seo from '@/components/Seo.svelte';
+  import Blogs from '@/components/pages/blogs/Blogs.svelte';
   import HighLightedBlog from '@/components/pages/blogs/HighLightedBlog.svelte';
 
   export let data;
@@ -16,3 +17,4 @@
 
 <Seo {seo} siteOgImg={ogImage} />
 <HighLightedBlog {blog} />
+<Blogs blogs={restBlogs} />
