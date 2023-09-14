@@ -3,30 +3,23 @@
   import PortableText from '@/lib/@portabletext/PortableText.svelte';
   import Block from './Block.svelte';
   import Number from './Number.svelte';
-  import { onMount } from 'svelte';
   import Disc from './Disc.svelte';
 
   export let description: PortableTextBlock[];
-  let componentRef: HTMLDivElement;
-  onMount(() => {
-    const paragraphs = componentRef.querySelectorAll('p');
-
-    Array.from(paragraphs).forEach((paragraph) => {
-      if (!paragraph.innerText) {
-        paragraph.style.paddingTop = '56px';
-      }
-    });
-  });
-
+  $: console.log(description);
   const components = {
     block: Block,
     listItem: {
-      normal: Disc,
+      normal: Number,
       number: Number,
+      bullet: Disc,
     },
   } as any;
 </script>
 
-<div class="pt-[56px]" bind:this={componentRef}>
+<div id="blog-body" class="pt-[56px] text-p2-sm">
   <PortableText {components} value={description} />
 </div>
+
+<style>
+</style>

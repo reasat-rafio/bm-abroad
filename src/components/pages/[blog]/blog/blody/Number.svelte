@@ -2,6 +2,6 @@
   export let portableText: any;
 </script>
 
-<li class="body-1 mx-auto max-w-screen-lg list-decimal pb-2">
+<li class="max-w-screen-lg pb-2 mx-auto list-decimal body-1">
   <slot />
 </li>

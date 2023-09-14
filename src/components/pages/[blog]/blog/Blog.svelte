@@ -13,21 +13,24 @@
   <article class="container">
     <figure class="">
       <SanityImage
-        class="h-full max-h-[776px] w-full rounded-lg object-cover"
+        class="h-full w-full rounded-lg object-cover max-sm:min-h-[560px] sm:max-h-[776px]"
         sizes="100vw"
         src={coverImage}
         imageUrlBuilder={imageBuilder}
       />
     </figure>
 
-    <div class="mt-[66px]">
+    <div class="mt-[48px] lg:mt-[66px]">
       <div
         class="flex items-center space-x-[8px] pb-[24px] text-[12px] text-black/40"
       >
         <img src="/icons/calender.svg" alt="" />
         <span>{formatDate(_createdAt)}</span>
       </div>
-      <h1 class="pb-[64px] font-poppins text-[48px] font-medium leading-[140%]">
+
+      <h1
+        class="pb-[48px] font-poppins text-[32px] font-medium leading-[140%] lg:pb-[64px] lg:text-[48px]"
+      >
         {name}
       </h1>
       <p class="body-1">{quickOverView}</p>
