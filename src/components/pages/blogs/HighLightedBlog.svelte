@@ -13,7 +13,7 @@
   onMount(() => {
     const timeline = gsap.timeline({ defaults: { duration: 0.8 } });
     timeline
-      .from(articleEl, { y: '20%', opacity: 0 })
+      .from(articleEl, { opacity: 0 })
       .from(articleEl.querySelectorAll('[data-animate]'), {
         opacity: 0,
         y: 15,

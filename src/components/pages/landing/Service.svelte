@@ -9,12 +9,14 @@
   let sectionEl: HTMLElement;
 
   onMount(() => {
-    gsap.from('.landing-service__card', {
-      y: '60px',
-      stagger: 0.1,
-      duration: 0.6,
-      scrollTrigger: sectionEl,
-    });
+    if (sectionEl)
+      gsap.from('.landing-service__card', {
+        y: '60px',
+        stagger: 0.1,
+        duration: 1.4,
+        scrollTrigger: sectionEl,
+        ease: 'power4.inOut',
+      });
   });
 </script>
 
@@ -45,7 +47,7 @@
           </h4>
 
           <p
-            class="body-2 hidden transition-colors duration-500 group-hover:text-white md:block"
+            class="hidden transition-colors duration-500 body-2 group-hover:text-white md:block"
           >
             {description}
           </p>

@@ -10,20 +10,20 @@
   export let blogs: Blog[];
 
   let sectionEl: HTMLElement;
-
   onMount(() => {
     gsap.from('.blogs-blog__card', {
       y: '60px',
       stagger: 0.1,
-      duration: 0.6,
+      duration: 1.4,
       scrollTrigger: {
         trigger: sectionEl,
       },
+      ease: 'power4.inOut',
     });
   });
 </script>
 
-<section bind:this={sectionEl} class="pb-[90px]">
+<section class="pb-[90px]">
   <div class="container">
     <SectionHeader
       title="Blogs"
@@ -32,6 +32,7 @@
 
     {#if !!blogs?.length}
       <div
+        bind:this={sectionEl}
         class="grid grid-cols-1 gap-y-[32px] pt-[46px] md:grid-cols-2 md:gap-x-[25px] md:gap-y-[56px] lg:grid-cols-3"
       >
         {#each blogs as { name, slug, coverImage, _createdAt }}
