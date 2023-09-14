@@ -4,7 +4,7 @@
 </script>
 
 <span
-  class="relative bg-gradient-to-b from-[#764af1] to-[#290886] bg-clip-text text-transparent"
+  class="from-slate-blue relative bg-gradient-to-b to-[#290886] bg-clip-text text-transparent"
 >
   <slot />
   <img

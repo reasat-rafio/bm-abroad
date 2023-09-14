@@ -62,7 +62,7 @@
     <header class="space-y-[24px]">
       <h2
         data-animate
-        class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-[#764AF1]"
+        class="text-slate-blue font-oswald text-[16px] font-semibold uppercase tracking-[1.28px]"
       >
         {title}
       </h2>

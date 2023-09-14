@@ -6,7 +6,6 @@
   import Disc from './Disc.svelte';
 
   export let description: PortableTextBlock[];
-  $: console.log(description);
   const components = {
     block: Block,
     listItem: {

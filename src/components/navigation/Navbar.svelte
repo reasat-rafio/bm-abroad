@@ -52,7 +52,7 @@
               </Cta>
             {:else}
               <a
-                class="text-[12px] font-medium tracking-[0.48px] transition-colors duration-300 hover:text-[#764AF1] xl:text-[16px]"
+                class="hover:text-slate-blue text-[12px] font-medium tracking-[0.48px] transition-colors duration-300 xl:text-[16px]"
                 href={pageUrl.current}
               >
                 {title}

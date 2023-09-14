@@ -16,6 +16,7 @@
         class="h-full w-full rounded-lg object-cover max-sm:min-h-[560px] sm:max-h-[776px]"
         sizes="100vw"
         src={coverImage}
+        alt={name}
         imageUrlBuilder={imageBuilder}
       />
     </figure>
@@ -24,7 +25,7 @@
       <div
         class="flex items-center space-x-[8px] pb-[24px] text-[12px] text-black/40"
       >
-        <img src="/icons/calender.svg" alt="" />
+        <img src="/icons/calender.svg" alt="calender" />
         <span>{formatDate(_createdAt)}</span>
       </div>
 

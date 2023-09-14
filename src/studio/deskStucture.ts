@@ -95,6 +95,12 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
                 icon: FcAbout,
               }),
               pageItem(S, {
+                schemaType: 'blogsPage',
+                id: 'blogsPage',
+                title: 'Blogs',
+                icon: FcNews,
+              }),
+              pageItem(S, {
                 schemaType: 'contactUsPage',
                 id: 'contactUsPage',
                 title: 'Contact Us',

@@ -14,7 +14,7 @@
   >
     <div class="col-span-5 space-y-[29px] text-[12px] lg:col-span-3">
       <a
-        class="flex space-x-[9px] transition-colors duration-500 hover:text-[#764AF1]"
+        class="hover:text-slate-blue flex space-x-[9px] transition-colors duration-500"
         href="tel:{contactNumber}"
       >
         <img sizes="20px" src="/icons/mobile.svg" alt="mobile" />
@@ -25,7 +25,7 @@
         <span>{address} </span>
       </div>
       <a
-        class="flex space-x-[9px] transition-colors duration-500 hover:text-[#764AF1]"
+        class="hover:text-slate-blue flex space-x-[9px] transition-colors duration-500"
         href="mailto:{email}"
       >
         <img sizes="20px" src="/icons/mail.svg" alt="email" />

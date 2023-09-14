@@ -25,7 +25,7 @@
     {#each services as { name, image, description }}
       <article
         style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-        class="landing-service__card group grid h-[150px] grid-rows-2 gap-1 rounded-[24px] bg-white px-[20px] py-[20px] transition-colors duration-500 hover:bg-[#764AF1] md:h-[430px] md:gap-[20px] md:px-[36px] md:py-[29px]"
+        class="landing-service__card hover:bg-slate-blue group grid h-[150px] grid-rows-2 gap-1 rounded-[24px] bg-white px-[20px] py-[20px] transition-colors duration-500 md:h-[430px] md:gap-[20px] md:px-[36px] md:py-[29px]"
       >
         <figure>
           <SanityImage

@@ -10,6 +10,7 @@ export default {
       colors: {
         'space-blue': '#1B1464',
         'dark-gray': '#A8A8A8',
+        'slate-blue': '#764AF1',
       },
       letterSpacing: {
         sm: '0.28px',
