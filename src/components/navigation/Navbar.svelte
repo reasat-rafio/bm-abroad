@@ -29,7 +29,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY />
-<nav class="fixed left-0 top-0 z-50 w-full">
+<nav class="fixed top-0 left-0 z-50 w-full">
   <div
     style="box-shadow: 0px 8px 20px -5px rgba(0, 0, 0, 0.10);"
     class="container bg-white/50 px-[32px] py-[14px] backdrop-blur-2xl transition-transform duration-500 ease-in-out sm:rounded-[10px] lg:rounded-lg {yPosition} relative"
@@ -37,7 +37,7 @@
     <div class="flex items-center justify-between space-x-5">
       <a class="h-[50px] 2xl:h-[69px]" href="/">
         <SanityImage
-          class="h-full w-fit object-cover"
+          class="object-cover h-full w-fit"
           src={logo}
           sizes="100px"
           imageUrlBuilder={imageBuilder}
@@ -47,13 +47,13 @@
         {#each nav.menu as { title, highlight, pageUrl }}
           <li class="my-auto uppercase">
             {#if !!highlight}
-              <Cta href={pageUrl.current}>
+              <Cta href={`/${pageUrl.current}`}>
                 {title}
               </Cta>
             {:else}
               <a
                 class="hover:text-slate-blue text-[12px] font-medium tracking-[0.48px] transition-colors duration-300 xl:text-[16px]"
-                href={pageUrl.current}
+                href="/{pageUrl.current}"
               >
                 {title}
               </a>
