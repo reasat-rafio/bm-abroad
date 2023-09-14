@@ -3,11 +3,12 @@ import { sanityClient } from '@/lib/sanity/sanityClient';
 import type { SiteProps } from '@/lib/types/common';
 import { error } from '@sveltejs/kit';
 
-export const load = async () => {
+export const load = async ({ url }) => {
   const data = await sanityClient.fetch(siteQuery);
   if (!data) throw error(404, { message: 'Not found' });
 
   return {
     site: data as SiteProps,
+    url: url.pathname,
   };
 };

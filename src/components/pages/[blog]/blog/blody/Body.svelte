@@ -20,6 +20,3 @@
 <div id="blog-body" class="pt-[56px] text-p2-sm">
   <PortableText {components} value={description} />
 </div>
-
-<style>
-</style>
