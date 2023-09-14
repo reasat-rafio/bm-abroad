@@ -35,7 +35,7 @@
       </div>
     </div>
     <div
-      class="col-span-12 flex flex-col items-end justify-end space-y-[16px] bg-red-300 lg:col-span-6"
+      class="col-span-12 flex flex-col items-end justify-end space-y-[16px] lg:col-span-6"
     >
       <Form {form} {formMessage} />
     </div>

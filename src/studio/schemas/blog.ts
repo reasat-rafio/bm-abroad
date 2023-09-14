@@ -36,6 +36,11 @@ const blog = {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
+      name: 'quickOverView',
+      type: 'text',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: 'description',
       type: 'array',
       of: [{ type: 'block' }],
