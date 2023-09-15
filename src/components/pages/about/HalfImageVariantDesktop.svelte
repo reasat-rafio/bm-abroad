@@ -77,18 +77,26 @@
   <div class="relative col-span-6 h-full 2xl:col-span-5">
     <div
       bind:this={contentContainerEl}
-      class="absolute left-0 top-1/2 w-[120%] -translate-x-[10%] -translate-y-1/2 space-y-[48px] rounded-[16px] bg-white/70 p-[50px] backdrop-blur-md 2xl:space-y-[64px]"
+      class="group absolute left-0 top-1/2 w-[120%] -translate-x-[10%] -translate-y-1/2 space-y-[48px] rounded-[16px] bg-white/70 p-[50px] backdrop-blur-md transition-colors duration-300 ease-in-out hover:bg-[#1B1464] hover:bg-opacity-90 hover:shadow-cta 2xl:space-y-[64px]"
     >
       <header class="space-y-[24px]">
         <h2
           data-animate
-          class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-slate-blue"
+          class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-slate-blue transition-colors duration-500 ease-in-out group-hover:text-white"
         >
           {title}
         </h2>
-        <h3 class="heading-lg-secondary" data-animate>{subtitle}</h3>
+        <h3
+          class="heading-lg-secondary transition-colors duration-500 ease-in-out group-hover:text-[#F3B30F]"
+          data-animate
+        >
+          {subtitle}
+        </h3>
       </header>
-      <div class="body-1 font-light" data-animate>
+      <div
+        class="body-1 font-light transition-colors duration-500 ease-in-out group-hover:text-white"
+        data-animate
+      >
         <PortableText value={description} />
       </div>
     </div>
