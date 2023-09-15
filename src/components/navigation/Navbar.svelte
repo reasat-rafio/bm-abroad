@@ -2,10 +2,10 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { SiteProps } from '@/lib/types/common';
-  // import uiStore from '@/stores/ui';
   import Cta from '../ui/Cta.svelte';
   import Hamburger from './Hamburger.svelte';
   import Dropdown from './Dropdown.svelte';
+  import { onNavigate } from '$app/navigation';
 
   export let nav: SiteProps['nav'];
   export let logo: SiteProps['logos']['logo'];
@@ -16,20 +16,13 @@
   $: yPosition = scrollY > 25 ? 'translate-y-0' : 'sm:translate-y-[25px]';
   $: if (windowWidth >= 1024) dropdown = 'inactive';
 
-  // const navAction = (node: HTMLElement, _: number) => {
-  //   const navbarHeight = node.getBoundingClientRect().height;
-  //   uiStore.setNavbarHeight(navbarHeight);
-  //   return {
-  //     update(_: number) {
-  //       const navbarHeight = node.getBoundingClientRect().height;
-  //       uiStore.setNavbarHeight(navbarHeight);
-  //     },
-  //   };
-  // };
+  onNavigate(() => {
+    dropdown = 'inactive';
+  });
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} bind:scrollY />
-<nav class="fixed top-0 left-0 z-50 w-full">
+<nav class="fixed left-0 top-0 z-50 w-full">
   <div
     style="box-shadow: 0px 8px 20px -5px rgba(0, 0, 0, 0.10);"
     class="container bg-white/50 px-[32px] py-[14px] backdrop-blur-2xl transition-transform duration-500 ease-in-out sm:rounded-[10px] lg:rounded-lg {yPosition} relative"
@@ -37,7 +30,7 @@
     <div class="flex items-center justify-between space-x-5">
       <a class="h-[50px] 2xl:h-[69px]" href="/">
         <SanityImage
-          class="object-cover h-full w-fit"
+          class="h-full w-fit object-cover"
           src={logo}
           sizes="100px"
           imageUrlBuilder={imageBuilder}
@@ -52,7 +45,7 @@
               </Cta>
             {:else}
               <a
-                class="hover:text-slate-blue text-[12px] font-medium tracking-[0.48px] transition-colors duration-300 xl:text-[16px]"
+                class="text-[12px] font-medium tracking-[0.48px] transition-colors duration-300 hover:text-slate-blue xl:text-[16px]"
                 href="/{pageUrl.current}"
               >
                 {title}
