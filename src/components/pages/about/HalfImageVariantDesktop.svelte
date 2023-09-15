@@ -11,6 +11,7 @@
 
   let rootContainereEl: HTMLElement;
   let contentContainerEl: HTMLElement;
+  let imageEl: HTMLElement;
   let deltaSpacing = 0;
   $: marginTop = deltaSpacing > 0 ? deltaSpacing + 140 : 0;
   $: marginBottom = deltaSpacing > 0 ? deltaSpacing + 140 : 140;
@@ -18,9 +19,7 @@
   onMount(() => {
     updateDeltaSpacing();
     triggerAnimation();
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   });
 
   const updateDeltaSpacing = () => {
@@ -36,18 +35,24 @@
   const triggerAnimation = () => {
     const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: contentContainerEl,
-        start: '-50% bottom',
+        trigger: imageEl,
+        start: 'center bottom',
+      },
+      defaults: {
+        ease: 'power4.inOut',
+        duration: 1,
       },
     });
 
-    timeline
-      .from(contentContainerEl, { y: '100%' })
-      .from(contentContainerEl.querySelectorAll('[data-animate]'), {
+    timeline.from(contentContainerEl, { y: '100%' }).from(
+      contentContainerEl.querySelectorAll('[data-animate]'),
+      {
         opacity: 0,
-        y: 15,
+        y: 10,
         stagger: 0.1,
-      });
+      },
+      '-=0.5',
+    );
   };
 </script>
 
@@ -57,7 +62,10 @@
   style="margin-top: {marginTop}px; margin-bottom: {marginBottom}px"
   class="grid grid-cols-12"
 >
-  <figure class="col-span-6 overflow-hidden rounded-lg 2xl:col-span-7">
+  <figure
+    bind:this={imageEl}
+    class="col-span-6 overflow-hidden rounded-lg 2xl:col-span-7"
+  >
     <SanityImage
       class="h-full w-full object-cover"
       sizes="50vw"

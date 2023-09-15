@@ -4,13 +4,14 @@
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
   import { onMount } from 'svelte';
-  import { gsap } from '@/lib/gsap';
+  import { gsap, ScrollTrigger } from '@/lib/gsap';
 
   export let about: About;
   $: ({ title, subtitle, image, description } = about);
 
   let contentContainerEl: HTMLElement;
   let contentContaineElHeight = 0;
+  let imageEl: HTMLElement;
 
   const upateExtraSpacing = () => {
     if (!!!contentContainerEl) return;
@@ -19,24 +20,30 @@
 
   const triggerAnimation = () => {
     const timeline = gsap.timeline({
-      scrollTrigger: contentContainerEl,
+      scrollTrigger: {
+        trigger: imageEl,
+        start: 'center bottom',
+      },
+      defaults: {
+        ease: 'power4.inOut',
+        duration: 1,
+      },
     });
-    timeline
-      .from(contentContainerEl, { y: '100%' })
-      .from(contentContainerEl.querySelectorAll('[data-animate]'), {
+    timeline.from(contentContainerEl, { y: '100%' }).from(
+      contentContainerEl.querySelectorAll('[data-animate]'),
+      {
         opacity: 0,
-        y: 15,
+        y: 10,
         stagger: 0.1,
-      });
+      },
+      '-=0.5',
+    );
   };
 
   onMount(() => {
     upateExtraSpacing();
     triggerAnimation();
-
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   });
 </script>
 
@@ -45,7 +52,10 @@
   class="relative"
   style="margin-bottom: {contentContaineElHeight / 2 + 140}px;"
 >
-  <figure class="aspect-video max-h-[906px] overflow-hidden rounded-lg">
+  <figure
+    bind:this={imageEl}
+    class="aspect-video max-h-[906px] overflow-hidden rounded-lg"
+  >
     <SanityImage
       lqip
       class="h-full w-full object-cover"

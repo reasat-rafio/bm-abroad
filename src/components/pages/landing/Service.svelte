@@ -12,8 +12,11 @@
     gsap.from('.landing-service__card', {
       y: '60px',
       stagger: 0.1,
-      duration: 1.4,
-      scrollTrigger: sectionEl,
+      duration: 1,
+      scrollTrigger: {
+        trigger: sectionEl,
+        start: '100px bottom',
+      },
       ease: 'power4.inOut',
     });
     return () => {

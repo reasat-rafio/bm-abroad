@@ -3,7 +3,7 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
-  import { gsap } from '@/lib/gsap';
+  import { gsap, ScrollTrigger } from '@/lib/gsap';
   import { onMount } from 'svelte';
 
   export let about: About;
@@ -11,29 +11,39 @@
 
   let rootContainereEl: HTMLElement;
   let contentContainerEl: HTMLElement;
+  let imageEl: HTMLElement;
 
   const triggerAnimation = () => {
     const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: rootContainereEl,
-        start: '30% bottom',
+        trigger: imageEl,
+        start: 'bottom bottom',
+      },
+      defaults: {
+        ease: 'power4.inOut',
+        duration: 1,
       },
     });
 
-    timeline.from(rootContainereEl.querySelectorAll('[data-animate]'), {
+    timeline.from(contentContainerEl.querySelectorAll('[data-animate]'), {
       opacity: 0,
-      y: 15,
-      stagger: 0.2,
+      y: 10,
+      stagger: 0.1,
     });
   };
 
   onMount(() => {
     triggerAnimation();
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   });
 </script>
 
 <article class="space-y-[72px]" bind:this={rootContainereEl}>
-  <figure data-animate class="overflow-hidden rounded-[12px]">
+  <figure
+    bind:this={imageEl}
+    data-animate
+    class="overflow-hidden rounded-[12px]"
+  >
     <SanityImage
       class="h-[560px] w-full object-cover sm:h-full "
       sizes="100vw"
@@ -47,7 +57,7 @@
     <header class="space-y-[24px]">
       <h2
         data-animate
-        class="text-slate-blue font-oswald text-[16px] font-semibold uppercase tracking-[1.28px]"
+        class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-slate-blue"
       >
         {title}
       </h2>

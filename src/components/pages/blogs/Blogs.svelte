@@ -5,7 +5,7 @@
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { Blog } from '@/lib/types/[blog]';
   import { onMount } from 'svelte';
-  import { gsap } from '@/lib/gsap';
+  import { gsap, ScrollTrigger } from '@/lib/gsap';
 
   export let blogs: Blog[];
 
@@ -14,12 +14,16 @@
     gsap.from('.blogs-blog__card', {
       y: '60px',
       stagger: 0.1,
-      duration: 1.4,
+      duration: 1,
       scrollTrigger: {
         trigger: sectionEl,
+        start: '100px bottom',
       },
       ease: 'power4.inOut',
     });
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
   });
 </script>
 
@@ -42,7 +46,7 @@
             >
               <figure class="col-span-4 md:col-span-12">
                 <SanityImage
-                  class="object-cover w-full h-full rounded-md"
+                  class="h-full w-full rounded-md object-cover"
                   src={coverImage}
                   alt={name}
                   sizes="(min-width:1024px) 40vw, 60vw"
@@ -56,7 +60,7 @@
                   <img
                     src="/icons/calender.svg"
                     alt="calender"
-                    class="object-contain h-max w-max"
+                    class="h-max w-max object-contain"
                   />
                   <span>{formatDate(_createdAt)}</span>
                 </div>
@@ -67,7 +71,7 @@
                   {name}
                 </h3>
                 <a
-                  class="body-2 text-slate-blue hidden items-center space-x-[6px] md:flex"
+                  class="body-2 hidden items-center space-x-[6px] text-slate-blue md:flex"
                   href="/blogs/{slug.current}"
                 >
                   <span> Read More </span>
