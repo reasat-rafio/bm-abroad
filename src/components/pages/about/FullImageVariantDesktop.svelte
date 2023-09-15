@@ -3,9 +3,8 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
-  import { onMount, tick } from 'svelte';
-  import { gsap } from 'gsap';
-  import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+  import { onMount } from 'svelte';
+  import { gsap } from '@/lib/gsap';
 
   export let about: About;
   $: ({ title, subtitle, image, description } = about);
@@ -18,15 +17,7 @@
     contentContaineElHeight = contentContainerEl.getBoundingClientRect().height;
   };
 
-  const triggerAnimation = () => {};
-
-  onMount(() => {
-    upateExtraSpacing();
-    gsap.registerPlugin(ScrollTrigger);
-    tick();
-
-    // triggerAnimation();
-
+  const triggerAnimation = () => {
     const timeline = gsap.timeline({
       scrollTrigger: contentContainerEl,
     });
@@ -37,10 +28,14 @@
         y: 15,
         stagger: 0.1,
       });
+  };
+
+  onMount(() => {
+    upateExtraSpacing();
+    triggerAnimation();
 
     return () => {
-      const t = ScrollTrigger.getAll();
-      t.forEach((t) => t.kill());
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   });
 </script>
@@ -53,7 +48,7 @@
   <figure class="aspect-video max-h-[906px] overflow-hidden rounded-lg">
     <SanityImage
       lqip
-      class="object-cover w-full h-full"
+      class="h-full w-full object-cover"
       sizes="80vw"
       src={image}
       alt={image.alt}
@@ -74,7 +69,7 @@
       </h2>
       <h3 class="heading-lg-secondary" data-animate>{subtitle}</h3>
     </header>
-    <div class="font-light body-1" data-animate>
+    <div class="body-1 font-light" data-animate>
       <PortableText value={description} />
     </div>
   </div>

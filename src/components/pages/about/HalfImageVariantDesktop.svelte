@@ -3,7 +3,7 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
-  import { gsap } from '@/lib/gsap';
+  import { gsap, ScrollTrigger } from '@/lib/gsap';
   import { onMount } from 'svelte';
 
   export let about: About;
@@ -18,6 +18,9 @@
   onMount(() => {
     updateDeltaSpacing();
     triggerAnimation();
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
   });
 
   const updateDeltaSpacing = () => {
@@ -71,7 +74,7 @@
       <header class="space-y-[24px]">
         <h2
           data-animate
-          class="text-slate-blue font-oswald text-[16px] font-semibold uppercase tracking-[1.28px]"
+          class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-slate-blue"
         >
           {title}
         </h2>

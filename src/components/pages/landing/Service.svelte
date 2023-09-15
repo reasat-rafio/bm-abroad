@@ -3,20 +3,22 @@
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { Service } from '@/lib/types/landing';
   import { onMount } from 'svelte';
-  import { gsap } from '@/lib/gsap';
+  import { gsap, ScrollTrigger } from '@/lib/gsap';
 
   export let services: Service[];
   let sectionEl: HTMLElement;
 
   onMount(() => {
-    if (sectionEl)
-      gsap.from('.landing-service__card', {
-        y: '60px',
-        stagger: 0.1,
-        duration: 1.4,
-        scrollTrigger: sectionEl,
-        ease: 'power4.inOut',
-      });
+    gsap.from('.landing-service__card', {
+      y: '60px',
+      stagger: 0.1,
+      duration: 1.4,
+      scrollTrigger: sectionEl,
+      ease: 'power4.inOut',
+    });
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
   });
 </script>
 
@@ -27,7 +29,7 @@
     {#each services as { name, image, description }}
       <article
         style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-        class="landing-service__card hover:bg-slate-blue group grid h-[150px] grid-rows-2 gap-1 rounded-[24px] bg-white px-[20px] py-[20px] transition-colors duration-500 md:h-[430px] md:gap-[20px] md:px-[36px] md:py-[29px]"
+        class="landing-service__card group grid h-[150px] grid-rows-2 gap-1 rounded-[24px] bg-white px-[20px] py-[20px] transition-colors duration-500 hover:bg-slate-blue md:h-[430px] md:gap-[20px] md:px-[36px] md:py-[29px]"
       >
         <figure>
           <SanityImage
@@ -47,7 +49,7 @@
           </h4>
 
           <p
-            class="hidden transition-colors duration-500 body-2 group-hover:text-white md:block"
+            class="body-2 hidden transition-colors duration-500 group-hover:text-white md:block"
           >
             {description}
           </p>
