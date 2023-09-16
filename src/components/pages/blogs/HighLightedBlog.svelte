@@ -55,7 +55,12 @@
             href="/blogs/{slug.current}"
           >
             <span> Read More </span>
-            <img src="/icons/chevron-right-sm.svg" alt="chevron" />
+            <img
+              src="/icons/chevron-right-sm.svg"
+              alt="chevron"
+              height="15px"
+              width="15px"
+            />
           </a>
         </div>
         <div

@@ -75,11 +75,11 @@
                   hoverdCardKey === _key && !isSm && 'backdrop-blur-lg',
                 )}
               >
-                <h5
+                <h4
                   class="text-center font-oswald text-[40px] font-semibold uppercase"
                 >
                   {name}
-                </h5>
+                </h4>
                 {#if hoverdCardKey === _key && !isSm}
                   <p
                     transition:slide={{ duration: 600 }}
@@ -95,7 +95,7 @@
       </div>
     </div>
 
-    <div class=" flex items-center justify-center pt-[32px]">
+    <nav class=" flex items-center justify-center pt-[32px]">
       <div class="flex space-x-[8px]">
         {#each destinations as _, index}
           <DotButton
@@ -106,7 +106,7 @@
           />
         {/each}
       </div>
-    </div>
+    </nav>
 
     <div class="md:hidden">
       {#key activeSlide}

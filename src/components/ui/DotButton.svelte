@@ -14,6 +14,8 @@
     $$props.class,
   )}
   on:click={$$props.clickAction}
+  aria-current={$$props.active}
+  aria-label="Next Slide"
   {...$$restProps}
 >
   <div

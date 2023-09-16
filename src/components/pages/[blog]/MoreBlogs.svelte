@@ -56,7 +56,7 @@
     </div>
   </div>
 
-  <div class="flex items-center justify-center pt-[68px] lg:pt-[34px]">
+  <nav class="flex items-center justify-center pt-[68px] lg:pt-[34px]">
     <div class="flex space-x-[8px]">
       {#each blogs as _, index}
         <DotButton
@@ -67,5 +67,5 @@
         />
       {/each}
     </div>
-  </div>
+  </nav>
 </section>

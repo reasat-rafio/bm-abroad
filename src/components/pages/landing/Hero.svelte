@@ -45,13 +45,14 @@
               src={image}
               sizes="(min-width: 1024px) 90vw, 100vw"
               imageUrlBuilder={imageBuilder}
+              alt={image.alt}
             />
           </svelte:element>
         {/each}
       </div>
     </div>
   </div>
-  <div class=" flex items-center justify-center pt-[32px]">
+  <nav class=" flex items-center justify-center pt-[32px]">
     <div class="flex space-x-[8px]">
       {#each banners as _, index}
         <DotButton
@@ -62,5 +63,5 @@
         />
       {/each}
     </div>
-  </div>
+  </nav>
 </section>

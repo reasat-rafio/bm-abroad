@@ -34,6 +34,7 @@
           src={logo}
           sizes="100px"
           imageUrlBuilder={imageBuilder}
+          alt="BM Abroad Logo"
         />
       </a>
       <ul class="hidden space-x-[20px] lg:flex 2xl:space-x-[46px]">

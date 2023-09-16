@@ -17,23 +17,28 @@
         class="flex space-x-[9px] transition-colors duration-500 hover:text-slate-blue"
         href="tel:{contactNumber}"
       >
-        <img sizes="20px" src="/icons/mobile.svg" alt="mobile" />
+        <img height="20px" width="20px" src="/icons/mobile.svg" alt="mobile" />
         <span>{contactNumber} </span>
       </a>
       <div class="flex space-x-[9px]">
-        <img sizes="20px" src="/icons/location.svg" alt="location" />
+        <img
+          height="20px"
+          width="20px"
+          src="/icons/location.svg"
+          alt="location"
+        />
         <span>{address} </span>
       </div>
       <a
         class="flex space-x-[9px] transition-colors duration-500 hover:text-slate-blue"
         href="mailto:{email}"
       >
-        <img sizes="20px" src="/icons/mail.svg" alt="email" />
+        <img height="20px" width="20px" src="/icons/mail.svg" alt="email" />
         <span>{email} </span>
       </a>
     </div>
     <div class="col-span-5 space-y-[24px] lg:col-span-2">
-      <h6 class="font-poppins text-[14px] opacity-40">Social Media</h6>
+      <h4 class="font-poppins text-[14px] opacity-40">Social Media</h4>
       <ul class="flex space-x-[24px]">
         {#each socials as { icon, link }}
           <li>
@@ -42,7 +47,9 @@
                 class="aspect-square h-[20px] object-contain"
                 src={icon}
                 imageUrlBuilder={imageBuilder}
-                sizes="20px"
+                height="20px"
+                width="20px"
+                alt="Social Media Icon"
               />
             </a>
           </li>
