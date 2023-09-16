@@ -77,9 +77,9 @@
   <div class="relative col-span-6 h-full 2xl:col-span-5">
     <div
       bind:this={contentContainerEl}
-      class="group absolute left-0 top-1/2 w-[120%] -translate-x-[10%] -translate-y-1/2 space-y-[48px] rounded-[16px] bg-white/70 p-[50px] backdrop-blur-md transition-colors duration-300 ease-in-out hover:bg-[#1B1464] hover:bg-opacity-90 hover:shadow-cta 2xl:space-y-[64px]"
+      class="group absolute left-0 top-1/2 w-[120%] -translate-x-[10%] -translate-y-1/2 space-y-[48px] rounded-[16px] bg-white/70 p-[50px] backdrop-blur-md transition-colors duration-300 ease-in-out hover:bg-[#1B1464] hover:bg-opacity-90 hover:shadow-cta"
     >
-      <header class="space-y-[24px]">
+      <header class="space-y-[16px]">
         <h2
           data-animate
           class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-slate-blue transition-colors duration-500 ease-in-out group-hover:text-white"

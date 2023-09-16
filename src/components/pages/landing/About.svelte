@@ -15,8 +15,8 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <IntersectionObserver
-  element={sectionEl}
   bind:intersecting
+  element={sectionEl}
   threshold={0.25}
   once
 >

@@ -5,21 +5,14 @@
   export let subtitle: string;
 </script>
 
-<header class={twMerge('relative space-y-[12px] pl-[25px]', $$props.class)}>
+<header
+  class={twMerge(
+    'relative space-y-[12px] pl-[25px] before:absolute before:left-0 before:top-0 before:h-full before:w-[6px] before:bg-slate-blue before:content-[""] before:md:w-[9px]',
+    $$props.class,
+  )}
+>
   <h2 class="heading-2xl leading-none">{title}</h2>
   <h3 class="font-poppins text-[12px] text-dark-gray md:text-[16px]">
     {subtitle}
   </h3>
 </header>
-
-<style>
-  header::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 9px;
-    background-color: #764af1;
-  }
-</style>

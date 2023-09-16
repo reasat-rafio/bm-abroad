@@ -22,7 +22,7 @@
   });
 </script>
 
-<section class="pb-[148px] pt-[195px]">
+<section class="pb-[66px] pt-[105px] md:pb-[148px] md:pt-[195px]">
   <article bind:this={articleEl} class="container relative isolate">
     <figure>
       <SanityImage
@@ -42,16 +42,16 @@
         <div class="space-y-[24px] md:flex-[60%]">
           <a data-animate href="/blogs/{slug.current}">
             <h1
-              class="hover:text-slate-blue font-poppins text-[24px] font-medium transition-colors duration-500 ease-in-out lg:text-[36px]"
+              class="font-poppins text-[24px] font-medium transition-colors duration-500 ease-in-out hover:text-slate-blue lg:text-[36px]"
             >
               {name}
             </h1>
           </a>
-          <p data-animate class="hidden body-2 lg:block">{quickOverView}</p>
+          <p data-animate class="body-2 hidden lg:block">{quickOverView}</p>
 
           <a
             data-animate
-            class="body-2 text-slate-blue flex items-center space-x-[6px] lg:hidden"
+            class="body-2 flex items-center space-x-[6px] text-slate-blue lg:hidden"
             href="/blogs/{slug.current}"
           >
             <span> Read More </span>

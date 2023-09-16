@@ -53,8 +53,8 @@
     />
   </figure>
 
-  <div bind:this={contentContainerEl} class="space-y-[48px]">
-    <header class="space-y-[24px]">
+  <div bind:this={contentContainerEl} class="space-y-[38px]">
+    <header class="space-y-[16px]">
       <h2
         data-animate
         class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-slate-blue"

@@ -7,7 +7,8 @@
     type EmblaOptionsType,
     type EmblaPluginType,
   } from 'embla-carousel-svelte';
-  let plugins: EmblaPluginType[] = [Autoplay()];
+  // Autoplay()
+  let plugins: EmblaPluginType[] = [];
   let options: Partial<EmblaOptionsType> = {
     containScroll: 'trimSnaps',
     align: 'start',
@@ -33,6 +34,7 @@
             class="flex-[0_0_100%] pl-[25px] sm:flex-[0_0_80%] lg:flex-[0_0_33.33%]"
             {name}
             {slug}
+            twoRowInMobile
             image={coverImage}
             date={_createdAt}
           />

@@ -29,11 +29,11 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<section class="relative mb-[176px] overflow-x-clip">
+<section class="relative mb-[50px] overflow-x-clip md:mb-[176px]">
   <div class="container">
     <SectionHeader {title} {subtitle} />
 
-    <div class="mx-auto mt-[128px] max-w-3xl">
+    <div class="mx-auto mt-[49px] max-w-3xl lg:mt-[128px]">
       {#each steps as { title, description }, index}
         <Step
           bind:allStepsComplete

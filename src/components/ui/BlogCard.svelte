@@ -9,11 +9,18 @@
   export let name: string;
   export let image: SanityAssetDocument;
   export let date: string;
+  export let twoRowInMobile: boolean = false;
 </script>
 
 <a href="/blogs/{slug.current}" class={$$props.class}>
-  <article class="grid grid-cols-12 max-md:space-x-[10px] md:space-y-[26px]">
-    <figure class="col-span-4 md:col-span-12">
+  <article
+    class="grid grid-cols-12 {twoRowInMobile
+      ? 'space-y-[16px] md:space-y-[24px]'
+      : 'max-md:space-x-[10px] md:space-y-[24px]'}"
+  >
+    <figure
+      class="{twoRowInMobile ? 'col-span-12' : 'col-span-4'} md:col-span-12"
+    >
       <SanityImage
         class="h-full w-full rounded-md object-cover"
         src={image}
@@ -22,9 +29,11 @@
         imageUrlBuilder={imageBuilder}
       />
     </figure>
-    <section class="col-span-8 md:col-span-12">
+    <section
+      class="{twoRowInMobile ? 'col-span-12' : 'col-span-8'} md:col-span-12"
+    >
       <div
-        class="flex items-center space-x-[14px] pb-[8px] text-[14px] text-black/40 md:pb-[24px]"
+        class="flex items-center space-x-[14px] pb-[8px] text-[14px] text-black/40 md:pb-[16px]"
       >
         <img
           src="/icons/calender.svg"

@@ -18,7 +18,7 @@
   <div class="mx-auto grid max-w-screen-xl grid-cols-12 max-lg:gap-y-[56px]">
     <div class="col-span-12 lg:col-span-6">
       <div class="flex max-w-full flex-col-reverse lg:max-w-lg lg:flex-col">
-        <header class="mt-[56px] space-y-[24px] lg:mb-[72px]">
+        <header class="mt-[56px] space-y-[16px] lg:mb-[72px] lg:space-y-[24px]">
           <h2 class={twMerge('heading-lg-secondary', 'text-black')}>
             {title}
           </h2>
