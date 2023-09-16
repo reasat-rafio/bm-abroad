@@ -1,16 +1,31 @@
 <script lang="ts">
   import BlogCard from '@/components/ui/BlogCard.svelte';
+  import DotButton from '@/components/ui/DotButton.svelte';
   import type { MoreBlog } from '@/lib/types/[blog]';
   import Autoplay from 'embla-carousel-autoplay';
   import emblaCarouselSvelte, {
     type EmblaOptionsType,
     type EmblaPluginType,
+    type EmblaCarouselType,
   } from 'embla-carousel-svelte';
+
+  let emblaApi: EmblaCarouselType;
+  let selectedIndex = 0;
   let plugins: EmblaPluginType[] = [Autoplay()];
   let options: Partial<EmblaOptionsType> = {
-    containScroll: 'trimSnaps',
     align: 'start',
   };
+
+  const onInit = (event: CustomEvent<EmblaCarouselType>) => {
+    emblaApi = event.detail;
+    selectedIndex = event.detail.selectedScrollSnap();
+  };
+
+  $: if (emblaApi) {
+    emblaApi.on('select', ({ selectedScrollSnap }) => {
+      selectedIndex = selectedScrollSnap();
+    });
+  }
 
   export let blogs: MoreBlog[];
 </script>
@@ -25,6 +40,7 @@
     <div
       class="relative -ml-[25px] overflow-hidden pt-[56px] lg:pt-[46px]"
       use:emblaCarouselSvelte={{ plugins, options }}
+      on:emblaInit={onInit}
     >
       <div class="relative flex">
         {#each blogs as { _createdAt, coverImage, name, slug }}
@@ -37,6 +53,19 @@
           />
         {/each}
       </div>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-center pt-[68px] lg:pt-[34px]">
+    <div class="flex space-x-[8px]">
+      {#each blogs as _, index}
+        <DotButton
+          active={index === selectedIndex}
+          clickAction={() => {
+            emblaApi.scrollTo(index);
+          }}
+        />
+      {/each}
     </div>
   </div>
 </section>

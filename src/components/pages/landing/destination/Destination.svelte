@@ -10,6 +10,8 @@
   } from 'embla-carousel-svelte';
   import { fade, slide } from 'svelte/transition';
   import Autoplay from 'embla-carousel-autoplay';
+  import { twMerge } from 'tailwind-merge';
+  import DotButton from '@/components/ui/DotButton.svelte';
 
   export let props: DestinationsProps;
   $: ({ title, subtitle, destinations } = props);
@@ -23,6 +25,7 @@
 
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
     emblaApi = event.detail;
+    activeSlide = event.detail.selectedScrollSnap();
   };
 
   $: isSm = windowWidth < 768 ? true : false;
@@ -67,10 +70,10 @@
                 style="background: {hoverdCardKey === _key && !isSm
                   ? 'linear-gradient(180deg, rgba(3, 3, 3, 0.40) 0%, #502CB5 100%)'
                   : 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50%, #000 100%)'};"
-                class="absolute inset-0 flex h-full w-full flex-col items-center justify-end p-[35px] text-white transition-all duration-700 {hoverdCardKey ===
-                  _key && !isSm
-                  ? 'backdrop-blur-lg'
-                  : ''}"
+                class={twMerge(
+                  'absolute inset-0 flex h-full w-full flex-col items-center justify-end p-[35px] text-white transition-all duration-700',
+                  hoverdCardKey === _key && !isSm && 'backdrop-blur-lg',
+                )}
               >
                 <h5
                   class="text-center font-oswald text-[40px] font-semibold uppercase"
@@ -88,6 +91,19 @@
               </div>
             </div>
           </article>
+        {/each}
+      </div>
+    </div>
+
+    <div class=" flex items-center justify-center pt-[32px]">
+      <div class="flex space-x-[8px]">
+        {#each destinations as _, index}
+          <DotButton
+            active={index === activeSlide}
+            clickAction={() => {
+              emblaApi.scrollTo(index);
+            }}
+          />
         {/each}
       </div>
     </div>
