@@ -51,13 +51,14 @@
       <a
         class="body-2 hidden items-center space-x-[6px] text-slate-blue md:flex"
         href="/blogs/{slug.current}"
+        title="Read the full article on {name}"
       >
         <span> Read More </span>
         <img
           src="/icons/chevron-right-sm.svg"
           alt="chevron"
-          height="15px"
-          width="15px"
+          height="8.5px"
+          width="5.5px"
         />
       </a>
     </section>

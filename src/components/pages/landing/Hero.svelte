@@ -37,6 +37,7 @@
         {#each banners as { image, url }}
           <svelte:element
             this={!!url ? 'a' : 'figure'}
+            href={url}
             class="aspect-video max-h-[70vh] flex-[0_0_100%]"
           >
             <SanityImage
