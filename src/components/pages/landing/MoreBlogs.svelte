@@ -1,4 +1,5 @@
 <script lang="ts">
+  import SectionHeader from '@/components/SectionHeader.svelte';
   import BlogCard from '@/components/ui/BlogCard.svelte';
   import type { MoreBlog } from '@/lib/types/[blog]';
   import Autoplay from 'embla-carousel-autoplay';
@@ -15,13 +16,13 @@
   export let blogs: MoreBlog[];
 </script>
 
-<section class="pb-[116px] lg:pb-[90px]">
+<section class="pb-[160px]">
   <div class="container">
-    <h2
-      class="text-[24px] font-semibold uppercase md:text-[32px] xl:text-[40px]"
-    >
-      More Blogs
-    </h2>
+    <SectionHeader
+      title="Blogs"
+      subtitle="Explore our latest blogs and articles "
+    />
+
     <div
       class="relative -ml-[25px] overflow-hidden pt-[56px] lg:pt-[46px]"
       use:emblaCarouselSvelte={{ plugins, options }}

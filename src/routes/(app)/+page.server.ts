@@ -27,6 +27,12 @@ const q = groq`*[_id == "landingPage"][0]{
   "services": *[_type == "service"]|order(orderRank){
     ...,
     ${asset('image')}
+  },
+  "moreBlogs": *[_type == "blog"][]|order(orderRank){
+    name,
+    slug,
+    _createdAt,
+    ${asset('coverImage')},
   }
 }`;
 

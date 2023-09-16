@@ -11,7 +11,7 @@
   $: ({ title, description, link, image } = props);
 </script>
 
-<section class="container relative mb-[48px]">
+<section class="container relative pb-[160px]">
   <article
     style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
     class=" relative z-10 grid grid-cols-1 gap-5 rounded-[32px] bg-white px-[20px] py-[44px] md:px-[40px] md:py-[70px] lg:grid-cols-2 xl:px-[111px] xl:py-[83px]"

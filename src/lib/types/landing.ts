@@ -1,10 +1,12 @@
 import type { SanityImageAssetDocument } from '@sanity/client';
 import type { CtaProps, SeoProps, TaglineProps } from './common';
+import type { MoreBlog } from './[blog]';
 
 export type LandingPageProps = {
   seo: SeoProps;
   services: Service[];
   sections: Section[];
+  moreBlogs: MoreBlog[];
 };
 
 type Section =

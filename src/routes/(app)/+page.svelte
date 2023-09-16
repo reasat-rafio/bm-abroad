@@ -8,13 +8,14 @@
   import Process from '@/components/pages/landing/process/Process.svelte';
   import Tagline from '@/components/Tagline.svelte';
   import Seo from '@/components/Seo.svelte';
+  import MoreBlogs from '@/components/pages/landing/MoreBlogs.svelte';
 
   export let data;
   $: ({
     site: {
       logos: { ogImage },
     },
-    page: { sections, services, seo },
+    page: { sections, services, seo, moreBlogs },
   } = data);
 </script>
 
@@ -37,3 +38,4 @@
     <Cta {props} />
   {/if}
 {/each}
+<MoreBlogs blogs={moreBlogs} />
