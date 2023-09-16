@@ -49,7 +49,7 @@
           </a>
           <p data-animate class="body-2 hidden lg:block">{quickOverView}</p>
 
-          <a
+          <!-- <a
             data-animate
             class="body-2 flex items-center space-x-[6px] text-slate-blue lg:hidden"
             href="/blogs/{slug.current}"
@@ -61,7 +61,7 @@
               height="15px"
               width="15px"
             />
-          </a>
+          </a> -->
         </div>
         <div
           class="flex max-md:pb-[16px] md:flex-[40%] md:items-end md:justify-end"
