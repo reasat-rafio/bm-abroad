@@ -12,6 +12,7 @@
   let emblaApi: EmblaCarouselType;
   let selectedIndex = 0;
   let plugins: EmblaPluginType[] = [Autoplay()];
+  let scrollSnaps: number[];
   let options: Partial<EmblaOptionsType> = {
     align: 'start',
   };
@@ -19,11 +20,13 @@
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
     emblaApi = event.detail;
     selectedIndex = event.detail.selectedScrollSnap();
+    scrollSnaps = event.detail.scrollSnapList();
   };
 
   $: if (emblaApi) {
-    emblaApi.on('select', ({ selectedScrollSnap }) => {
+    emblaApi.on('select', ({ selectedScrollSnap, scrollSnapList }) => {
       selectedIndex = selectedScrollSnap();
+      scrollSnaps = scrollSnapList();
     });
   }
 
@@ -56,16 +59,18 @@
     </div>
   </div>
 
-  <nav class="flex items-center justify-center pt-[68px] lg:pt-[34px]">
-    <div class="flex space-x-[8px]">
-      {#each blogs as _, index}
-        <DotButton
-          active={index === selectedIndex}
-          clickAction={() => {
-            emblaApi.scrollTo(index);
-          }}
-        />
-      {/each}
-    </div>
-  </nav>
+  {#if !!scrollSnaps?.length}
+    <nav class="flex items-center justify-center pt-[68px] lg:pt-[34px]">
+      <div class="flex space-x-[8px]">
+        {#each blogs as _, index}
+          <DotButton
+            active={index === selectedIndex}
+            clickAction={() => {
+              emblaApi.scrollTo(index);
+            }}
+          />
+        {/each}
+      </div>
+    </nav>
+  {/if}
 </section>

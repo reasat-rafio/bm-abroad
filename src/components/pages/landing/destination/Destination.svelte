@@ -22,17 +22,20 @@
   let activeSlide = 0;
   let hoverdCardKey: null | string = null;
   let windowWidth = 0;
+  let scrollSnaps: number[];
 
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
     emblaApi = event.detail;
     activeSlide = event.detail.selectedScrollSnap();
+    scrollSnaps = event.detail.scrollSnapList();
   };
 
   $: isSm = windowWidth < 768 ? true : false;
   $: activeSlideDescription = destinations[activeSlide]?.description;
   $: if (emblaApi) {
-    emblaApi.on('select', ({ selectedScrollSnap }) => {
+    emblaApi.on('select', ({ selectedScrollSnap, scrollSnapList }) => {
       activeSlide = selectedScrollSnap();
+      scrollSnaps = scrollSnapList();
     });
   }
 </script>
@@ -95,18 +98,20 @@
       </div>
     </div>
 
-    <nav class=" flex items-center justify-center pt-[32px]">
-      <div class="flex space-x-[8px]">
-        {#each destinations as _, index}
-          <DotButton
-            active={index === activeSlide}
-            clickAction={() => {
-              emblaApi.scrollTo(index);
-            }}
-          />
-        {/each}
-      </div>
-    </nav>
+    {#if !!scrollSnaps?.length}
+      <nav class=" flex items-center justify-center pt-[32px]">
+        <div class="flex space-x-[8px]">
+          {#each scrollSnaps as _, index}
+            <DotButton
+              active={index === activeSlide}
+              clickAction={() => {
+                emblaApi.scrollTo(index);
+              }}
+            />
+          {/each}
+        </div>
+      </nav>
+    {/if}
 
     <div class="md:hidden">
       {#key activeSlide}

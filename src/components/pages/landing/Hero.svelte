@@ -17,15 +17,18 @@
   $: ({ banners } = props);
   let emblaApi: EmblaCarouselType;
   let selectedIndex = 0;
+  let scrollSnaps: number[];
 
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
     emblaApi = event.detail;
+    scrollSnaps = event.detail.scrollSnapList();
     selectedIndex = event.detail.selectedScrollSnap();
   };
 
   $: if (emblaApi) {
-    emblaApi.on('select', ({ selectedScrollSnap }) => {
+    emblaApi.on('select', ({ selectedScrollSnap, scrollSnapList }) => {
       selectedIndex = selectedScrollSnap();
+      scrollSnaps = scrollSnapList();
     });
   }
 </script>
@@ -53,16 +56,18 @@
       </div>
     </div>
   </div>
-  <nav class=" flex items-center justify-center pt-[32px]">
-    <div class="flex space-x-[8px]">
-      {#each banners as _, index}
-        <DotButton
-          active={index === selectedIndex}
-          clickAction={() => {
-            emblaApi.scrollTo(index);
-          }}
-        />
-      {/each}
-    </div>
-  </nav>
+  {#if !!scrollSnaps?.length}
+    <nav class=" flex items-center justify-center pt-[32px]">
+      <div class="flex space-x-[8px]">
+        {#each scrollSnaps as _, index}
+          <DotButton
+            active={index === selectedIndex}
+            clickAction={() => {
+              emblaApi.scrollTo(index);
+            }}
+          />
+        {/each}
+      </div>
+    </nav>
+  {/if}
 </section>
