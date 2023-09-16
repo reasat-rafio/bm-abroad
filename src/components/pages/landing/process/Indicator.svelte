@@ -4,10 +4,12 @@
   export let isIntersecting: boolean;
   export let isLast: boolean;
   export let scrollPercentage: number;
+  export let headerDeltaY: number;
 </script>
 
 <div
-  class="col-span-1 flex translate-y-[23px] flex-col items-center justify-center md:translate-y-[32px] lg:translate-y-[41px]"
+  style="transform: translateY({headerDeltaY}px);"
+  class="col-span-1 flex flex-col items-center justify-center"
 >
   <div class="my-2">
     {#if isIntersecting}

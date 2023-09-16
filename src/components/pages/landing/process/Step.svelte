@@ -8,9 +8,14 @@
   export let index: number;
   export let allStepsComplete: boolean;
 
-  let stepEl: HTMLDivElement;
   let windowHeight = 0;
   let scrollPercentage = 0;
+  let stepEl: HTMLDivElement;
+  let heraderEl: HTMLHeadElement;
+  $: headerDeltaY =
+    heraderEl?.getBoundingClientRect().top -
+    stepEl?.getBoundingClientRect().top;
+
   $: isIntersecting = scrollPercentage > 0;
   $: textColor = (color: string = 'text-black') =>
     isIntersecting ? color : 'text-black/10';
@@ -19,6 +24,12 @@
   } else {
     if (scrollPercentage < 100) allStepsComplete = false;
   }
+
+  const calcDeltaY = () => {
+    headerDeltaY =
+      heraderEl.getBoundingClientRect().top -
+      stepEl.getBoundingClientRect().top;
+  };
 
   const scrollAction = () => {
     if (scrollPercentage === 100) return;
@@ -35,11 +46,15 @@
   };
 </script>
 
-<svelte:window bind:innerHeight={windowHeight} on:scroll={scrollAction} />
+<svelte:window
+  bind:innerHeight={windowHeight}
+  on:scroll={scrollAction}
+  on:resize={calcDeltaY}
+/>
 <div bind:this={stepEl} class="grid grid-cols-12 gap-[20px] !overflow-visible">
-  <Indicator {isIntersecting} {isLast} {scrollPercentage} />
+  <Indicator {headerDeltaY} {isIntersecting} {isLast} {scrollPercentage} />
   <div
-    class="col-span-11 space-y-[16px] pb-[65px] lg:pb-[150px] {isIntersecting
+    class="col-span-11 space-y-[2px] pb-[65px] lg:pb-[150px] {isIntersecting
       ? 'scale-100'
       : 'scale-95'} transition-transform duration-500 ease-in-out"
   >
@@ -51,7 +66,10 @@
       Step {index + 1} :
     </div>
 
-    <h4 class="{textColor()} heading-xl transition-colors duration-500">
+    <h4
+      bind:this={heraderEl}
+      class="{textColor()} heading-xl transition-colors duration-500"
+    >
       {title}
     </h4>
 
