@@ -52,7 +52,11 @@
       <div
         class="hidden items-center justify-center lg:col-span-1 lg:flex xl:col-span-2"
       >
-        <button class="xl:-translate-x-full" on:click={slideNext}>
+        <button
+          aria-label="Change Slide"
+          class="xl:-translate-x-full"
+          on:click={slideNext}
+        >
           <ChevronRightRounded />
         </button>
       </div>

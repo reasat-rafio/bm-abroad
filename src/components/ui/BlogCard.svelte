@@ -48,7 +48,7 @@
       >
         {name}
       </h3>
-      <a
+      <!-- <a
         class="body-2 hidden items-center space-x-[6px] text-slate-blue md:flex"
         href="/blogs/{slug.current}"
         title="Read the full article on {name}"
@@ -60,7 +60,7 @@
           height="8.5px"
           width="5.5px"
         />
-      </a>
+      </a> -->
     </section>
   </article>
 </a>
