@@ -44,44 +44,48 @@
       use:emblaCarouselSvelte={{ plugins, options }}
       on:emblaInit={onInit}
     >
-      <div class="relative flex space-x-[20px] md:space-x-[24px]">
+      <div class="relative -ml-[20px] flex md:-ml-[24px]">
         {#each destinations as { image, description, name, _key }}
           <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
           <article
             on:mouseenter={() => (hoverdCardKey = _key)}
             on:mouseleave={() => (hoverdCardKey = null)}
-            class="relative block h-[376px] flex-[0_0_calc(95%-24px)] overflow-hidden rounded-md md:h-[512px] md:flex-[0_0_calc(50%-24px)] xl:flex-[0_0_calc(33.33%-20px)] 2xl:flex-[0_0_calc(25%-20px)]"
+            class="flex-[0_0_100%] pl-[20px] md:flex-[0_0_50%] md:pl-[24px] xl:flex-[0_0_33.33%] 2xl:flex-[0_0_25%]"
           >
-            <SanityImage
-              class="h-full w-full object-cover"
-              src={image}
-              sizes="30vw"
-              alt={image.alt}
-              imageUrlBuilder={imageBuilder}
-            />
-
             <div
-              style="background: {hoverdCardKey === _key && !isSm
-                ? 'linear-gradient(180deg, rgba(3, 3, 3, 0.40) 0%, #502CB5 100%)'
-                : 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50%, #000 100%)'};"
-              class="absolute inset-0 flex h-full w-full flex-col items-center justify-end p-[35px] text-white transition-all duration-700 {hoverdCardKey ===
-                _key && !isSm
-                ? 'backdrop-blur-lg'
-                : ''}"
+              class="relative block h-[376px] overflow-hidden rounded-md md:h-[512px]"
             >
-              <h5
-                class="text-center font-oswald text-[40px] font-semibold uppercase"
+              <SanityImage
+                class="h-full w-full object-cover"
+                src={image}
+                sizes="30vw"
+                alt={image.alt}
+                imageUrlBuilder={imageBuilder}
+              />
+
+              <div
+                style="background: {hoverdCardKey === _key && !isSm
+                  ? 'linear-gradient(180deg, rgba(3, 3, 3, 0.40) 0%, #502CB5 100%)'
+                  : 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50%, #000 100%)'};"
+                class="absolute inset-0 flex h-full w-full flex-col items-center justify-end p-[35px] text-white transition-all duration-700 {hoverdCardKey ===
+                  _key && !isSm
+                  ? 'backdrop-blur-lg'
+                  : ''}"
               >
-                {name}
-              </h5>
-              {#if hoverdCardKey === _key && !isSm}
-                <p
-                  transition:slide={{ duration: 600 }}
-                  class="mt-[30%] text-center text-[16px] font-light leading-md"
+                <h5
+                  class="text-center font-oswald text-[40px] font-semibold uppercase"
                 >
-                  {description}
-                </p>
-              {/if}
+                  {name}
+                </h5>
+                {#if hoverdCardKey === _key && !isSm}
+                  <p
+                    transition:slide={{ duration: 600 }}
+                    class="mt-[30%] text-center text-[16px] font-light leading-md"
+                  >
+                    {description}
+                  </p>
+                {/if}
+              </div>
             </div>
           </article>
         {/each}
