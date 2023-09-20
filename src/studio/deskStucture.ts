@@ -12,6 +12,7 @@ import { GrEdit } from 'react-icons/gr';
 import { RiPagesLine } from 'react-icons/ri';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import type { ConfigContext } from 'sanity';
+import { GiIsland } from 'react-icons/gi';
 
 interface PageItemProps {
   schemaType: string;
@@ -99,6 +100,12 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
                 id: 'blogsPage',
                 title: 'Blogs',
                 icon: FcNews,
+              }),
+              pageItem(S, {
+                schemaType: 'touristsPage',
+                id: 'touristsPage',
+                title: 'Tourists Hub',
+                icon: GiIsland,
               }),
               pageItem(S, {
                 schemaType: 'contactUsPage',
