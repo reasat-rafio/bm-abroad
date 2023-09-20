@@ -15,7 +15,11 @@ const touristsPage = {
       name: 'sections',
       title: 'Sections',
       type: 'array',
-      of: [{ type: 'common.tagline' }, { type: 'common.cta' }],
+      of: [
+        { type: 'common.tagline' },
+        { type: 'touristsPage.hubs' },
+        { type: 'common.cta' },
+      ],
     },
   ],
   preview: {

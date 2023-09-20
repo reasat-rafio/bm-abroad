@@ -1,3 +1,4 @@
 import touristsPage from './document';
+import hubs from './hubs';
 
-export default [touristsPage];
+export default [touristsPage, hubs];
