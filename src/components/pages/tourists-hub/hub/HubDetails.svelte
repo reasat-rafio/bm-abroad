@@ -31,6 +31,7 @@
         class="h-full max-h-[50vh] w-full object-contain"
         sizes="100vw"
         src={image}
+        alt={image.alt}
         imageUrlBuilder={imageBuilder}
       />
     </figure>
@@ -44,8 +45,9 @@
   <figure class="hidden p-[20px] xl:col-span-5 xl:block">
     <SanityImage
       class="h-full w-full object-contain"
-      sizes="40vw"
+      sizes="(min-width: 1280px) 40vw, 90vw"
       src={image}
+      alt={image.alt}
       imageUrlBuilder={imageBuilder}
     />
   </figure>
