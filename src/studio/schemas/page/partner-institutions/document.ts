@@ -15,7 +15,11 @@ const partnerInstitutionsPage = {
       name: 'sections',
       title: 'Sections',
       type: 'array',
-      of: [{ type: 'common.cta' }],
+      of: [
+        { type: 'partnerInstitutionsPage.why' },
+        { type: 'partnerInstitutionsPage.universities' },
+        { type: 'common.cta' },
+      ],
     },
   ],
   preview: {

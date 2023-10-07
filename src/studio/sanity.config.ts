@@ -1,10 +1,10 @@
-import {defineConfig, type SchemaTypeDefinition} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
+import { defineConfig, type SchemaTypeDefinition } from 'sanity';
+import { deskTool } from 'sanity/desk';
+import { visionTool } from '@sanity/vision';
+import { schemaTypes } from './schemas';
 import { PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
-import { AppStructure} from './deskStucture';
-
+import { AppStructure } from './deskStucture';
+import { table } from '@sanity/table';
 
 export default defineConfig([
   {
@@ -17,10 +17,11 @@ export default defineConfig([
     dataset: 'production',
 
     plugins: [
-        deskTool({
+      deskTool({
         structure: AppStructure,
       }),
       visionTool(),
+      table(),
     ],
     schema: {
       types: schemaTypes as SchemaTypeDefinition[],
@@ -36,13 +37,14 @@ export default defineConfig([
     dataset: 'staging',
 
     plugins: [
-        deskTool({
+      deskTool({
         structure: AppStructure,
       }),
       visionTool(),
+      table(),
     ],
     schema: {
       types: schemaTypes as SchemaTypeDefinition[],
     },
-  }
-])
+  },
+]);

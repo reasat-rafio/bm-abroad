@@ -58,6 +58,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@sanity/table": "^1.0.1",
     "gsap": "^3.12.2"
   }
 }
