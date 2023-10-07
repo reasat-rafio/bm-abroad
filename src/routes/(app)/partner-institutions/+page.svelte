@@ -2,6 +2,7 @@
   import Cta from '@/components/Cta.svelte';
   import Seo from '@/components/Seo.svelte';
   import Why from '@/components/pages/partner-institutions/Why.svelte';
+  import Universities from '@/components/pages/partner-institutions/universities/Universities.svelte';
 
   export let data;
   $: ({
@@ -13,10 +14,11 @@
 </script>
 
 <Seo {seo} siteOgImg={ogImage} />
-
 {#each sections as props}
   {#if props._type === 'partnerInstitutionsPage.why'}
     <Why {props} />
+  {:else if props._type === 'partnerInstitutionsPage.universities'}
+    <Universities {props} />
   {:else if props._type === 'common.cta'}
     <Cta {props} />
   {/if}

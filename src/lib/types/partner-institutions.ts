@@ -38,7 +38,7 @@ export type University = {
 
 export type Program = {
   name: string;
-  courses: Row[];
+  courses: { rows: Row[] };
 };
 
 export type Row = {
