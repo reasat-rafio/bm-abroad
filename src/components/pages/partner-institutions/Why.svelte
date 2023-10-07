@@ -23,13 +23,16 @@
       />
     </h1>
 
-    <div class="grid grid-cols-2 gap-[24px]">
+    <div
+      class="mt-[90px] grid grid-cols-1 gap-[24px] lg:mt-[101px] xl:grid-cols-2"
+    >
       {#each reasons as { title, image, description }}
         <article
-          class="grid grid-cols-12 gap-[50px] rounded-lg bg-white p-[20px]"
+          class="grid grid-cols-12 rounded-lg bg-white p-[20px] max-md:gap-y-[32px] md:gap-[50px]"
         >
-          <figure class="col-span-4">
+          <figure class="col-span-12 md:col-span-4 md:py-[20px] md:pl-[20px]">
             <SanityImage
+              class="h-full max-h-[400px] w-full object-contain"
               sizes="20vw"
               src={image}
               alt={image.alt}
@@ -44,7 +47,7 @@
             >
               {title}
             </h3>
-            <p class="body-1 hidden md:block">
+            <p class="body-1">
               {description}
             </p>
           </section>
