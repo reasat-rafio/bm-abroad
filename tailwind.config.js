@@ -42,6 +42,7 @@ export default {
         oswald: ['Oswald', 'sans-serif'],
       },
       borderRadius: {
+        sm: '16px',
         md: '20px',
         lg: '25px',
       },

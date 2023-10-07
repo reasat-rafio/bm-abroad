@@ -18,7 +18,7 @@ export type TouristsHubProps = {
 
 export type Hub = {
   singleImage?: SanityImageAssetDocument;
-  college?: College[];
+  college?: College;
   title: string;
   subtitle: string;
   description: string;
@@ -27,7 +27,14 @@ export type Hub = {
 
 export type College = {
   layout: '1' | '2';
-  images: SanityImageAssetDocument[];
+  images: [
+    SanityImageAssetDocument,
+    SanityImageAssetDocument,
+    SanityImageAssetDocument,
+    SanityImageAssetDocument,
+    SanityImageAssetDocument,
+    SanityImageAssetDocument,
+  ];
 };
 
 export type AdvantagesProps = {

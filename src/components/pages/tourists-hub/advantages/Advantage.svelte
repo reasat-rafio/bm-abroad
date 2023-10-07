@@ -12,7 +12,7 @@
 
 <svelte:window bind:innerWidth />
 <article
-  class="grid grid-cols-12 gap-[32px] rounded-[24px] p-[20px] md:gap-[50px] md:p-[50px]"
+  class="grid grid-cols-12 gap-[32px] rounded-[24px] bg-white p-[20px] md:gap-[50px] md:p-[50px]"
 >
   {#if index % 2 === 1 && innerWidth >= 768}
     <section
