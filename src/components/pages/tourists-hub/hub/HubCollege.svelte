@@ -9,12 +9,12 @@
 </script>
 
 <div
-  class="grid aspect-video max-h-[1010px] grid-cols-12 grid-rows-5 gap-[24px]"
+  class="grid max-h-[80vh] grid-cols-12 grid-rows-5 gap-[9px] lg:aspect-video lg:max-h-[1010px] lg:gap-[24px]"
 >
   {#if layout === '1'}
     <SanityImage
       lqip
-      class="col-span-5 row-span-2 h-full w-full rounded-lg object-cover"
+      class="col-span-8 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-5 lg:row-span-2 lg:rounded-lg "
       sizes="30vw"
       src={img1}
       imageUrlBuilder={imageBuilder}
@@ -22,7 +22,7 @@
     />
     <SanityImage
       lqip
-      class="col-span-3 row-span-2 h-full w-full rounded-lg object-cover"
+      class="col-span-4 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-3 lg:row-span-2 lg:rounded-lg"
       sizes="30vw"
       src={img2}
       imageUrlBuilder={imageBuilder}
@@ -30,7 +30,7 @@
     />
     <SanityImage
       lqip
-      class="col-span-4 row-span-3 h-full w-full rounded-lg object-cover"
+      class="col-span-5 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-4  lg:row-span-3 lg:rounded-lg"
       sizes="30vw"
       src={img3}
       imageUrlBuilder={imageBuilder}
@@ -38,14 +38,14 @@
     />
     <SanityImage
       lqip
-      class="col-span-3 row-span-3 h-full w-full rounded-lg object-cover"
+      class="col-span-7 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-3 lg:row-span-3 lg:rounded-lg"
       sizes="30vw"
       src={img4}
       imageUrlBuilder={imageBuilder}
       alt={img4.alt}
     />
     <SanityImage
-      class="col-span-5 row-span-3 h-full w-full rounded-lg object-cover"
+      class="col-span-6 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-5 lg:row-span-3 lg:rounded-lg"
       sizes="30vw"
       src={img5}
       imageUrlBuilder={imageBuilder}
@@ -53,7 +53,7 @@
     />
     <SanityImage
       lqip
-      class="col-span-4 row-span-2 h-full w-full rounded-lg object-cover"
+      class="col-span-6 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-4 lg:row-span-2 lg:rounded-lg"
       sizes="30vw"
       src={img6}
       imageUrlBuilder={imageBuilder}
@@ -62,7 +62,7 @@
   {:else if layout === '2'}
     <SanityImage
       lqip
-      class="col-span-4 row-span-3 h-full w-full rounded-lg object-cover"
+      class="col-span-8 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-4 lg:row-span-3 lg:rounded-lg"
       sizes="30vw"
       src={img1}
       imageUrlBuilder={imageBuilder}
@@ -70,14 +70,14 @@
     />
     <SanityImage
       lqip
-      class="col-span-5 row-span-2 h-full w-full rounded-lg object-cover"
+      class="col-span-4 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-5 lg:row-span-2 lg:rounded-lg"
       sizes="30vw"
       src={img2}
       imageUrlBuilder={imageBuilder}
       alt={img2.alt}
     />
     <SanityImage
-      class="col-span-3 row-span-2 h-full w-full rounded-lg object-cover"
+      class="col-span-5 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-3 lg:row-span-2 lg:rounded-lg"
       lqip
       sizes="30vw"
       src={img3}
@@ -86,7 +86,7 @@
     />
 
     <SanityImage
-      class="col-span-3 row-span-3 h-full w-full rounded-lg object-cover "
+      class="col-span-7 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-3 lg:row-span-3 lg:rounded-lg "
       sizes="30vw"
       src={img5}
       imageUrlBuilder={imageBuilder}
@@ -94,7 +94,7 @@
     />
     <SanityImage
       lqip
-      class="col-span-5 row-span-3 h-full w-full rounded-lg object-cover"
+      class="col-span-6 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-5 lg:row-span-3 lg:rounded-lg"
       sizes="30vw"
       src={img4}
       imageUrlBuilder={imageBuilder}
@@ -103,7 +103,7 @@
 
     <SanityImage
       lqip
-      class="col-span-4 row-span-2 h-full w-full rounded-lg object-cover "
+      class="col-span-6 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-4 lg:row-span-2 lg:rounded-lg "
       sizes="30vw"
       src={img6}
       imageUrlBuilder={imageBuilder}

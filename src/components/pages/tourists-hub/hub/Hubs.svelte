@@ -8,9 +8,11 @@
 </script>
 
 <section class="">
-  <div class="container space-y-[149px] pb-[149px]">
+  <div
+    class="container space-y-[90px] pb-[90px] lg:space-y-[149px] lg:pb-[149px]"
+  >
     {#each hubs as { title, subtitle, description, image, college, singleImage }}
-      <div class="space-y-[146px]">
+      <div class="space-y-[90px] lg:space-y-[146px]">
         <HubDetails {title} {subtitle} {description} {image} />
         <HubImage {singleImage} {college} />
       </div>

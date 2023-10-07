@@ -9,8 +9,10 @@
   export let image: SanityAssetDocument;
 </script>
 
-<article class="grid grid-cols-12 gap-[91px]">
-  <section class="col-span-7 space-y-[48px] rounded-sm bg-white p-[40px]">
+<article class="grid grid-cols-12 lg:gap-[91px]">
+  <section
+    class="col-span-12 space-y-[48px] rounded-sm bg-white p-[40px] lg:col-span-7"
+  >
     <header class="space-y-[16px]">
       <h2
         class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-slate-blue transition-colors duration-500 ease-in-out group-hover:text-white"
@@ -23,13 +25,23 @@
         {subtitle}
       </h3>
     </header>
+
+    <figure class="block lg:hidden">
+      <SanityImage
+        class="h-full w-full object-cover"
+        sizes="100vw"
+        src={image}
+        imageUrlBuilder={imageBuilder}
+      />
+    </figure>
+
     <p
       class="body-1 font-light transition-colors duration-500 ease-in-out group-hover:text-white"
     >
       {description}
     </p>
   </section>
-  <figure class="col-span-5 p-[20px]">
+  <figure class="hidden p-[20px] lg:col-span-5 lg:block">
     <SanityImage
       class="h-full w-full object-cover"
       sizes="40vw"
