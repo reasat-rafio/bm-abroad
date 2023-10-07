@@ -1,5 +1,6 @@
 import { asset } from '@/lib/sanity/sanity-image';
 import { sanityClient } from '@/lib/sanity/sanityClient';
+import type { PartnerInstitutionsPageProps } from '@/lib/types/partner-institutions';
 import { error, type ServerLoad } from '@sveltejs/kit';
 import groq from 'groq';
 
@@ -25,6 +26,6 @@ export const load: ServerLoad = async () => {
   if (!data) throw error(404, { message: 'Not found' });
 
   return {
-    page: data,
+    page: data as PartnerInstitutionsPageProps,
   };
 };
