@@ -1,4 +1,7 @@
-import type { SanityImageAssetDocument } from '@sanity/client';
+import type {
+  SanityAssetDocument,
+  SanityImageAssetDocument,
+} from '@sanity/client';
 import type { CtaProps, SeoProps, TaglineProps } from './common';
 
 export type TouristsHubPageProps = {
@@ -6,7 +9,7 @@ export type TouristsHubPageProps = {
   sections: Section[];
 };
 
-type Section = TaglineProps | TouristsHubProps | CtaProps;
+type Section = TaglineProps | TouristsHubProps | AdvantagesProps | CtaProps;
 
 export type TouristsHubProps = {
   _type: 'touristsPage.hubs';
@@ -24,4 +27,17 @@ export type Hub = {
 export type College = {
   layout: '1' | '2';
   images: SanityImageAssetDocument[];
+};
+
+export type AdvantagesProps = {
+  _type: 'touristsPage.advantages';
+  image: SanityAssetDocument;
+  title: string;
+  advantages: Advantage[];
+};
+
+export type Advantage = {
+  title: string;
+  description: string;
+  image: SanityAssetDocument;
 };

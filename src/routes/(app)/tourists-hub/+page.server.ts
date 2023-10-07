@@ -7,21 +7,21 @@ import groq from 'groq';
 const query = groq`*[_id == "touristsPage"][0]{
     ...,
     sections[]{
+      ...,
+      ${asset('image')},
+      ${asset('decorators[]', { as: 'decorators' })},
+      advantages[]{
         ...,
         ${asset('image')},
-        ${asset('decorators[]', { as: 'decorators' })},
-        advantages[]{
+      },
+      hubs[]{
+        ...,
+        ${asset('singleImage')},
+        college{
           ...,
-          ${asset('image')},
+          ${asset('images[]', { as: 'images' })},
         },
-        hubs[]{
-          ...,
-          ${asset('singleImage')},
-          college{
-            ...,
-            ${asset('images[]', { as: 'images' })},
-          }
-        }
+      }
     }
 }`;
 
