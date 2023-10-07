@@ -19,11 +19,11 @@ const hubs = {
             Rule.custom(
               (field: {
                 singleImage: SanityImageAssetDocument;
-                imageCollege: SanityImageAssetDocument[];
+                college: { images: SanityImageAssetDocument[] };
               }) => {
                 const hasSingleImage = !!field?.singleImage;
                 const hasImageCollege =
-                  !!field?.imageCollege && !!field?.imageCollege?.length;
+                  !!field?.college?.images && !!field?.college?.images?.length;
 
                 if (!hasSingleImage && !hasImageCollege) {
                   return 'You must provide either a Single Image or College Images.';
@@ -38,7 +38,7 @@ const hubs = {
               type: 'image',
               options: { hotspot: true },
               hidden: ({ parent }: SanityDocument) =>
-                !!parent?.imageCollege?.length,
+                !!parent?.college?.images?.length,
               fields: [
                 {
                   name: 'alt',
@@ -50,27 +50,47 @@ const hubs = {
               ],
             },
             {
-              name: 'imageCollege',
-              type: 'array',
-              validation: (Rule: Rule) => Rule.length(6),
+              name: 'college',
+              type: 'object',
+              initialValue: '1',
               hidden: ({ parent }: SanityDocument) => !!parent?.singleImage,
-              of: [
+              fields: [
                 {
-                  name: 'singleImage',
-                  type: 'image',
-                  options: { hotspot: true },
-                  fields: [
+                  name: 'layout',
+                  type: 'string',
+                  options: {
+                    list: [
+                      { title: '1', value: '1' },
+                      { title: '2', value: '2' },
+                    ],
+                    layout: 'radio',
+                  },
+                  validation: (Rule: Rule) => Rule.required(),
+                },
+                {
+                  name: 'images',
+                  type: 'array',
+                  validation: (Rule: Rule) => Rule.length(6),
+                  of: [
                     {
-                      name: 'alt',
-                      title: 'Alternative Text',
-                      description: 'Important for SEO and accessibility',
-                      type: 'string',
-                      validation: (Rule: Rule) => Rule.required(),
+                      name: 'singleImage',
+                      type: 'image',
+                      options: { hotspot: true },
+                      fields: [
+                        {
+                          name: 'alt',
+                          title: 'Alternative Text',
+                          description: 'Important for SEO and accessibility',
+                          type: 'string',
+                          validation: (Rule: Rule) => Rule.required(),
+                        },
+                      ],
                     },
                   ],
                 },
               ],
             },
+
             {
               name: 'title',
               type: 'string',
@@ -93,7 +113,7 @@ const hubs = {
               subtitle: 'subtitle',
               description: 'description',
               singleImage: 'singleImage',
-              imageCollege: 'imageCollege',
+              imageCollege: 'college.images',
             },
             prepare: ({
               title,

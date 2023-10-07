@@ -18,6 +18,7 @@ const touristsPage = {
       of: [
         { type: 'common.tagline' },
         { type: 'touristsPage.hubs' },
+        { type: 'touristsPage.advantages' },
         { type: 'common.cta' },
       ],
     },
