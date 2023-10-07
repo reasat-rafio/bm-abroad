@@ -21,7 +21,7 @@
       {props}
     />
   {:else if props._type === 'touristsPage.hubs'}
-    <Hubs {props} />
+    <!-- <Hubs {props} /> -->
   {:else if props._type === 'common.cta'}
     <Cta {props} />
   {/if}

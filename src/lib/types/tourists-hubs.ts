@@ -15,8 +15,13 @@ export type TouristsHubProps = {
 
 export type Hub = {
   singleImage?: SanityImageAssetDocument;
-  imageCollege?: SanityImageAssetDocument[];
+  college?: College[];
   title: string;
   subtitle: string;
   description: string;
+};
+
+export type College = {
+  layout: '1' | '2';
+  images: SanityImageAssetDocument[];
 };

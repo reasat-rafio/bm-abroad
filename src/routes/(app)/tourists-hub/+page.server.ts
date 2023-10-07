@@ -10,10 +10,17 @@ const query = groq`*[_id == "touristsPage"][0]{
         ...,
         ${asset('image')},
         ${asset('decorators[]', { as: 'decorators' })},
+        advantages[]{
+          ...,
+          ${asset('image')},
+        },
         hubs[]{
+          ...,
+          ${asset('singleImage')},
+          college{
             ...,
-            ${asset('singleImage')},
-            ${asset('imageCollege[]', { as: 'imageCollege' })},
+            ${asset('images[]', { as: 'images' })},
+          }
         }
     }
 }`;
