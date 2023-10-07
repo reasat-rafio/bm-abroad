@@ -8,7 +8,7 @@
   export let name: string;
 </script>
 
-<section class="relative max-h-[360px]">
+<section class="relative h-[360px]">
   <SanityImage
     class="h-full w-full object-cover"
     sizes="70vw"
@@ -18,7 +18,7 @@
   />
 
   <figure
-    class="absolute bottom-0 left-[40px] translate-y-1/2 rounded-[16px] bg-white p-[21px]"
+    class="absolute bottom-0 left-[40px] max-w-[133px] translate-y-1/2 rounded-[16px] bg-white p-[14px] lg:max-w-[192px] lg:p-[21px]"
   >
     <SanityImage
       class="h-full w-full object-contain"

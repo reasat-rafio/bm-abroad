@@ -13,14 +13,14 @@
     >
       {name}
     </h3>
-    <p>{location}</p>
+    <p class="body-2">{location}</p>
   </div>
-  <!-- <a
-    class="flex space-x-[12px] rounded-[45px] border border-slate-blue px-[28px] py-[16px] text-[16px] font-medium text-slate-blue"
+  <a
+    class="flex border-slate-blue md:space-x-[12px] md:rounded-[45px] md:border md:px-[28px] md:py-[16px] md:text-[16px] md:font-medium md:text-slate-blue"
     href={link.href}
-    ><span>
+    ><span class="hidden md:block">
       {link.title}
     </span>
     <img src="/icons/link.svg" alt="Link" />
-  </a> -->
+  </a>
 </section>

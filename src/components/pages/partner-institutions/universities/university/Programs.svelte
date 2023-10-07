@@ -12,7 +12,7 @@
 </script>
 
 <div>
-  <h4 class="heading-lg-secondary">
+  <h4 class="heading-lg-secondary mb-[14px]">
     {name}
   </h4>
 
@@ -22,8 +22,8 @@
         {#each head.cells as cell, index}
           <th
             class={twMerge(
-              'px-[20px] py-[12px] text-left text-[20px] font-semibold',
-              index === 1 && 'pr-[10%] text-right',
+              'text-left text-[12px] font-semibold max-lg:p-[10px] lg:px-[20px] lg:py-[12px] lg:text-[20px]',
+              index === 1 && 'lg:pr-[10%] lg:text-right',
             )}>{cell}</th
           >
         {/each}
@@ -35,8 +35,8 @@
           {#each cells as cell, index}
             <td
               class={twMerge(
-                'px-[20px] py-[14px] text-[18px]',
-                index === 1 && 'pr-[10%] text-right',
+                'text-[14px] max-lg:p-[10px] lg:px-[20px] lg:py-[14px] lg:text-[18px]',
+                index === 1 && 'lg:pr-[10%] lg:text-right',
               )}>{cell}</td
             >
           {/each}

@@ -10,14 +10,14 @@
 
 <article
   style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
-  class="rounded-[15px] bg-white"
+  class="overflow-hidden rounded-[15px] bg-white"
 >
   <CoverPhoto {coverPhoto} {logo} {name} />
 
-  <section class="p-[40px]">
+  <section class="p-[20px] lg:p-[40px]">
     <Title {link} {name} {location} />
 
-    <section class="mt-[72px] space-y-[60px]">
+    <section class="mt-[46px] space-y-[60px] md:mt-[72px]">
       {#each programs as program}
         <Programs {program} />
       {/each}
