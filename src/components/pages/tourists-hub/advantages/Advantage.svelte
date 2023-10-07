@@ -50,7 +50,7 @@
       class="col-span-12 flex flex-col justify-center space-y-[24px] md:col-span-7"
     >
       <h3
-        class="text-center font-oswald text-[24px] font-semibold uppercase leading-none text-space-blue transition-colors duration-500 group-hover:text-white md:text-left md:text-[24px] xl:text-h2"
+        class="text-center font-oswald text-[24px] font-semibold uppercase leading-none text-space-blue transition-colors duration-500 group-hover:text-white max-md:pb-[16px] md:text-left md:text-[24px] xl:text-h2"
       >
         {title}
       </h3>

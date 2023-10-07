@@ -9,9 +9,9 @@
   export let image: SanityAssetDocument;
 </script>
 
-<article class="grid grid-cols-12 lg:gap-[91px]">
+<article class="grid grid-cols-12 lg:gap-[50px] 2xl:gap-[91px]">
   <section
-    class="col-span-12 space-y-[48px] rounded-sm bg-white p-[40px] lg:col-span-7"
+    class="col-span-12 space-y-[48px] rounded-sm bg-white p-[40px] xl:col-span-7"
   >
     <header class="space-y-[16px]">
       <h2
@@ -26,9 +26,9 @@
       </h3>
     </header>
 
-    <figure class="block lg:hidden">
+    <figure class="block xl:hidden">
       <SanityImage
-        class="h-full w-full object-cover"
+        class="h-full max-h-[50vh] w-full object-contain"
         sizes="100vw"
         src={image}
         imageUrlBuilder={imageBuilder}
@@ -41,9 +41,9 @@
       {description}
     </p>
   </section>
-  <figure class="hidden p-[20px] lg:col-span-5 lg:block">
+  <figure class="hidden p-[20px] xl:col-span-5 xl:block">
     <SanityImage
-      class="h-full w-full object-cover"
+      class="h-full w-full object-contain"
       sizes="40vw"
       src={image}
       imageUrlBuilder={imageBuilder}
