@@ -13,6 +13,7 @@ import { RiPagesLine } from 'react-icons/ri';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import type { ConfigContext } from 'sanity';
 import { GiIsland } from 'react-icons/gi';
+import { BiSolidBusiness } from 'react-icons/bi';
 
 interface PageItemProps {
   schemaType: string;
@@ -106,6 +107,12 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
                 id: 'touristsPage',
                 title: 'Tourists Hub',
                 icon: GiIsland,
+              }),
+              pageItem(S, {
+                schemaType: 'partnerInstitutionsPage',
+                id: 'partnerInstitutionsPage',
+                title: 'Partner Institutions',
+                icon: BiSolidBusiness,
               }),
               pageItem(S, {
                 schemaType: 'contactUsPage',
