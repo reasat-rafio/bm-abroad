@@ -62,7 +62,7 @@
   {#if !!scrollSnaps?.length}
     <nav class="flex items-center justify-center pt-[68px] lg:pt-[34px]">
       <div class="flex space-x-[8px]">
-        {#each blogs as _, index}
+        {#each scrollSnaps as _, index}
           <DotButton
             active={index === selectedIndex}
             clickAction={() => {
