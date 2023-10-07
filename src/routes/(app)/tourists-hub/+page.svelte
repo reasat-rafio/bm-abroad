@@ -2,6 +2,7 @@
   import Cta from '@/components/Cta.svelte';
   import Seo from '@/components/Seo.svelte';
   import Tagline from '@/components/Tagline.svelte';
+  import Hubs from '@/components/pages/tourists-hub/hub/Hubs.svelte';
   import Advantages from '@/components/pages/tourists-hub/advantages/Advantages.svelte';
 
   export let data;
@@ -23,7 +24,7 @@
   {:else if props._type === 'touristsPage.advantages'}
     <Advantages {props} />
   {:else if props._type === 'touristsPage.hubs'}
-    <!-- <Hubs {props} /> -->
+    <Hubs {props} />
   {:else if props._type === 'common.cta'}
     <Cta {props} />
   {/if}

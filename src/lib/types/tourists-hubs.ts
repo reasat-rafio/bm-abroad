@@ -22,6 +22,7 @@ export type Hub = {
   title: string;
   subtitle: string;
   description: string;
+  image: SanityImageAssetDocument;
 };
 
 export type College = {

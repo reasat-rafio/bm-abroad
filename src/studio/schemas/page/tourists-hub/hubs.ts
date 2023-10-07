@@ -1,6 +1,6 @@
 import type { SanityDocument, SanityImageAssetDocument } from '@sanity/client';
 import { GiIsland } from 'react-icons/gi';
-import type { DefaultPreviewProps, Rule } from 'sanity';
+import type { Rule } from 'sanity';
 
 const hubs = {
   name: 'touristsPage.hubs',
@@ -106,28 +106,28 @@ const hubs = {
               type: 'text',
               validation: (Rule: Rule) => Rule.required(),
             },
+            {
+              name: 'image',
+              type: 'image',
+              options: { hotspot: true },
+              validation: (Rule: Rule) => Rule.required(),
+              fields: [
+                {
+                  name: 'alt',
+                  title: 'Alternative Text',
+                  description: 'Important for SEO and accessibility',
+                  type: 'string',
+                  validation: (Rule: Rule) => Rule.required(),
+                },
+              ],
+            },
           ],
           preview: {
             select: {
               title: 'title',
               subtitle: 'subtitle',
-              description: 'description',
-              singleImage: 'singleImage',
-              imageCollege: 'college.images',
+              media: 'image',
             },
-            prepare: ({
-              title,
-              subtitle,
-              singleImage,
-              imageCollege,
-            }: DefaultPreviewProps & {
-              singleImage: SanityImageAssetDocument;
-              imageCollege: SanityImageAssetDocument[];
-            }) => ({
-              title,
-              subtitle,
-              media: singleImage ? singleImage : imageCollege[0],
-            }),
           },
         },
       ],

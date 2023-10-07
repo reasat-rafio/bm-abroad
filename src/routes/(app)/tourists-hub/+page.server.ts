@@ -16,6 +16,7 @@ const query = groq`*[_id == "touristsPage"][0]{
       },
       hubs[]{
         ...,
+        ${asset('image')},
         ${asset('singleImage')},
         college{
           ...,
