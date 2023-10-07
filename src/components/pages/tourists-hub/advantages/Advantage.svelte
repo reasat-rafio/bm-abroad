@@ -12,7 +12,7 @@
 
 <svelte:window bind:innerWidth />
 <article
-  class="grid grid-cols-12 gap-[32px] rounded-[24px] bg-white p-[20px] md:gap-[50px] md:p-[50px]"
+  class="grid grid-cols-12 rounded-[24px] bg-white p-[20px] max-md:gap-y-[32px] md:gap-[50px] md:p-[50px]"
 >
   {#if index % 2 === 1 && innerWidth >= 768}
     <section
@@ -40,7 +40,7 @@
     <figure class="col-span-12 md:col-span-5">
       <SanityImage
         class="h-full w-full object-contain"
-        sizes="20vw"
+        sizes="(min-width: 768px) 20vw, 90vw"
         src={image}
         alt={image.alt}
         imageUrlBuilder={imageBuilder}
