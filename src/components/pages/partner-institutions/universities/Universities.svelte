@@ -10,7 +10,7 @@
 
 <section>
   <div class="mx-auto max-w-[1058px] px-[20px]">
-    <h2 class="heading-2xl text-center">
+    <h2 class="text-center heading-2xl">
       <PortableText
         value={title}
         components={{

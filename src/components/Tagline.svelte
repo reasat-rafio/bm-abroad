@@ -5,30 +5,53 @@
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { TaglineProps } from '@/lib/types/common';
   import { twMerge } from 'tailwind-merge';
+  import { onMount } from 'svelte';
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
   export let props: TaglineProps;
   $: ({ title, decorators } = props);
   $: [decor1, decor2] = decorators;
+  let sectionEl: HTMLElement;
+  let headerEl: HTMLHeadElement;
+
+  onMount(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.from(headerEl, {
+        y: '100%',
+        duration: 0.7,
+        scrollTrigger: sectionEl,
+        ease: 'power4.inOut',
+      });
+    });
+
+    return () => ctx.revert();
+  });
 </script>
 
 <section
+  bind:this={sectionEl}
   class="{twMerge(
     'overflow-hidden pb-[130px] md:pb-[200px] xl:pb-[410px]',
     $$props.class,
   )} "
 >
   <div class="container relative">
-    <h1 class="heading-2xl text-center">
-      <PortableText
-        value={title}
-        components={{
-          marks: {
-            // @ts-ignore
-            gradientPurpleBlue: GradientPurpleBlue,
-          },
-        }}
-      />
-    </h1>
+    <div class="overflow-hidden">
+      <h1 bind:this={headerEl} class="text-center heading-2xl">
+        <PortableText
+          value={title}
+          components={{
+            marks: {
+              // @ts-ignore
+              gradientPurpleBlue: GradientPurpleBlue,
+            },
+          }}
+        />
+      </h1>
+    </div>
 
     {#if !!decor1}
       <figure

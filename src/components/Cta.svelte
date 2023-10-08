@@ -6,12 +6,38 @@
   import GradientPurpleBlue from './GradientPurpleBlue.svelte';
   import type { CtaProps } from '@/lib/types/common';
   import { twMerge } from 'tailwind-merge';
+  import { onMount } from 'svelte';
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
   export let props: CtaProps;
   $: ({ title, description, link, image } = props);
+
+  let sectionEl: HTMLElement;
+  onMount(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.from(sectionEl, {
+        y: 100,
+        scale: 0.9,
+        duration: 0.7,
+        scrollTrigger: {
+          trigger: sectionEl,
+          start: '100px bottom',
+        },
+        ease: 'power4.inOut',
+      });
+    });
+
+    return () => ctx.revert();
+  });
 </script>
 
-<section class="container relative pb-[62px] md:pb-[160px]">
+<section
+  bind:this={sectionEl}
+  class="container relative pb-[62px] md:pb-[160px]"
+>
   <article
     style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
     class=" relative z-10 grid grid-cols-1 gap-5 rounded-[32px] bg-white px-[20px] py-[44px] md:px-[40px] md:py-[70px] lg:grid-cols-2 xl:px-[111px] xl:py-[83px]"
