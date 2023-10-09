@@ -24,7 +24,7 @@
         duration: 0.7,
         scrollTrigger: {
           trigger: sectionEl,
-          start: '100px bottom',
+          start: '5% bottom',
         },
         ease: 'power4.inOut',
       });

@@ -12,6 +12,7 @@
   export let image: SanityAssetDocument;
 
   let sectionEl: HTMLElement;
+  let articleEl: HTMLElement;
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger);
     let childAnimationEls = sectionEl?.querySelectorAll('[data-animate]');
@@ -19,8 +20,8 @@
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: sectionEl,
-          start: '-70% bottom',
+          trigger: articleEl,
+          start: '5% bottom',
         },
         defaults: {
           ease: 'power4.inOut',
@@ -44,7 +45,10 @@
   });
 </script>
 
-<article class="grid grid-cols-12 lg:gap-[50px] 2xl:gap-[91px]">
+<article
+  bind:this={articleEl}
+  class="grid grid-cols-12 lg:gap-[50px] 2xl:gap-[91px]"
+>
   <section
     bind:this={sectionEl}
     class="col-span-12 space-y-[48px] rounded-sm bg-white p-[40px] xl:col-span-7"
@@ -76,14 +80,14 @@
 
     <p
       data-animate
-      class="font-light transition-colors duration-500 ease-in-out body-1 group-hover:text-white"
+      class="body-1 font-light transition-colors duration-500 ease-in-out group-hover:text-white"
     >
       {description}
     </p>
   </section>
   <figure class="hidden p-[20px] xl:col-span-5 xl:block">
     <SanityImage
-      class="object-contain w-full h-full"
+      class="h-full w-full object-contain"
       sizes="(min-width: 1280px) 40vw, 90vw"
       src={image}
       alt={image.alt}
