@@ -11,7 +11,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<section class="max-lg:mb-[90px]">
+<section class="max-lg:pb-[90px]">
   <div class="container">
     <div class="max-lg:space-y-[90px]">
       {#each abouts as about, index (about._key)}

@@ -3,8 +3,9 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
-  import { gsap, ScrollTrigger } from '@/lib/gsap';
   import { onMount } from 'svelte';
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
   export let about: About;
   $: ({ title, subtitle, image, description } = about);
@@ -17,9 +18,11 @@
   $: marginBottom = deltaSpacing > 0 ? deltaSpacing + 140 : 140;
 
   onMount(() => {
+    gsap.registerPlugin(ScrollTrigger);
     updateDeltaSpacing();
-    triggerAnimation();
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+
+    const ctx = gsap.context(() => triggerAnimation());
+    return () => ctx.revert();
   });
 
   const updateDeltaSpacing = () => {
@@ -36,7 +39,7 @@
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: imageEl,
-        start: 'center bottom',
+        start: '30% bottom',
       },
       defaults: {
         ease: 'power4.inOut',

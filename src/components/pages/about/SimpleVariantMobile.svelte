@@ -3,8 +3,9 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
-  import { gsap, ScrollTrigger } from '@/lib/gsap';
   import { onMount } from 'svelte';
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
   export let about: About;
   $: ({ title, subtitle, image, description } = about);
@@ -33,8 +34,9 @@
   };
 
   onMount(() => {
-    triggerAnimation();
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => triggerAnimation());
+    return () => ctx.revert();
   });
 </script>
 

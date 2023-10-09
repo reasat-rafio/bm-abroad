@@ -4,7 +4,8 @@
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
   import { onMount } from 'svelte';
-  import { gsap, ScrollTrigger } from '@/lib/gsap';
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
   export let about: About;
   $: ({ title, subtitle, image, description } = about);
@@ -13,44 +14,37 @@
   let contentContaineElHeight = 0;
   let imageEl: HTMLElement;
 
-  const upateExtraSpacing = () => {
-    if (!!!contentContainerEl) return;
-    contentContaineElHeight = contentContainerEl.getBoundingClientRect().height;
-  };
-
-  const triggerAnimation = () => {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: imageEl,
-        start: 'center bottom',
-      },
-      defaults: {
-        ease: 'power4.inOut',
-        duration: 1,
-      },
-    });
-    timeline.from(contentContainerEl, { y: '100%' }).from(
-      contentContainerEl.querySelectorAll('[data-animate]'),
-      {
-        opacity: 0,
-        y: 10,
-        stagger: 0.1,
-      },
-      '-=0.5',
-    );
-  };
-
   onMount(() => {
-    upateExtraSpacing();
-    triggerAnimation();
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: imageEl,
+          start: 'center bottom',
+        },
+        defaults: {
+          ease: 'power4.inOut',
+          duration: 1,
+        },
+      });
+      tl.from(contentContainerEl, { y: '100%' }).from(
+        contentContainerEl.querySelectorAll('[data-animate]'),
+        {
+          opacity: 0,
+          y: 10,
+          stagger: 0.1,
+        },
+        '-=0.5',
+      );
+    });
+
+    return () => ctx.revert();
   });
 </script>
 
-<svelte:window on:resize={upateExtraSpacing} />
 <article
-  class="relative"
   style="margin-bottom: {contentContaineElHeight / 2 + 140}px;"
+  class="relative"
 >
   <figure
     bind:this={imageEl}
@@ -68,6 +62,7 @@
 
   <div
     bind:this={contentContainerEl}
+    bind:clientHeight={contentContaineElHeight}
     class="group absolute bottom-0 left-0 max-w-[788px] translate-x-[7.5%] translate-y-1/2 space-y-[48px] rounded-[16px] bg-white/70 p-[50px] backdrop-blur-md transition-colors duration-300 ease-in-out hover:bg-[#1B1464] hover:bg-opacity-90 hover:shadow-cta xl:translate-x-[15%]"
   >
     <header class="space-y-[16px]">
