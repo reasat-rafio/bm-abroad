@@ -17,7 +17,13 @@
         class="flex space-x-[9px] transition-colors duration-500 hover:text-slate-blue"
         href="tel:{contactNumber}"
       >
-        <img height="20px" width="20px" src="/icons/mobile.svg" alt="mobile" />
+        <img
+          height="20px"
+          width="20px"
+          src="/icons/mobile.svg"
+          alt="mobile"
+          loading="lazy"
+        />
         <span>{contactNumber} </span>
       </a>
       <div class="flex space-x-[9px]">

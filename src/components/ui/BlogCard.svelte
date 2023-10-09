@@ -36,6 +36,7 @@
         class="flex items-center space-x-[14px] pb-[8px] text-[14px] text-black/40 md:pb-[16px]"
       >
         <img
+          loading="lazy"
           src="/icons/calender.svg"
           alt="calender"
           class="h-max w-max object-contain"

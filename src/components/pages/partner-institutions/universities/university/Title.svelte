@@ -21,6 +21,12 @@
     ><span class="hidden md:block">
       {link.title}
     </span>
-    <img src="/icons/link.svg" alt="Link" width="14" height="14" />
+    <img
+      loading="lazy"
+      src="/icons/link.svg"
+      alt="Link"
+      width="14"
+      height="14"
+    />
   </a>
 </section>

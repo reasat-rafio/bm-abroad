@@ -110,9 +110,10 @@
         </div>
       {:else}
         <img
+          loading="lazy"
           class="inline h-4 w-4 object-contain"
           src="/icons/message.svg"
-          alt=""
+          alt="Send Message"
         />
       {/if}
       <span class="inline">Send Message</span>

@@ -25,7 +25,7 @@
       <div
         class="flex items-center space-x-[8px] pb-[24px] text-[12px] text-black/40"
       >
-        <img src="/icons/calender.svg" alt="calender" />
+        <img loading="lazy" src="/icons/calender.svg" alt="calender" />
         <span>{formatDate(_createdAt)}</span>
       </div>
 

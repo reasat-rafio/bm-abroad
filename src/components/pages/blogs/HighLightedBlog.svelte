@@ -67,7 +67,11 @@
           class="flex max-md:pb-[16px] md:flex-[40%] md:items-end md:justify-end"
         >
           <div class="flex items-center space-x-[8px] text-[14px] text-white">
-            <img src="/icons/calender-white.svg" alt="calender" />
+            <img
+              src="/icons/calender-white.svg"
+              alt="calender"
+              loading="lazy"
+            />
             <span>{formatDate(_createdAt)}</span>
           </div>
         </div>
