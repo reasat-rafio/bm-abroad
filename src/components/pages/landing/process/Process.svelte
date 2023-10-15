@@ -11,21 +11,6 @@
   let allStepsComplete = false;
   let decorEl: HTMLElement;
   let windowWidth = 0;
-
-  // $: if (decorEl) {
-  //   if (allStepsComplete) {
-  //     animate(
-  //       decorEl,
-  //       { x: ['-50%', `${windowWidth}px`], y: ['0%', '250%'] },
-  //       { duration: 2 },
-  //     );
-  //   } else
-  //     animate(
-  //       decorEl,
-  //       { x: [`${windowWidth}px`, '-50%'], y: ['250%', '0%'] },
-  //       { duration: 1.2 },
-  //     );
-  // }
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />

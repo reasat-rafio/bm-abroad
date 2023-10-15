@@ -11,10 +11,10 @@
 
 <section>
   <div class="container">
-    <SectionHeader class="mb-[148px]" {title} {subtitle} />
+    <SectionHeader class="mb-lg lg:mb-2xl" {title} {subtitle} />
     <Detail {image} {services} />
     {#if !!steps?.length}
-      <div class="pb-[148px]">
+      <div class="mb-[49px] lg:mb-[128px]">
         {#each steps as { title, description }, index}
           <Step
             {title}
@@ -26,7 +26,7 @@
       </div>
     {/if}
     {#if !!gallery}
-      <section class="pb-[148px]">
+      <section class="mb-lg lg:mb-2xl">
         <Gallery {...gallery} />
       </section>
     {/if}

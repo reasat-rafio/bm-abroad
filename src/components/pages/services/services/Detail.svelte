@@ -8,8 +8,20 @@
   export let services: Service[];
 </script>
 
-<section class="mx-auto grid max-w-[1330px] grid-cols-2 pb-[148px]">
-  <ul class="space-y-[32px] pr-[159px]">
+<section
+  class="mx-auto grid max-w-[1330px] grid-cols-1 pb-[148px] max-lg:gap-y-[32px] lg:grid-cols-2"
+>
+  <figure class="block lg:hidden">
+    <SanityImage
+      class="h-full w-full rounded-lg object-cover"
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      alt={image.alt}
+      src={image}
+      imageUrlBuilder={imageBuilder}
+    />
+  </figure>
+
+  <ul class="space-y-[32px] lg:pr-lg xl:pr-xl 2xl:pr-[159px]">
     {#each services as { title, description, icon }}
       <li class="space-y-[8px]">
         <div class="flex items-center gap-x-[12px]">
@@ -31,10 +43,10 @@
     {/each}
   </ul>
 
-  <figure>
+  <figure class="hidden lg:block">
     <SanityImage
       class="h-full w-full rounded-lg object-cover"
-      sizes="50vw"
+      sizes="(min-width: 1024px) 50vw, 100vw"
       alt={image.alt}
       src={image}
       imageUrlBuilder={imageBuilder}

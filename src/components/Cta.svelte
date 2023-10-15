@@ -34,10 +34,7 @@
   });
 </script>
 
-<section
-  bind:this={sectionEl}
-  class="container relative pb-[62px] md:pb-[160px]"
->
+<section bind:this={sectionEl} class="container relative pb-[62px] md:pb-2xl">
   <article
     style="box-shadow: 0px 30px 60px 0px rgba(89, 86, 230, 0.10);"
     class=" relative z-10 grid grid-cols-1 gap-5 rounded-[32px] bg-white px-[20px] py-[44px] md:px-[40px] md:py-[70px] lg:grid-cols-2 xl:px-[111px] xl:py-[83px]"
