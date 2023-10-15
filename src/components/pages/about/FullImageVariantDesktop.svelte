@@ -63,7 +63,7 @@
   <div
     bind:this={contentContainerEl}
     bind:clientHeight={contentContaineElHeight}
-    class="group absolute bottom-0 left-0 max-w-[788px] translate-x-[7.5%] translate-y-1/2 space-y-[48px] rounded-[16px] bg-white/70 p-[50px] backdrop-blur-md transition-colors duration-300 ease-in-out hover:bg-[#1B1464] hover:bg-opacity-90 hover:shadow-cta xl:translate-x-[15%]"
+    class="group absolute bottom-0 left-0 max-w-[788px] translate-x-[7.5%] translate-y-1/2 space-y-[48px] rounded-[16px] bg-white/70 p-[50px] backdrop-blur-md transition-all duration-300 ease-in-out hover:bg-[#1B1464] hover:bg-opacity-90 hover:shadow-cta xl:translate-x-[15%]"
   >
     <header class="space-y-[16px]">
       <h2
