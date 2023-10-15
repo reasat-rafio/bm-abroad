@@ -4,6 +4,7 @@ import letsTalk from './contact-us';
 import blogs from './blogs';
 import touristsHub from './tourists-hub';
 import partnerInstitutions from './partner-institutions';
+import services from './services';
 
 export default [
   ...landing,
@@ -12,4 +13,5 @@ export default [
   ...blogs,
   ...touristsHub,
   ...partnerInstitutions,
+  ...services,
 ];

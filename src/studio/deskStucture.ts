@@ -97,12 +97,6 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
                 icon: FcAbout,
               }),
               pageItem(S, {
-                schemaType: 'blogsPage',
-                id: 'blogsPage',
-                title: 'Blogs',
-                icon: FcNews,
-              }),
-              pageItem(S, {
                 schemaType: 'touristsPage',
                 id: 'touristsPage',
                 title: 'Tourists Hub',
@@ -114,6 +108,19 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
                 title: 'Partner Institutions',
                 icon: BiSolidBusiness,
               }),
+              pageItem(S, {
+                schemaType: 'servicesPage',
+                id: 'servicesPage',
+                title: 'Services',
+                icon: FcServices,
+              }),
+              pageItem(S, {
+                schemaType: 'blogsPage',
+                id: 'blogsPage',
+                title: 'Blogs',
+                icon: FcNews,
+              }),
+
               pageItem(S, {
                 schemaType: 'contactUsPage',
                 id: 'contactUsPage',
