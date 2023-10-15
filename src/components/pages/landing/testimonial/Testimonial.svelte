@@ -16,7 +16,7 @@
 
   let emblaApi: EmblaCarouselType;
   let plugins: EmblaPluginType[] = [Autoplay()];
-  let options: Partial<EmblaOptionsType> = { align: 'center' };
+  let options: Partial<EmblaOptionsType> = { align: 'center', loop: true };
 
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
     emblaApi = event.detail;

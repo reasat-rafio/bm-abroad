@@ -17,12 +17,12 @@
     let imagesEl = clgContainerEl?.querySelectorAll('.clg-image');
 
     const ctx = gsap.context(() => {
-      gsap.from(imagesEl, {
+      gsap.to(imagesEl, {
         scrollTrigger: {
           trigger: clgContainerEl,
           start: '-20% bottom',
         },
-        y: 50,
+        y: 0,
         stagger: 0.1,
         ease: 'power4.inOut',
         duration: 1.6,
@@ -40,7 +40,7 @@
   {#if layout === '1'}
     <SanityImage
       lqip
-      class="clg-image col-span-8 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-5 lg:row-span-2 lg:rounded-lg "
+      class="clg-image col-span-8 row-span-1 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-5 lg:row-span-2 lg:rounded-lg"
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img1}
       imageUrlBuilder={imageBuilder}
@@ -48,7 +48,7 @@
     />
     <SanityImage
       lqip
-      class="clg-image col-span-4 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-3 lg:row-span-2 lg:rounded-lg"
+      class="clg-image col-span-4 row-span-1 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-3 lg:row-span-2 lg:rounded-lg"
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img2}
       imageUrlBuilder={imageBuilder}
@@ -56,7 +56,7 @@
     />
     <SanityImage
       lqip
-      class="clg-image col-span-5 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-4  lg:row-span-3 lg:rounded-lg"
+      class="clg-image col-span-5 row-span-2 h-full w-full translate-y-[50px] rounded-[8px] object-cover  lg:col-span-4 lg:row-span-3 lg:rounded-lg"
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img3}
       imageUrlBuilder={imageBuilder}
@@ -64,14 +64,14 @@
     />
     <SanityImage
       lqip
-      class="clg-image col-span-7 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-3 lg:row-span-3 lg:rounded-lg"
+      class="clg-image col-span-7 row-span-2 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-3 lg:row-span-3 lg:rounded-lg"
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img4}
       imageUrlBuilder={imageBuilder}
       alt={img4.alt}
     />
     <SanityImage
-      class="clg-image col-span-6 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-5 lg:row-span-3 lg:rounded-lg"
+      class="clg-image col-span-6 row-span-2 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-5 lg:row-span-3 lg:rounded-lg"
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img5}
       imageUrlBuilder={imageBuilder}
@@ -79,7 +79,7 @@
     />
     <SanityImage
       lqip
-      class="clg-image col-span-6 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-4 lg:row-span-2 lg:rounded-lg"
+      class="clg-image col-span-6 row-span-1 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-4 lg:row-span-2 lg:rounded-lg"
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img6}
       imageUrlBuilder={imageBuilder}
@@ -88,7 +88,7 @@
   {:else if layout === '2'}
     <SanityImage
       lqip
-      class="clg-image col-span-8 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-4 lg:row-span-3 lg:rounded-lg"
+      class="clg-image col-span-8 row-span-1 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-4 lg:row-span-3 lg:rounded-lg"
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img1}
       imageUrlBuilder={imageBuilder}
@@ -96,14 +96,14 @@
     />
     <SanityImage
       lqip
-      class="clg-image col-span-4 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-5 lg:row-span-2 lg:rounded-lg"
+      class="clg-image col-span-4 row-span-1 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-5 lg:row-span-2 lg:rounded-lg"
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img2}
       imageUrlBuilder={imageBuilder}
       alt={img2.alt}
     />
     <SanityImage
-      class="clg-image col-span-5 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-3 lg:row-span-2 lg:rounded-lg"
+      class="clg-image col-span-5 row-span-2 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-3 lg:row-span-2 lg:rounded-lg"
       lqip
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img3}
@@ -112,7 +112,7 @@
     />
 
     <SanityImage
-      class="clg-image col-span-7 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-3 lg:row-span-3 lg:rounded-lg "
+      class="clg-image col-span-7 row-span-2 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-3 lg:row-span-3 lg:rounded-lg "
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img5}
       imageUrlBuilder={imageBuilder}
@@ -120,7 +120,7 @@
     />
     <SanityImage
       lqip
-      class="clg-image col-span-6 row-span-2 h-full w-full rounded-[8px] object-cover lg:col-span-5 lg:row-span-3 lg:rounded-lg"
+      class="clg-image col-span-6 row-span-2 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-5 lg:row-span-3 lg:rounded-lg"
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img4}
       imageUrlBuilder={imageBuilder}
@@ -129,7 +129,7 @@
 
     <SanityImage
       lqip
-      class="clg-image col-span-6 row-span-1 h-full w-full rounded-[8px] object-cover lg:col-span-4 lg:row-span-2 lg:rounded-lg "
+      class="clg-image col-span-6 row-span-1 h-full w-full translate-y-[50px] rounded-[8px] object-cover lg:col-span-4 lg:row-span-2 lg:rounded-lg "
       sizes="(min-width: 768px) 30vw, 50vw"
       src={img6}
       imageUrlBuilder={imageBuilder}
