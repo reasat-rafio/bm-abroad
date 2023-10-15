@@ -1,4 +1,4 @@
-import { FcAbout } from 'react-icons/fc';
+import { FcAbout, FcServices } from 'react-icons/fc';
 import type { Rule } from 'sanity';
 
 const about = {
@@ -49,6 +49,44 @@ const about = {
           description: 'Important for SEO and accessibility',
           type: 'string',
           validation: (Rule: Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      name: 'services',
+      validation: (Rule: Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          name: 'service',
+          type: 'object',
+          icon: FcServices,
+          validation: (Rule: Rule) => Rule.required(),
+          fields: [
+            {
+              name: 'image',
+              type: 'image',
+              validation: (Rule: Rule) => Rule.required(),
+              options: { hotspot: true },
+            },
+            {
+              name: 'name',
+              type: 'string',
+              validation: (Rule: Rule) => Rule.required(),
+            },
+            {
+              name: 'description',
+              type: 'text',
+              validation: (Rule: Rule) => Rule.required(),
+            },
+          ],
+          preview: {
+            select: {
+              title: 'name',
+              subtitle: 'description',
+              media: 'image',
+            },
+          },
         },
       ],
     },

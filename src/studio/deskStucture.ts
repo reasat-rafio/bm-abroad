@@ -131,13 +131,6 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
         ),
       S.divider(),
       orderableDocumentListDeskItem({
-        type: 'service',
-        S,
-        context,
-        title: 'Services',
-        icon: FcServices,
-      }),
-      orderableDocumentListDeskItem({
         type: 'blog',
         S,
         context,

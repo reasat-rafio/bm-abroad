@@ -2,10 +2,8 @@
   import About from '@/components/pages/landing/About.svelte';
   import Hero from '@/components/pages/landing/Hero.svelte';
   import Cta from '@/components/Cta.svelte';
-  import Service from '@/components/pages/landing/Service.svelte';
   import Testimonial from '@/components/pages/landing/testimonial/Testimonial.svelte';
   import Destination from '@/components/pages/landing/destination/Destination.svelte';
-  import Process from '@/components/pages/landing/process/Process.svelte';
   import Tagline from '@/components/Tagline.svelte';
   import Seo from '@/components/Seo.svelte';
   import MoreBlogs from '@/components/pages/landing/MoreBlogs.svelte';
@@ -15,7 +13,7 @@
     site: {
       logos: { ogImage },
     },
-    page: { sections, services, seo, moreBlogs },
+    page: { sections, seo, moreBlogs },
   } = data);
 </script>
 
@@ -27,11 +25,8 @@
     <Tagline {props} />
   {:else if props._type === 'landingPage.about'}
     <About {props} />
-    <Service {services} />
   {:else if props._type === 'landingPage.testimonial'}
     <Testimonial {props} />
-  {:else if props._type === 'landingPage.process'}
-    <Process {props} />
   {:else if props._type === 'landingPage.destination'}
     <Destination {props} />
   {:else if props._type === 'common.cta'}

@@ -4,7 +4,6 @@ import type { MoreBlog } from './[blog]';
 
 export type LandingPageProps = {
   seo: SeoProps;
-  services: Service[];
   sections: Section[];
   moreBlogs: MoreBlog[];
 };
@@ -15,8 +14,7 @@ type Section =
   | AboutProps
   | TestimonialProps
   | CtaProps
-  | DestinationsProps
-  | ProcessProps;
+  | DestinationsProps;
 
 export type Service = {
   _id: string;
@@ -44,6 +42,7 @@ export type AboutProps = {
   description: string;
   image: SanityImageAssetDocument;
   decoration: SanityImageAssetDocument;
+  services: Service[];
 };
 
 export type TestimonialProps = {
@@ -59,14 +58,6 @@ export type Testimonial = {
   role: string;
   header: string;
   testimony: string;
-};
-
-export type ProcessProps = {
-  _type: 'landingPage.process';
-  title: string;
-  subtitle: string;
-  decoration: SanityImageAssetDocument;
-  steps: Step[];
 };
 
 export type Step = {

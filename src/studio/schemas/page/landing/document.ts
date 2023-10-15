@@ -22,7 +22,6 @@ const landingPage = {
         { type: 'landingPage.testimonial' },
         { type: 'common.cta' },
         { type: 'landingPage.destination' },
-        { type: 'landingPage.process' },
       ],
     },
   ],

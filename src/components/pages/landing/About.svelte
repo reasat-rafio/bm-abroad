@@ -4,9 +4,10 @@
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { AboutProps } from '@/lib/types/landing';
   import IntersectionObserver from 'svelte-intersection-observer';
+  import Service from '@/components/pages/landing/Service.svelte';
 
   export let props: AboutProps;
-  $: ({ title, subtitle, description, image, decoration } = props);
+  $: ({ title, subtitle, description, image, decoration, services } = props);
 
   let sectionEl: HTMLElement;
   let intersecting = false;
@@ -59,3 +60,5 @@
     </div>
   </section>
 </IntersectionObserver>
+
+<Service {services} />
