@@ -55,6 +55,13 @@ const servies = {
               ],
             },
           ],
+          preview: {
+            select: {
+              title: 'title',
+              subtitle: 'description',
+              media: 'icon',
+            },
+          },
         },
       ],
     },
@@ -144,7 +151,6 @@ const servies = {
         {
           name: 'college',
           type: 'object',
-          initialValue: '1',
           hidden: ({ parent }: SanityDocument) => !!parent?.singleImage,
           fields: [
             {
@@ -157,7 +163,7 @@ const servies = {
                 ],
                 layout: 'radio',
               },
-              validation: (Rule: Rule) => Rule.required(),
+              initialValue: '1',
             },
             {
               name: 'images',
@@ -185,6 +191,12 @@ const servies = {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'subtitle',
+    },
+  },
 };
 
 export default servies;

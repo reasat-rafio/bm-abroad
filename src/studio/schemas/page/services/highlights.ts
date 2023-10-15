@@ -9,11 +9,6 @@ const highlights = {
   icon: BiHighlight,
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
       name: 'gallery',
       type: 'object',
       validation: (Rule: Rule) =>
@@ -54,7 +49,6 @@ const highlights = {
         {
           name: 'college',
           type: 'object',
-          initialValue: '1',
           hidden: ({ parent }: SanityDocument) => !!parent?.singleImage,
           fields: [
             {
@@ -67,6 +61,7 @@ const highlights = {
                 ],
                 layout: 'radio',
               },
+              initialValue: '1',
               validation: (Rule: Rule) => Rule.required(),
             },
             {
@@ -94,7 +89,17 @@ const highlights = {
         },
       ],
     },
+    {
+      name: 'title',
+      type: 'text',
+      validation: (Rule: Rule) => Rule.required(),
+    },
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+  },
 };
 
 export default highlights;
