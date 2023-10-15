@@ -1,12 +1,12 @@
 import type { SanityAssetDocument } from '@sanity/client';
-import type { CtaProps, SeoProps, TaglineProps } from './common';
+import type { SeoProps, TaglineProps } from './common';
 
 export type ServicesPageProps = {
   seo: SeoProps;
   sections: Section[];
 };
 
-type Section = TaglineProps | Highlights | CtaProps;
+type Section = TaglineProps | Highlights | ServicesProps;
 
 export type Highlights = {
   _type: 'servicesPage.highlights';
@@ -37,8 +37,8 @@ export type Service = {
 };
 
 export type Gallery = {
-  singleImage?: SanityAssetDocument;
-  college?: {
+  singleImage: SanityAssetDocument;
+  college: {
     layout: '1' | '2';
     images: [
       SanityAssetDocument,
