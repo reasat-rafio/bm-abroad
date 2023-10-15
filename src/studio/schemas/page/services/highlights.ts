@@ -70,7 +70,7 @@ const highlights = {
               validation: (Rule: Rule) => Rule.length(6),
               of: [
                 {
-                  name: 'singleImage',
+                  name: 'image',
                   type: 'image',
                   options: { hotspot: true },
                   fields: [
