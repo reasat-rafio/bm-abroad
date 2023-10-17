@@ -20,7 +20,6 @@
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger);
     updateDeltaSpacing();
-
     const ctx = gsap.context(() => triggerAnimation());
     return () => ctx.revert();
   });
@@ -47,7 +46,7 @@
       },
     });
 
-    timeline.from(contentContainerEl, { y: '100%' }).from(
+    timeline.to(contentContainerEl, { y: '-50%' }).from(
       contentContainerEl.querySelectorAll('[data-animate]'),
       {
         opacity: 0,
@@ -80,7 +79,7 @@
   <div class="relative col-span-6 h-full 2xl:col-span-5">
     <div
       bind:this={contentContainerEl}
-      class="group absolute left-0 top-1/2 w-[120%] -translate-x-[10%] -translate-y-1/2 space-y-[48px] rounded-[16px] bg-white/70 p-[50px] backdrop-blur-md transition-all duration-300 ease-in-out hover:bg-[#1B1464] hover:bg-opacity-90 hover:shadow-cta"
+      class="group absolute left-0 top-1/2 w-[120%] -translate-x-[10%] translate-y-0 space-y-[48px] rounded-[16px] bg-white/70 p-[50px] backdrop-blur-md transition-colors duration-300 ease-in-out hover:bg-space-blue hover:bg-opacity-90 hover:shadow-cta"
     >
       <header class="space-y-[16px]">
         <h2
