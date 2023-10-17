@@ -21,7 +21,7 @@
     </div>
     <figure class="h-full w-full">
       <SanityImage
-        class="h-full w-full rounded-[18px] object-cover"
+        class="h-full max-h-[610px] w-full rounded-[18px] object-cover max-lg:min-h-[378px]"
         src={image}
         imageUrlBuilder={imageBuilder}
         sizes="40vw"
