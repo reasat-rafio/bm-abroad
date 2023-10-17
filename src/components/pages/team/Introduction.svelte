@@ -5,12 +5,10 @@
   $: ({ description, subtitle, title } = introduction);
 </script>
 
-<section
-  class="space-y-[46px] sm:p-[15px] md:p-[30px] lg:space-y-[64px] xl:p-[50px]"
->
+<section class="space-y-[40px] sm:p-[15px] md:p-[30px] xl:p-[50px]">
   <header class="space-y-[24px]">
     <h2
-      class="font-oswald text-[16px] font-semibold uppercase tracking-[1.28px] text-slate-blue"
+      class="font-oswald text-[16px] font-semibold uppercase !leading-none tracking-[1.28px] text-slate-blue"
     >
       {title}
     </h2>
