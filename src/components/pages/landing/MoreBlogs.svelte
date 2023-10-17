@@ -38,40 +38,38 @@
       subtitle="Explore our latest blogs and articles "
     />
 
-    {#if !!blogs?.length}
-      <div
-        class="relative -ml-[25px] overflow-hidden pt-[56px] lg:pt-[46px]"
-        use:emblaCarouselSvelte={{ plugins, options }}
-        on:emblaInit={onInit}
-      >
-        <div class="relative flex">
-          {#each blogs as { _createdAt, coverImage, name, slug }}
-            <BlogCard
-              class="flex-[0_0_100%] pl-[25px] sm:flex-[0_0_80%] lg:flex-[0_0_33.33%]"
-              {name}
-              {slug}
-              twoRowInMobile
-              image={coverImage}
-              date={_createdAt}
+    <div
+      class="relative -ml-[25px] overflow-hidden pt-[56px] lg:pt-[46px]"
+      use:emblaCarouselSvelte={{ plugins, options }}
+      on:emblaInit={onInit}
+    >
+      <div class="relative flex">
+        {#each blogs as { _createdAt, coverImage, name, slug }}
+          <BlogCard
+            class="flex-[0_0_100%] pl-[25px] sm:flex-[0_0_80%] lg:flex-[0_0_33.33%]"
+            {name}
+            {slug}
+            twoRowInMobile
+            image={coverImage}
+            date={_createdAt}
+          />
+        {/each}
+      </div>
+    </div>
+
+    {#if !!scrollSnaps?.length}
+      <nav class="flex items-center justify-center pt-[68px] lg:pt-[34px]">
+        <div class="flex space-x-[8px]">
+          {#each scrollSnaps as _, index}
+            <DotButton
+              active={index === selectedIndex}
+              clickAction={() => {
+                emblaApi.scrollTo(index);
+              }}
             />
           {/each}
         </div>
-      </div>
-
-      {#if !!scrollSnaps?.length}
-        <nav class="flex items-center justify-center pt-[68px] lg:pt-[34px]">
-          <div class="flex space-x-[8px]">
-            {#each scrollSnaps as _, index}
-              <DotButton
-                active={index === selectedIndex}
-                clickAction={() => {
-                  emblaApi.scrollTo(index);
-                }}
-              />
-            {/each}
-          </div>
-        </nav>
-      {/if}
+      </nav>
     {/if}
   </div>
 </section>

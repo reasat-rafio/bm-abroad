@@ -32,22 +32,19 @@
       subtitle="Explore our latest blogs and articles "
     />
 
-    {#if !!blogs?.length}
-      <div
-        bind:this={sectionEl}
-        class="grid grid-cols-1 gap-y-[32px] pt-[46px] md:grid-cols-2 md:gap-x-[25px] md:gap-y-[56px] lg:grid-cols-3"
-      >
-        {#each blogs as { name, slug, coverImage, _createdAt }}
-          <BlogCard
-            {name}
-            {slug}
-            date={_createdAt}
-            image={coverImage}
-            class="blogs-blog__card"
-          />
-        {/each}
-      </div>
-    {/if}
-    <ul></ul>
+    <div
+      bind:this={sectionEl}
+      class="grid grid-cols-1 gap-y-[32px] pt-[46px] md:grid-cols-2 md:gap-x-[25px] md:gap-y-[56px] lg:grid-cols-3"
+    >
+      {#each blogs as { name, slug, coverImage, _createdAt }}
+        <BlogCard
+          {name}
+          {slug}
+          date={_createdAt}
+          image={coverImage}
+          class="blogs-blog__card"
+        />
+      {/each}
+    </div>
   </div>
 </section>

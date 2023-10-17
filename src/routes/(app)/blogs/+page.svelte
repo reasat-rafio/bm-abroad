@@ -17,4 +17,6 @@
 
 <Seo {seo} siteOgImg={ogImage} />
 <HighLightedBlog {blog} />
-<Blogs blogs={restBlogs} />
+{#if !!restBlogs?.length}
+  <Blogs blogs={restBlogs} />
+{/if}

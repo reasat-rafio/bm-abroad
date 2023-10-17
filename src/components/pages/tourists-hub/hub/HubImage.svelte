@@ -12,7 +12,7 @@
 {#if !!singleImage}
   <figure>
     <SanityImage
-      class="aspect-video h-full w-full rounded-lg"
+      class="h-full w-full rounded-lg object-cover max-md:h-[80vh] md:aspect-video"
       sizes="100vw"
       src={singleImage}
       alt={singleImage.alt}

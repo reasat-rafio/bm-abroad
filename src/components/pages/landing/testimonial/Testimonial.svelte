@@ -43,7 +43,7 @@
         use:emblaCarouselSvelte={{ plugins, options }}
         on:emblaInit={onInit}
       >
-        <div class="relative flex space-x-[20px] md:space-x-10">
+        <div class="relative flex">
           {#each testimonials as testimony}
             <Testimony {testimony} />
           {/each}

@@ -24,14 +24,18 @@
 
 <section class="pb-[66px] pt-[105px] md:pb-[148px] md:pt-[195px]">
   <article bind:this={articleEl} class="container relative isolate">
-    <figure>
+    <figure class="relative overflow-hidden rounded-lg">
       <SanityImage
         lqip
-        class="h-full w-full rounded-lg object-cover max-sm:min-h-[560px] sm:max-h-[776px]"
+        class="h-full w-full object-cover max-sm:min-h-[560px] sm:max-h-[776px]"
         sizes="100vw"
         src={coverImage}
         alt={name}
         imageUrlBuilder={imageBuilder}
+      />
+      <div
+        style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50%, rgba(0, 0, 0, 0.40) 100%); "
+        class="absolute inset-0 h-full w-full"
       />
     </figure>
 

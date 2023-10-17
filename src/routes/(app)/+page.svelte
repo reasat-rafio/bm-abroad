@@ -33,4 +33,6 @@
     <Cta {props} />
   {/if}
 {/each}
-<MoreBlogs blogs={moreBlogs} />
+{#if !!moreBlogs?.length}
+  <MoreBlogs blogs={moreBlogs} />
+{/if}

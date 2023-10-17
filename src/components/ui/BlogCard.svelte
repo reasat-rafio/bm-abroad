@@ -22,7 +22,7 @@
       class="{twoRowInMobile ? 'col-span-12' : 'col-span-4'} md:col-span-12"
     >
       <SanityImage
-        class="h-full w-full rounded-md object-cover"
+        class="h-full max-h-[291px] w-full rounded-[8px] object-cover lg:rounded-md"
         src={image}
         alt={name}
         sizes="(min-width:1024px) 40vw, 60vw"
@@ -33,7 +33,7 @@
       class="{twoRowInMobile ? 'col-span-12' : 'col-span-8'} md:col-span-12"
     >
       <div
-        class="flex items-center space-x-[14px] pb-[8px] text-[14px] text-black/40 md:pb-[16px]"
+        class="flex items-center space-x-[14px] pb-[8px] text-[14px] text-black/20 md:pb-[16px]"
       >
         <img
           loading="lazy"
@@ -49,19 +49,6 @@
       >
         {name}
       </h3>
-      <!-- <a
-        class="body-2 hidden items-center space-x-[6px] text-slate-blue md:flex"
-        href="/blogs/{slug.current}"
-        title="Read the full article on {name}"
-      >
-        <span> Read More </span>
-        <img
-          src="/icons/chevron-right-sm.svg"
-          alt="chevron"
-          height="8.5px"
-          width="5.5px"
-        />
-      </a> -->
     </section>
   </article>
 </a>

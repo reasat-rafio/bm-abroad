@@ -10,7 +10,7 @@
 
 <section class="relative h-[360px]">
   <SanityImage
-    class="object-cover w-full h-full"
+    class="h-full w-full object-cover"
     sizes="(min-width : 1024px) 70vw, 100vw"
     src={coverPhoto}
     alt={coverPhoto.alt}
@@ -18,10 +18,11 @@
   />
 
   <figure
+    style="box-shadow: 0px 5px 38px 0px rgba(0, 0, 0, 0.10);"
     class="absolute bottom-0 left-[40px] max-w-[133px] translate-y-1/2 rounded-[16px] bg-white p-[14px] lg:max-w-[192px] lg:p-[21px]"
   >
     <SanityImage
-      class="object-contain w-full h-full"
+      class="h-full w-full object-contain"
       sizes="200px"
       src={logo}
       alt={name}

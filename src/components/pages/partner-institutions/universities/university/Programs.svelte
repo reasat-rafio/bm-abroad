@@ -22,8 +22,8 @@
         {#each head.cells as cell, index}
           <th
             class={twMerge(
-              'text-left text-[12px] font-semibold max-lg:p-[10px] lg:px-[20px] lg:py-[12px] lg:text-[20px]',
-              index === 1 && 'lg:pr-[10%] lg:text-right',
+              'text-center text-[12px] font-semibold max-lg:p-[10px] lg:px-[20px] lg:py-[12px] lg:text-[20px]',
+              index === 0 && 'text-left',
             )}>{cell}</th
           >
         {/each}
@@ -35,8 +35,8 @@
           {#each cells as cell, index}
             <td
               class={twMerge(
-                'text-[14px] max-lg:p-[10px] lg:px-[20px] lg:py-[14px] lg:text-[18px]',
-                index === 1 && 'lg:pr-[10%] lg:text-right',
+                'text-center text-[14px] max-lg:p-[10px] lg:px-[20px] lg:py-[14px] lg:text-[18px]',
+                index === 0 && 'text-left',
               )}>{cell}</td
             >
           {/each}

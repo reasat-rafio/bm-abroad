@@ -58,7 +58,7 @@
         class="absolute bottom-0 left-0 hidden -translate-x-1/2 translate-y-1/2 lg:block"
       >
         <SanityImage
-          class="h-full w-full max-w-[200px] animate-floating object-contain md:max-w-[220px] xl:max-w-[337px]"
+          class="h-full w-full max-w-[160px] animate-floating object-contain md:max-w-[180px] xl:max-w-[280px]"
           sizes="300px"
           src={decor1}
           imageUrlBuilder={imageBuilder}
@@ -72,7 +72,7 @@
         class="absolute bottom-0 right-0 hidden translate-x-1/2 translate-y-1/2 lg:block"
       >
         <SanityImage
-          class="h-full w-full max-w-[150px] animate-floating-reverse object-contain md:max-w-[170px] xl:max-w-[262px]"
+          class="h-full w-full max-w-[120px] animate-floating-reverse object-contain md:max-w-[140px] xl:max-w-[200px]"
           sizes="300px"
           src={decor2}
           imageUrlBuilder={imageBuilder}

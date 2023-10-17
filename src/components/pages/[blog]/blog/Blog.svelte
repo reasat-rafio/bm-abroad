@@ -11,7 +11,7 @@
 
 <section class="py-[160px]">
   <article class="container">
-    <figure class="">
+    <figure>
       <SanityImage
         class="h-full w-full rounded-lg object-cover max-sm:min-h-[560px] sm:max-h-[776px]"
         sizes="100vw"
