@@ -18,6 +18,12 @@ const teamPage = {
       of: [{ type: 'common.tagline' }, { type: 'teamPage.team' }],
     },
   ],
+  preview: {
+    select: {
+      title: 'seo.title',
+      subtitle: 'seo.description',
+    },
+  },
 };
 
 export default teamPage;
