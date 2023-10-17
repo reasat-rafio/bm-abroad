@@ -17,6 +17,7 @@
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger);
     const cards = containerEl.querySelectorAll('.why-card');
+    const cardTextEls = containerEl.querySelectorAll('[data-animate-y]');
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -29,9 +30,9 @@
         },
       });
 
-      tl.from(headerEl, {
-        y: '100%',
-      }).from(cards, { y: '20%', stagger: 0.1 }, 0.2);
+      tl.to(headerEl, { y: 0 })
+        .to(cards, { y: 0, opacity: 1, stagger: 0.1 }, 0.2)
+        .to(cardTextEls, { y: 0, opacity: 1, stagger: 0.1 }, 0.2);
     });
 
     return () => ctx.revert();
@@ -44,7 +45,7 @@
 >
   <div class="container relative">
     <div class="overflow-hidden">
-      <h1 bind:this={headerEl} class="text-center heading-2xl">
+      <h1 bind:this={headerEl} class="heading-2xl translate-y-full text-center">
         <PortableText
           value={title}
           components={{
@@ -62,7 +63,7 @@
     >
       {#each reasons as { title, image, description }}
         <article
-          class="why-card grid grid-cols-12 rounded-lg bg-white p-[20px] max-md:gap-y-[32px] md:gap-[50px]"
+          class="why-card grid translate-y-[20%] grid-cols-12 rounded-lg bg-white p-[20px] opacity-0 max-md:gap-y-[32px] md:gap-[50px]"
         >
           <figure class="col-span-12 md:col-span-4 md:py-[20px] md:pl-[20px]">
             <SanityImage
@@ -77,11 +78,12 @@
             class="col-span-12 flex flex-col justify-center space-y-[24px] md:col-span-8"
           >
             <h3
-              class="text-center font-oswald text-[24px] font-semibold uppercase leading-none text-space-blue transition-colors duration-500 group-hover:text-white max-md:pb-[16px] md:text-left md:text-[24px] xl:text-h2"
+              data-animate-y
+              class="translate-y-[20%] text-center font-oswald text-[24px] font-semibold uppercase leading-none text-space-blue opacity-0 transition-colors duration-500 group-hover:text-white max-md:pb-[16px] md:text-left md:text-[24px] xl:text-h2"
             >
               {title}
             </h3>
-            <p class="body-1">
+            <p data-animate-y class="body-1 translate-y-[20%] opacity-0">
               {description}
             </p>
           </section>

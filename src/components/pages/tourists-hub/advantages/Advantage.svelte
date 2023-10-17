@@ -20,6 +20,7 @@
       gsap.from(sectionEl, {
         y: 100,
         scale: 0.9,
+        opacity: 0,
         duration: 0.7,
         scrollTrigger: sectionEl,
         ease: 'power4.inOut',
@@ -44,13 +45,13 @@
       >
         {title}
       </h3>
-      <p class="hidden body-1 md:block">
+      <p class="body-1 hidden md:block">
         {description}
       </p>
     </section>
     <figure class="col-span-12 md:col-span-5">
       <SanityImage
-        class="object-contain w-full h-full"
+        class="h-full w-full object-contain"
         sizes="20vw"
         src={image}
         alt={image.alt}
@@ -60,7 +61,7 @@
   {:else}
     <figure class="col-span-12 md:col-span-5">
       <SanityImage
-        class="object-contain w-full h-full"
+        class="h-full w-full object-contain"
         sizes="(min-width: 768px) 20vw, 90vw"
         src={image}
         alt={image.alt}
@@ -75,7 +76,7 @@
       >
         {title}
       </h3>
-      <p class="hidden body-1 md:block">
+      <p class="body-1 hidden md:block">
         {description}
       </p>
     </section>

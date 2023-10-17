@@ -14,7 +14,7 @@
     <SectionHeader class="mb-lg lg:mb-2xl" {title} {subtitle} />
     <Detail {image} {services} />
     {#if !!steps?.length}
-      <div class="mb-[49px] lg:mb-[128px]">
+      <div class="mb-[30px] lg:mb-[60px]">
         {#each steps as { title, description }, index}
           <Step
             {title}

@@ -12,7 +12,7 @@
   <div
     class="col-span-4 grid grid-cols-5 items-end gap-[24px] lg:gap-[40px] xl:gap-[81px]"
   >
-    <div class="col-span-5 space-y-[29px] text-[12px] lg:col-span-3">
+    <div class="col-span-5 space-y-[29px] text-[14px] lg:col-span-3">
       <a
         class="flex space-x-[9px] transition-colors duration-500 hover:text-slate-blue"
         href="tel:{contactNumber}"

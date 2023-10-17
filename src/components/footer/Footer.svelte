@@ -13,7 +13,7 @@
   $: ({ menu, title } = footer);
 </script>
 
-<footer class="">
+<footer>
   <div class="bg-white">
     <div
       class="container grid grid-cols-12 py-[26px] max-xl:space-y-[48px] lg:py-[46px]"
@@ -29,7 +29,7 @@
               imageUrlBuilder={imageBuilder}
             />
           </figure>
-          <p class="text-[12px] tracking-[0.3px]">
+          <p class="text-[14px] tracking-[0.3px]">
             {title}
           </p>
         </div>

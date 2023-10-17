@@ -7,7 +7,7 @@
   <ul class="grid grid-cols-2 gap-y-[25px]">
     {#each menu as { title, pageUrl }}
       <li
-        class="hover:text-slate-blue text-[14px] text-[#0A142F] transition-colors duration-500"
+        class="text-[14px] font-medium text-[#0A142F] transition-colors duration-500 hover:text-slate-blue"
       >
         <a href="/{pageUrl.current}">{title}</a>
       </li>
