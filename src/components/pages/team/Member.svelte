@@ -44,21 +44,23 @@
 
     <p class="body-1 whitespace-pre-wrap">{description}</p>
 
-    <ul class="flex gap-x-[20px]">
-      {#each socials as { icon, link }}
-        <li>
-          <a href={link}>
-            <SanityImage
-              class="aspect-square h-[20px] object-contain"
-              src={icon}
-              imageUrlBuilder={imageBuilder}
-              height="20px"
-              width="20px"
-              alt="Social Media Icon"
-            />
-          </a>
-        </li>
-      {/each}
-    </ul>
+    {#if !!socials?.length}
+      <ul class="flex gap-x-[20px]">
+        {#each socials as { icon, link }}
+          <li>
+            <a href={link}>
+              <SanityImage
+                class="aspect-square h-[20px] object-contain"
+                src={icon}
+                imageUrlBuilder={imageBuilder}
+                height="20px"
+                width="20px"
+                alt="Social Media Icon"
+              />
+            </a>
+          </li>
+        {/each}
+      </ul>
+    {/if}
   </section>
 </article>
