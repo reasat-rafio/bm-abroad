@@ -22,10 +22,12 @@
 </section>
 
 <style>
-  section {
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.76);
-    box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.5px);
+  @media screen and (min-width: 640px) {
+    section {
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6.5px);
+    }
   }
 </style>
