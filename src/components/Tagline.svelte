@@ -40,7 +40,7 @@
 >
   <div class="container relative">
     <div class="overflow-hidden">
-      <h1 bind:this={headerEl} class="text-center heading-2xl">
+      <h1 bind:this={headerEl} class="heading-2xl pb-3 text-center">
         <PortableText
           value={title}
           components={{

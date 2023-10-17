@@ -12,15 +12,15 @@ const query = groq`*[_id == "servicesPage"][0]{
         ${asset('decorators[]', { as: 'decorators' })},
         ${asset('decoration')},
         gallery{
-            ${asset('singleImage')},
-            college{
-               ...,
-               ${asset('images[]', { as: 'images' })},
-            }
+          ${asset('singleImage')},
+          college{
+            ...,
+            ${asset('images[]', { as: 'images' })},
+          }
         },
         services[]{
-            ...,
-            ${asset('icon')},
+          ...,
+          ${asset('icon')},
         }
     }
 }`;
