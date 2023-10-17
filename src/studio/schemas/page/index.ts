@@ -5,6 +5,7 @@ import blogs from './blogs';
 import touristsHub from './tourists-hub';
 import partnerInstitutions from './partner-institutions';
 import services from './services';
+import team from './team';
 
 export default [
   ...landing,
@@ -14,4 +15,5 @@ export default [
   ...touristsHub,
   ...partnerInstitutions,
   ...services,
+  ...team,
 ];

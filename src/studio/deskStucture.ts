@@ -9,7 +9,7 @@ import {
   FcServices,
 } from 'react-icons/fc';
 import { GrEdit } from 'react-icons/gr';
-import { RiPagesLine } from 'react-icons/ri';
+import { RiPagesLine, RiTeamFill } from 'react-icons/ri';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import type { ConfigContext } from 'sanity';
 import { GiIsland } from 'react-icons/gi';
@@ -115,12 +115,17 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
                 icon: FcServices,
               }),
               pageItem(S, {
+                schemaType: 'teamPage',
+                id: 'teamPage',
+                title: 'Team',
+                icon: RiTeamFill,
+              }),
+              pageItem(S, {
                 schemaType: 'blogsPage',
                 id: 'blogsPage',
                 title: 'Blogs',
                 icon: FcNews,
               }),
-
               pageItem(S, {
                 schemaType: 'contactUsPage',
                 id: 'contactUsPage',
