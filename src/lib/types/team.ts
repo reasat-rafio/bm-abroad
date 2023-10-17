@@ -20,10 +20,10 @@ export type TeamMember = {
   description: string;
   image: SanityAssetDocument;
   socials: SocialProps[];
-  saying?: Sayings;
+  saying?: Saying;
 };
 
-export type Sayings = {
+export type Saying = {
   title: string;
   description: string;
 };
