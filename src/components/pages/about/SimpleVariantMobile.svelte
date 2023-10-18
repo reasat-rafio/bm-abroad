@@ -47,6 +47,7 @@
     class="overflow-hidden rounded-[12px]"
   >
     <SanityImage
+      lqip
       class="h-[560px] w-full object-cover sm:h-full "
       sizes="100vw"
       src={image}

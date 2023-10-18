@@ -47,7 +47,7 @@
               lqip
               class="h-full w-full object-cover lg:rounded-lg"
               src={image}
-              sizes="(min-width: 1024px) 90vw, 100vw"
+              sizes="(min-width: 1024px) 80vw, 90vw"
               imageUrlBuilder={imageBuilder}
               alt={image.alt}
             />

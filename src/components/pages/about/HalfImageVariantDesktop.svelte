@@ -69,6 +69,7 @@
     class="col-span-6 overflow-hidden rounded-lg 2xl:col-span-7"
   >
     <SanityImage
+      lqip
       class="h-full w-full object-cover"
       sizes="50vw"
       src={image}
