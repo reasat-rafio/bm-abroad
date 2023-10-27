@@ -27,12 +27,19 @@ export type HeroProps = {
   _type: 'landingPage.hero';
   banners: HeroBanner[];
 };
-
-export type HeroBanner = {
+type HeroBanner = HeroBannerImage | HeroBannerVideo;
+export type HeroBannerImage = {
   _key: string;
-  _type: string;
+  _type: 'img';
   image: SanityImageAssetDocument;
   url?: string;
+};
+
+export type HeroBannerVideo = {
+  _key: string;
+  _type: 'video';
+  webm: string;
+  mov: string;
 };
 
 export type AboutProps = {

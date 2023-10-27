@@ -5,7 +5,7 @@ import { error, type ServerLoad } from '@sveltejs/kit';
 import groq from 'groq';
 
 const q = groq`*[_id == "landingPage"][0]{
-  ...,
+   ...,
    sections[]{
     ...,
     ${asset('image')},
@@ -13,7 +13,9 @@ const q = groq`*[_id == "landingPage"][0]{
     ${asset('decorators[]', { as: 'decorators' })},
     banners[]{
       ...,
-      ${asset('image')}
+      ${asset('image')},
+      "webm": video_webm.asset->url,
+      "mov": video_hevc.asset->url,
     },
     testimonials[]{
       ...,
