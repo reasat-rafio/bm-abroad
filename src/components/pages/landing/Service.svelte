@@ -25,7 +25,7 @@
   });
 </script>
 
-<section bind:this={sectionEl} class="mb-2xl md:mb-xl">
+<section bind:this={sectionEl} class="mb-[90px]">
   <div
     class="container grid grid-cols-2 gap-[20px] lg:grid-cols-3 lg:gap-[24px] 2xl:grid-cols-4"
   >

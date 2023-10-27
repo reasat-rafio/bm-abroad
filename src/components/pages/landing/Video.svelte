@@ -23,7 +23,7 @@
   });
 </script>
 
-<section bind:this={sectionEl} class="mb-[90px] lg:container md:mb-2xl">
+<section bind:this={sectionEl} class="mb-xl lg:container">
   <div
     class=" relative aspect-video h-full max-h-[70vh] w-full overflow-hidden lg:rounded-lg"
   >
