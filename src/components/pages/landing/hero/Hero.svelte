@@ -5,10 +5,14 @@
   import type { HeroProps } from '@/lib/types/landing';
   import Autoplay from 'embla-carousel-autoplay';
   import emblaCarouselSvelte, {
+    type EmblaCarouselType,
     type EmblaOptionsType,
     type EmblaPluginType,
-    type EmblaCarouselType,
   } from 'embla-carousel-svelte';
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+  import { onMount } from 'svelte';
+  import Video from './Video.svelte';
 
   export let props: HeroProps;
   export let plugins: EmblaPluginType[] = [Autoplay()];
@@ -16,8 +20,10 @@
 
   $: ({ banners } = props);
   let emblaApi: EmblaCarouselType;
+  let sectionEl: HTMLElement;
   let selectedIndex = 0;
   let scrollSnaps: number[];
+  let isIntersecting = false;
 
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
     emblaApi = event.detail;
@@ -31,9 +37,23 @@
       scrollSnaps = scrollSnapList();
     });
   }
+
+  onMount(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      trigger: sectionEl,
+      onToggle: ({ isActive }) => {
+        isIntersecting = isActive;
+      },
+    });
+  });
 </script>
 
-<section class="mb-lg mt-[90px] sm:mt-[130px] lg:mb-2xl lg:mt-[150px]">
+<section
+  bind:this={sectionEl}
+  class="mb-lg mt-[90px] sm:mt-[130px] lg:mb-2xl lg:mt-[150px]"
+>
   <div class="overflow-hidden lg:container">
     <div use:emblaCarouselSvelte={{ plugins, options }} on:emblaInit={onInit}>
       <div class="relative flex space-x-5 lg:space-x-10">
@@ -54,26 +74,7 @@
               />
             </svelte:element>
           {:else if banner._type === 'video'}
-            <div
-              class="relative aspect-video max-h-[70vh] flex-[0_0_100%] overflow-hidden lg:rounded-lg"
-            >
-              <video
-                class="absolute h-full w-full object-cover"
-                width="100%"
-                height="100%"
-                disablePictureInPicture
-                controlsList="nodownload noplaybackrate"
-                controls={false}
-                playsInline
-                autoPlay
-                muted
-                loop
-              >
-                <source src={banner?.mov} type="video/mp4; codecs=hvc1" />
-                <source src={banner?.webm} type="video/webm" />
-                Sorry, your browser doesn&apos;t support embedded videos.
-              </video>
-            </div>
+            <Video {isIntersecting} mov={banner.mov} webm={banner.webm} />
           {/if}
         {/each}
       </div>

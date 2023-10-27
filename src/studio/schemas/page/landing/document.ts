@@ -19,6 +19,7 @@ const landingPage = {
         { type: 'landingPage.hero' },
         { type: 'common.tagline' },
         { type: 'landingPage.about' },
+        { type: 'landingPage.video' },
         { type: 'landingPage.testimonial' },
         { type: 'common.cta' },
         { type: 'landingPage.destination' },

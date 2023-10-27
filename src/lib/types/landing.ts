@@ -12,9 +12,16 @@ type Section =
   | HeroProps
   | TaglineProps
   | AboutProps
+  | VideoProps
   | TestimonialProps
   | CtaProps
   | DestinationsProps;
+
+export type VideoProps = {
+  _type: 'landingPage.video';
+  webm: string;
+  mov: string;
+};
 
 export type Service = {
   _id: string;

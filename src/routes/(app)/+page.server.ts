@@ -11,6 +11,8 @@ const q = groq`*[_id == "landingPage"][0]{
     ${asset('image')},
     ${asset('decoration')},
     ${asset('decorators[]', { as: 'decorators' })},
+    "webm": video_webm.asset->url,
+    "mov": video_hevc.asset->url,
     banners[]{
       ...,
       ${asset('image')},
