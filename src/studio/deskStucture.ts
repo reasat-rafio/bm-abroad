@@ -14,6 +14,7 @@ import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import type { ConfigContext } from 'sanity';
 import { GiIsland } from 'react-icons/gi';
 import { BiSolidBusiness } from 'react-icons/bi';
+import { MdPolicy } from 'react-icons/md';
 
 interface PageItemProps {
   schemaType: string;
@@ -131,6 +132,12 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
                 id: 'contactUsPage',
                 title: 'Contact Us',
                 icon: FcContacts,
+              }),
+              pageItem(S, {
+                schemaType: 'privacyPolicyPage',
+                id: 'privacyPolicyPage',
+                title: 'Privacy Policy',
+                icon: MdPolicy,
               }),
             ]),
         ),
