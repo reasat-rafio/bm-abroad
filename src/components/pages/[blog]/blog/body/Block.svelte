@@ -17,10 +17,14 @@
     style === 'h6';
 </script>
 
-{#if isHeader}
-  <h2 class="heading-lg-secondary">
+{#if style === 'h1' || style === 'h2'}
+  <h2 class="text-h2-sm font-semibold text-space-blue md:text-h2-md xl:text-h2">
     <slot />
   </h2>
+{:else if style === 'h3' || style === 'h4'}
+  <h3 class="text-[24px] font-medium text-space-blue lg:text-[32px]">
+    <slot />
+  </h3>
 {:else if style === 'normal'}
   <p class="body-1">
     <slot />

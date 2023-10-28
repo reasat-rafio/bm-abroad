@@ -3,7 +3,7 @@
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient.js';
   import type { Blog } from '@/lib/types/[blog]';
-  import Body from './blody/Body.svelte';
+  import Body from './body/Body.svelte';
 
   export let blog: Blog;
   $: ({ _createdAt, coverImage, description, name, quickOverView } = blog);
