@@ -8,7 +8,7 @@
 </script>
 
 <article
-  class="mx-[20px] grid min-h-[500px] flex-[0_0_90%] grid-cols-8 overflow-hidden rounded-[16px] bg-white sm:flex-[0_0_100%] md:mx-10"
+  class="mx-[20px] grid flex-[0_0_100%] grid-cols-8 overflow-hidden rounded-[16px] bg-white max-md:h-fit sm:min-h-[500px] md:mx-10"
 >
   <div
     class="relative col-span-8 flex h-[250px] justify-end sm:h-[350px] md:col-span-3 md:h-full"
