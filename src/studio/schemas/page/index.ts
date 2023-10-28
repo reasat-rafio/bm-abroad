@@ -7,6 +7,7 @@ import partnerInstitutions from './partner-institutions';
 import services from './services';
 import team from './team';
 import privacyPolicyPage from './privacy-policy/document';
+import termsAndConditionsPage from './terms-and-conditions/document';
 
 export default [
   ...landing,
@@ -18,4 +19,5 @@ export default [
   ...services,
   ...team,
   privacyPolicyPage,
+  termsAndConditionsPage
 ];

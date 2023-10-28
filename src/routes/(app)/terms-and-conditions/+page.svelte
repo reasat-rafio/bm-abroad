@@ -6,11 +6,12 @@
   import { onMount } from 'svelte';
 
   export let data;
+
   $: ({
     site: {
       logos: { ogImage },
     },
-    page: { seo, title, privacyPolicy },
+    page: { seo, title, termsAndCondition },
   } = data);
 
   let headerEl: HTMLElement;
@@ -46,7 +47,7 @@
     <div
       class="prose mt-10 max-w-none lg:prose-xl prose-headings:text-space-blue prose-a:text-space-blue"
     >
-      <PortableText value={privacyPolicy} />
+      <PortableText value={termsAndCondition} />
     </div>
   </div>
 </section>

@@ -6,6 +6,7 @@ import {
   FcContacts,
   FcHome,
   FcNews,
+  FcRules,
   FcServices,
 } from 'react-icons/fc';
 import { GrEdit } from 'react-icons/gr';
@@ -138,6 +139,12 @@ export const AppStructure = (S: StructureBuilder, context: ConfigContext) =>
                 id: 'privacyPolicyPage',
                 title: 'Privacy Policy',
                 icon: MdPolicy,
+              }),
+              pageItem(S, {
+                schemaType: 'termsAndConditionsPage',
+                id: 'termsAndConditionsPage',
+                title: 'Terms And Conditions',
+                icon: FcRules,
               }),
             ]),
         ),
