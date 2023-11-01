@@ -1,22 +1,25 @@
-<script>export let global;
-$: ({ components } = global);
-export let indexInParent;
-export let node;
-$: ({ style = 'normal' } = node);
-$: listItemComponent =
-    typeof components.listItem === 'function' ? components.listItem : components.listItem[style];
-$: if (!listItemComponent) {
+<script>
+  export let global;
+  $: ({ components } = global);
+  export let indexInParent;
+  export let node;
+  $: ({ style = 'normal' } = node);
+  $: listItemComponent =
+    typeof components.listItem === 'function'
+      ? components.listItem
+      : components.listItem[style];
+  $: if (!listItemComponent) {
     global.missingComponentHandler(style, 'listItemStyle');
-}
-$: styleComponent = style !== 'normal' ? components.block[style] : undefined;
-// Using a function is the only way to use TS in Svelte reactive assignments
-$: listItemProps = (() => {
+  }
+  $: styleComponent = style !== 'normal' ? components.block[style] : undefined;
+  // Using a function is the only way to use TS in Svelte reactive assignments
+  $: listItemProps = (() => {
     return {
-        global,
-        value: node,
-        indexInParent
+      global,
+      value: node,
+      indexInParent,
     };
-})();
+  })();
 </script>
 
 <svelte:component
@@ -32,8 +35,8 @@ $: listItemProps = (() => {
         value: {
           ...node,
           // BlockComponentProps shouldn't receive a listItem
-          listItem: undefined
-        }
+          listItem: undefined,
+        },
       }}
     >
       <slot />

@@ -1,5 +1,6 @@
-<script>export let portableText;
-$: ({ markType } = portableText);
+<script>
+  export let portableText;
+  $: ({ markType } = portableText);
 </script>
 
 {#if markType === 'strong'}

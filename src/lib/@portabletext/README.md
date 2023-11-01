@@ -10,7 +10,7 @@ Render [Portable Text](https://portabletext.org) block content with [Svelte](htt
 
 ```svelte
 <script>
-  import {PortableText} from '@portabletext/svelte'
+  import { PortableText } from '@portabletext/svelte';
 </script>
 
 <PortableText
@@ -36,12 +36,12 @@ You can use the `components` prop to determine how the renderer should process e
       // block-level components
       callout: Callout,
       // inline-level components
-      userInfo: UserInfo
+      userInfo: UserInfo,
     },
     marks: {
       absUrl: AbsoluteURL,
       // Overwrite default mark renderers
-      strong: CustomStrong
+      strong: CustomStrong,
     },
     block: {
       normal: CustomParagraph,
@@ -51,18 +51,18 @@ You can use the `components` prop to determine how the renderer should process e
       h2: CustomHeading,
       h3: CustomHeading,
       // Custom user-defined style
-      textCenter: CentralizedText
+      textCenter: CentralizedText,
     },
     list: {
       // Swap only the list parts you need
       bullet: UnorderedListWrapper,
       // Custom user-defined list type
-      checklist: ChecklistWrapper
+      checklist: ChecklistWrapper,
     },
     listItem: {
       bullet: ListItem,
-      checklist: ChecklistItem
-    }
+      checklist: ChecklistItem,
+    },
   }}
 />
 ```
@@ -72,13 +72,13 @@ Example components from above:
 ```svelte
 <!-- UserInfo (custom block type) -->
 <script lang="ts">
-  import {session} from '$app/stores'
-  import type {CustomBlockComponentProps} from '@portabletext/svelte'
+  import { session } from '$app/stores';
+  import type { CustomBlockComponentProps } from '@portabletext/svelte';
 
   // Property custom blocks receive from @portabletext/svelte when redered
-  export let portableText: CustomBlockComponentProps<{bold?: boolean}>
+  export let portableText: CustomBlockComponentProps<{ bold?: boolean }>;
 
-  $: userName = $session?.user?.name || 'person'
+  $: userName = $session?.user?.name || 'person';
 </script>
 
 {#if portableText.value.bold}
@@ -91,18 +91,18 @@ Example components from above:
 ```svelte
 <!-- AbsoluteURL (custom mark) -->
 <script lang="ts">
-  import type {MarkComponentProps} from '@portabletext/svelte'
+  import type { MarkComponentProps } from '@portabletext/svelte';
 
   // Property custom marks receive from @portabletext/svelte when redered
   export let portableText: MarkComponentProps<{
-    url?: string
-    newWindow?: boolean
-  }>
+    url?: string;
+    newWindow?: boolean;
+  }>;
 
   // Remember to make your variables reactive so that they can reflect prop changes
   // See: https://svelte.dev/docs#3_$_marks_a_statement_as_reactive
-  $: ({value} = portableText)
-  $: newWindow = value.newWindow || false
+  $: ({ value } = portableText);
+  $: newWindow = value.newWindow || false;
 </script>
 
 {#if value.url}
@@ -121,16 +121,18 @@ Example components from above:
 ```svelte
 <!-- CustomHeading (blockStyle) -->
 <script lang="ts">
-  import type {BlockComponentProps} from '@portabletext/svelte'
+  import type { BlockComponentProps } from '@portabletext/svelte';
 
-  export let portableText: BlockComponentProps
+  export let portableText: BlockComponentProps;
 
-  $: ({index, blocks, value} = portableText)
-  $: ({style} = block)
+  $: ({ index, blocks, value } = portableText);
+  $: ({ style } = block);
 
-  $: precededByHeading = ['h1', 'h2', 'h3', 'h4', 'h5'].includes(blocks[index - 1]?.style)
+  $: precededByHeading = ['h1', 'h2', 'h3', 'h4', 'h5'].includes(
+    blocks[index - 1]?.style,
+  );
 
-  $: anchorId = `heading-${value._key}`
+  $: anchorId = `heading-${value._key}`;
 </script>
 
 <!-- If preceded by heading, have a higher margin top -->
@@ -273,7 +275,7 @@ For instance, to render an OpenGraph meta description for a page:
 
 ```svelte
 <script>
-  import {toPlainText} from '@portabletext/svelte'
+  import { toPlainText } from '@portabletext/svelte';
 </script>
 
 <svelte:head>

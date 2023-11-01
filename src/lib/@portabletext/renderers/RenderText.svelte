@@ -1,7 +1,8 @@
-<script>export let global;
-$: ({ components } = global);
-export let node;
-$: ({ text } = node);
+<script>
+  export let global;
+  $: ({ components } = global);
+  export let node;
+  $: ({ text } = node);
 </script>
 
 {#if text === '\n'}

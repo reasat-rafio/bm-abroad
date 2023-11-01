@@ -19,5 +19,5 @@ export default [
   ...services,
   ...team,
   privacyPolicyPage,
-  termsAndConditionsPage
+  termsAndConditionsPage,
 ];

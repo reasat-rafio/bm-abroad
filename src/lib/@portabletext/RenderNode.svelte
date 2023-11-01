@@ -1,13 +1,21 @@
-<script>import { buildMarksTree, isPortableTextBlock, isPortableTextListItemBlock, isPortableTextToolkitList, isPortableTextToolkitSpan, isPortableTextToolkitTextNode } from '@portabletext/toolkit';
-import RenderBlock from './renderers/RenderBlock.svelte';
-import RenderCustomBlock from './renderers/RenderCustomBlock.svelte';
-import RenderList from './renderers/RenderList.svelte';
-import RenderListItem from './renderers/RenderListItem.svelte';
-import RenderSpan from './renderers/RenderSpan.svelte';
-import RenderText from './renderers/RenderText.svelte';
-export let global;
-export let options;
-$: ({ node, indexInParent, parentBlock, isInline } = options);
+<script>
+  import {
+    buildMarksTree,
+    isPortableTextBlock,
+    isPortableTextListItemBlock,
+    isPortableTextToolkitList,
+    isPortableTextToolkitSpan,
+    isPortableTextToolkitTextNode,
+  } from '@portabletext/toolkit';
+  import RenderBlock from './renderers/RenderBlock.svelte';
+  import RenderCustomBlock from './renderers/RenderCustomBlock.svelte';
+  import RenderList from './renderers/RenderList.svelte';
+  import RenderListItem from './renderers/RenderListItem.svelte';
+  import RenderSpan from './renderers/RenderSpan.svelte';
+  import RenderText from './renderers/RenderText.svelte';
+  export let global;
+  export let options;
+  $: ({ node, indexInParent, parentBlock, isInline } = options);
 </script>
 
 {#if isPortableTextToolkitList(node)}
@@ -19,7 +27,7 @@ $: ({ node, indexInParent, parentBlock, isInline } = options);
           indexInParent: childIndex,
           // The list's children will be parsed as PortableTextListItem, which will pass the proper parentBlock & isInline
           parentBlock: undefined,
-          isInline: undefined
+          isInline: undefined,
         }}
         {global}
       />
@@ -34,7 +42,7 @@ $: ({ node, indexInParent, parentBlock, isInline } = options);
           parentBlock: node,
           node: child,
           isInline: true,
-          indexInParent: childIndex
+          indexInParent: childIndex,
         }}
         {global}
       />
@@ -48,7 +56,7 @@ $: ({ node, indexInParent, parentBlock, isInline } = options);
           parentBlock,
           node: child,
           isInline: true,
-          indexInParent: childIndex
+          indexInParent: childIndex,
         }}
         {global}
       />
@@ -62,7 +70,7 @@ $: ({ node, indexInParent, parentBlock, isInline } = options);
           parentBlock: node,
           node: child,
           isInline: true,
-          indexInParent: childIndex
+          indexInParent: childIndex,
         }}
         {global}
       />

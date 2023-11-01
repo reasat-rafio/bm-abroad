@@ -11,12 +11,12 @@
 </script>
 
 {#if value?.title && value?.description}
-  <div class=" gap-10 lg:my-5 grid lg:grid-cols-[1fr_2fr]">
+  <div class=" grid gap-10 lg:my-5 lg:grid-cols-[1fr_2fr]">
     <SanityImage
       src={value}
       alt={value?.alt}
       imageUrlBuilder={imageBuilder}
-      class="object-cover w-full h-full overflow-hidden rounded-lg aspect-square"
+      class="aspect-square h-full w-full overflow-hidden rounded-lg object-cover"
       sizes="(min-width:768px) 30vw, 98vw"
     />
     <div>

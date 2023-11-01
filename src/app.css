@@ -19,11 +19,11 @@
 
 @layer utilities {
   .heading-2xl {
-    @apply font-semibold uppercase text-h1-sm md:text-h1-md xl:text-h1;
+    @apply text-h1-sm font-semibold uppercase md:text-h1-md xl:text-h1;
   }
 
   .heading-xl {
-    @apply font-semibold uppercase text-h2-sm text-space-blue md:text-h2-md xl:text-h2;
+    @apply text-h2-sm font-semibold uppercase text-space-blue md:text-h2-md xl:text-h2;
   }
 
   .heading-lg {

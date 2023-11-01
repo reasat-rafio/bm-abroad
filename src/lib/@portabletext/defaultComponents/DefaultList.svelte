@@ -1,6 +1,7 @@
-<script>export let portableText;
-$: ({ value } = portableText);
-$: ({ listItem } = value);
+<script>
+  export let portableText;
+  $: ({ value } = portableText);
+  $: ({ listItem } = value);
 </script>
 
 {#if listItem === 'number'}
