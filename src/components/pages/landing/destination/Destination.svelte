@@ -1,17 +1,18 @@
 <script lang="ts">
   import SectionHeader from '@/components/SectionHeader.svelte';
+  import DotButton from '@/components/ui/DotButton.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { DestinationsProps } from '@/lib/types/landing';
+  import Autoplay from 'embla-carousel-autoplay';
   import emblaCarouselSvelte, {
     type EmblaCarouselType,
     type EmblaOptionsType,
     type EmblaPluginType,
   } from 'embla-carousel-svelte';
+  import { onMount } from 'svelte';
   import { fade, slide } from 'svelte/transition';
-  import Autoplay from 'embla-carousel-autoplay';
   import { twMerge } from 'tailwind-merge';
-  import DotButton from '@/components/ui/DotButton.svelte';
 
   export let props: DestinationsProps;
   $: ({ title, subtitle, destinations } = props);
@@ -20,9 +21,10 @@
   let plugins: EmblaPluginType[] = [Autoplay()];
   let options: Partial<EmblaOptionsType> = { align: 'start' };
   let activeSlide = 0;
-  let hoverdCardKey: null | string = null;
+  let hoveredCardKey: null | string = null;
   let windowWidth = 0;
   let scrollSnaps: number[];
+  let destinationMobileContainerEl: HTMLElement;
 
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
     emblaApi = event.detail;
@@ -38,6 +40,35 @@
       scrollSnaps = scrollSnapList();
     });
   }
+
+  const getTheLongestDescription = (
+    destinations: DestinationsProps['destinations'],
+  ) => {
+    let longestDescription: string = '';
+    let maxLength = 0;
+
+    destinations.forEach(({ description }) => {
+      if (description.length > maxLength) {
+        maxLength = description.length;
+        longestDescription = description;
+      }
+    });
+    return longestDescription;
+  };
+
+  onMount(() => {
+    const descriptionsEl =
+      destinationMobileContainerEl.querySelector('.description')!;
+    const longestDescription = getTheLongestDescription(destinations);
+
+    descriptionsEl.innerHTML = longestDescription;
+
+    destinationMobileContainerEl.style.height = `${
+      descriptionsEl.clientHeight + 20
+    }px`;
+
+    descriptionsEl.innerHTML = activeSlideDescription;
+  });
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -54,8 +85,8 @@
         {#each destinations as { image, description, name, _key }}
           <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
           <article
-            on:mouseenter={() => (hoverdCardKey = _key)}
-            on:mouseleave={() => (hoverdCardKey = null)}
+            on:mouseenter={() => (hoveredCardKey = _key)}
+            on:mouseleave={() => (hoveredCardKey = null)}
             class="flex-[0_0_100%] pl-[20px] md:flex-[0_0_50%] md:pl-[24px] xl:flex-[0_0_33.33%] 2xl:flex-[0_0_25%]"
           >
             <div
@@ -70,12 +101,12 @@
               />
 
               <div
-                style="background: {hoverdCardKey === _key && !isSm
+                style="background: {hoveredCardKey === _key && !isSm
                   ? 'linear-gradient(180deg, rgba(3, 3, 3, 0.40) 0%, #502CB5 100%)'
                   : 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50%, #000 100%)'};"
                 class={twMerge(
                   'absolute inset-0 flex h-full w-full flex-col items-center justify-end p-[35px] text-white transition-all duration-700',
-                  hoverdCardKey === _key && !isSm && 'backdrop-blur-lg',
+                  hoveredCardKey === _key && !isSm && 'backdrop-blur-lg',
                 )}
               >
                 <h4
@@ -83,7 +114,7 @@
                 >
                   {name}
                 </h4>
-                {#if hoverdCardKey === _key && !isSm}
+                {#if hoveredCardKey === _key && !isSm}
                   <p
                     transition:slide={{ duration: 600 }}
                     class="mt-[30%] text-center text-[16px] font-light leading-md"
@@ -113,12 +144,12 @@
       </nav>
     {/if}
 
-    <div class="md:hidden">
+    <div bind:this={destinationMobileContainerEl} class="md:hidden">
       {#key activeSlide}
         <p
           in:fade={{ duration: 1000 }}
           out:fade={{ duration: 0 }}
-          class="mt-[32px] text-[16px] font-light leading-md tracking-sm"
+          class="description mt-[32px] text-[16px] font-light leading-md tracking-sm"
         >
           {activeSlideDescription}
         </p>
