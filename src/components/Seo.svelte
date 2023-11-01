@@ -37,5 +37,11 @@
     url: 'https://www.bmabroaddreamers.com/',
     images: openGraphImages,
   }}
+  twitter={{
+    card: 'summary_large_image',
+    title,
+    description,
+    image: urlFor(ogImage).width(600).height(400).auto('format').url(),
+  }}
   keywords="study abroad bangladesh, study abroad agency bangladesh, study abroad consultant bangladesh, study abroad visa bangladesh, study abroad scholarships bangladesh, study abroad cost bangladesh, study abroad requirements bangladesh, study abroad universities bangladesh, study abroad courses bangladesh, best study abroad agency bangladesh, top study abroad agency bangladesh, leading study abroad agency bangladesh, study abroad in usa from bangladesh, study abroad in canada from bangladesh, study abroad in uk from bangladesh, study abroad in australia from bangladesh, study abroad in germany from bangladesh, study abroad in malaysia from bangladesh, study abroad in singapore from bangladesh, study abroad for undergraduate degree from bangladesh, study abroad for postgraduate degree from bangladesh, study abroad for mba from bangladesh, study abroad for engineering from bangladesh, study abroad for medicine from bangladesh, how to study abroad from bangladesh, best study abroad programs for bangladeshi students, affordable study abroad programs for bangladeshi students, study abroad scholarships for bangladeshi students, step-by-step guide to study abroad from bangladesh, requirements for study abroad visa in bangladesh, top universities for bangladeshi students to study abroad, best study abroad consultants in bangladesh, study abroad reviews from bangladeshi students"
 />
