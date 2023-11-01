@@ -17,8 +17,10 @@
 </section>
 
 <style>
-  section {
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.76);
+  @media screen and (min-width: 640px) {
+    section {
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.76);
+    }
   }
 </style>
