@@ -62,13 +62,13 @@
             <svelte:element
               this={!!banner?.url ? 'a' : 'figure'}
               href={banner.url}
-              class="aspect-video max-h-[70vh] flex-[0_0_100%]"
+              class="aspect-[18/9] max-h-[70vh] flex-[0_0_100%]"
             >
               <SanityImage
                 lqip
                 class="h-full w-full object-cover lg:rounded-lg"
                 src={banner.image}
-                sizes="(min-width: 1024px) 80vw, 90vw"
+                sizes="(min-width: 1024px) 90vw, 100vw"
                 imageUrlBuilder={imageBuilder}
                 alt={banner.image.alt}
               />
