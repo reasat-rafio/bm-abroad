@@ -13,13 +13,16 @@
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    ScrollTrigger.create({
-      trigger: sectionEl,
-      onToggle: ({ isActive }) => {
-        if (isActive) videoEl?.play();
-        else videoEl?.pause();
-      },
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: sectionEl,
+        onToggle: ({ isActive }) => {
+          if (isActive) videoEl?.play();
+          else videoEl?.pause();
+        },
+      });
     });
+    return () => ctx.revert();
   });
 </script>
 

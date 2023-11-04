@@ -41,12 +41,15 @@
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    ScrollTrigger.create({
-      trigger: sectionEl,
-      onToggle: ({ isActive }) => {
-        isIntersecting = isActive;
-      },
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: sectionEl,
+        onToggle: ({ isActive }) => {
+          isIntersecting = isActive;
+        },
+      });
     });
+    return () => ctx.revert();
   });
 </script>
 
@@ -66,7 +69,7 @@
             >
               <SanityImage
                 lqip
-                class="h-full w-full object-cover lg:rounded-lg"
+                class="object-cover w-full h-full lg:rounded-lg"
                 src={banner.image}
                 sizes="(min-width: 1024px) 90vw, 100vw"
                 imageUrlBuilder={imageBuilder}
