@@ -15,7 +15,7 @@
 >
   <video
     bind:this={videoEl}
-    class="absolute inset-0 h-full w-full object-cover"
+    class="absolute inset-0 object-cover w-full h-full"
     width="100%"
     height="100%"
     disablePictureInPicture
@@ -25,6 +25,7 @@
     autoPlay
     muted
     loop
+    preload="false"
   >
     <source src={mov} type="video/mp4; codecs=hvc1" />
     <source src={webm} type="video/webm" />
