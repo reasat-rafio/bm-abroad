@@ -4,6 +4,12 @@ import type { Blog, MoreBlog } from '@/lib/types/[blog]';
 import { error, type ServerLoad } from '@sveltejs/kit';
 import groq from 'groq';
 
+export const config = {
+  isr: {
+    expiration: 120,
+  }
+}
+
 const query = (params: Partial<Record<string, string>>) =>
   groq`*[_type == "blog" && slug.current == "${params.slug}"][0]{
     ...,

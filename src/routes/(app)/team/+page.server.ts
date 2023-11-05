@@ -4,6 +4,12 @@ import type { TeamPageProps } from '@/lib/types/team';
 import { error } from '@sveltejs/kit';
 import groq from 'groq';
 
+export const config = {
+  isr: {
+    expiration: 120,
+  }
+}
+
 const query = groq`
     *[_type == "teamPage"][0]{
         ...,

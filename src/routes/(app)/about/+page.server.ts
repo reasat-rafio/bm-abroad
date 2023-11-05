@@ -4,6 +4,12 @@ import type { AboutPageProps } from '@/lib/types/about';
 import { error, type ServerLoad } from '@sveltejs/kit';
 import groq from 'groq';
 
+export const config = {
+  isr: {
+    expiration: 120,
+  },
+};
+
 const q = groq`*[_id == "aboutPage"][0]{
     ...,
     sections[]{

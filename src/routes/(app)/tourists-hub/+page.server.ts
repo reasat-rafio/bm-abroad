@@ -4,6 +4,12 @@ import type { TouristsHubPageProps } from '@/lib/types/tourists-hubs';
 import { error, type ServerLoad } from '@sveltejs/kit';
 import groq from 'groq';
 
+export const config = {
+  isr: {
+    expiration: 120,
+  }
+}
+
 const query = groq`*[_id == "touristsPage"][0]{
     ...,
     sections[]{
