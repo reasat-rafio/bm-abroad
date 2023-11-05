@@ -6,12 +6,16 @@ import { error } from '@sveltejs/kit';
 export const config = {
   isr: {
     expiration: 120,
-  }
-}
+  },
+};
 
-export const load = async () => {
+export const load = async ({ setHeaders }) => {
   const data = await sanityClient.fetch(siteQuery);
   if (!data) throw error(404, { message: 'Not found' });
+
+  setHeaders({
+    'cache-control': 'max-age=120',
+  });
 
   return {
     site: data as SiteProps,

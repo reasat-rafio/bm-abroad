@@ -73,8 +73,12 @@ const sitemap = (
     .join('')}
 </urlset>`;
 
-export async function GET() {
+export async function GET({ setHeaders }) {
   const blogs = await getBlogs();
+
+  setHeaders({
+    'cache-control': 'max-age=120',
+  });
 
   const body = sitemap(blogs, pages);
   const response = new Response(body);
