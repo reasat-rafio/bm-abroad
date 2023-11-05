@@ -10,8 +10,8 @@ import { FORM_ACCESS_KEY } from '$env/static/private';
 export const config = {
   isr: {
     expiration: 120,
-  }
-}
+  },
+};
 
 const q = groq`*[_id == "contactUsPage"][0]{
     ...,

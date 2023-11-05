@@ -1,7 +1,5 @@
 <script lang="ts">
-  import type { BlockComponentProps } from '@/lib/@portabletext';
-  import DefaultBlock from '@/lib/@portabletext/defaultComponents/DefaultBlock.svelte';
-
+  import { DefaultBlock, type BlockComponentProps } from '@portabletext/svelte';
   export let portableText: BlockComponentProps;
 
   let {

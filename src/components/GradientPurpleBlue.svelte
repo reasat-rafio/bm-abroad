@@ -1,9 +1,3 @@
-<script lang="ts">
-  import type { MarkComponentProps } from '@portabletext/svelte';
-
-  export let portableText: MarkComponentProps;
-</script>
-
 <span
   class="relative bg-gradient-to-b from-slate-blue to-[#290886] bg-clip-text text-transparent"
 >

@@ -1,6 +1,4 @@
 <script lang="ts">
-  export const prerender = true;
-
   import Footer from '@/components/footer/Footer.svelte';
   import Navbar from '@/components/navigation/Navbar.svelte';
   import { urlFor } from '@/lib/sanity/sanityClient.js';
