@@ -1,4 +1,6 @@
 <script lang="ts">
+  export const prerender = true;
+
   import Footer from '@/components/footer/Footer.svelte';
   import Navbar from '@/components/navigation/Navbar.svelte';
   import { urlFor } from '@/lib/sanity/sanityClient.js';
@@ -7,7 +9,6 @@
   import '@fontsource/poppins/400.css';
   import '@fontsource/poppins/500.css';
   import '@fontsource/poppins/600.css';
-  // import { fly } from 'svelte/transition';
 
   export let data;
   $: ({
@@ -29,12 +30,5 @@
 </svelte:head>
 
 <Navbar {nav} {logo} />
-<!-- {#key data.url}
-  <div
-    in:fly={{ x: -200, duration: 300, delay: 300 }}
-    out:fly={{ x: 200, duration: 300 }}
-  > -->
 <slot />
-<!-- </div>
-{/key} -->
 <Footer {footer} {contact} {logo} />
