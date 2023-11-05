@@ -1,5 +1,7 @@
 User-agent: *
+Disallow: /studio/
 
-Disallow: /studio
-Disallow: /*.js$
-Disallow: /*.json
+User-agent: *
+Allow: /
+
+Sitemap: https://www.bmabroaddreamers.com/sitemap.xml
