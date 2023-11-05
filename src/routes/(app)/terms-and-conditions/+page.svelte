@@ -1,9 +1,9 @@
 <script lang="ts">
   import GradientPurpleBlue from '@/components/GradientPurpleBlue.svelte';
   import Seo from '@/components/Seo.svelte';
-  import PortableText from '@/lib/@portabletext/PortableText.svelte';
   import gsap from 'gsap';
   import { onMount } from 'svelte';
+  import { PortableText } from '@portabletext/svelte';
 
   export let data;
 
@@ -36,7 +36,6 @@
           value={title}
           components={{
             marks: {
-              // @ts-ignore
               gradientPurpleBlue: GradientPurpleBlue,
             },
           }}
@@ -47,7 +46,7 @@
     <div
       class="prose mt-10 max-w-none lg:prose-xl prose-headings:text-space-blue prose-a:text-space-blue"
     >
-      <PortableText value={termsAndCondition} />
+      <PortableText value={termsAndCondition} components={{}} />
     </div>
   </div>
 </section>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PortableText } from '@/lib/@portabletext/index';
+  import { PortableText } from '@portabletext/svelte';
   import GradientPurpleBlue from './GradientPurpleBlue.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
@@ -45,7 +45,6 @@
           value={title}
           components={{
             marks: {
-              // @ts-ignore
               gradientPurpleBlue: GradientPurpleBlue,
             },
           }}

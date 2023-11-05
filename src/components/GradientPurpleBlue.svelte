@@ -1,5 +1,6 @@
 <script lang="ts">
-  import type { MarkComponentProps } from '@/lib/@portabletext';
+  import type { MarkComponentProps } from '@portabletext/svelte';
+
   export let portableText: MarkComponentProps;
 </script>
 

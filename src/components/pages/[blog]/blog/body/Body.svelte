@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PortableTextBlock } from 'sanity';
-  import PortableText from '@/lib/@portabletext/PortableText.svelte';
+  import { PortableText } from '@/lib/@portabletext/index';
   import Block from './Block.svelte';
   import Number from './Number.svelte';
   import Disc from './Disc.svelte';

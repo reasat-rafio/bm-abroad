@@ -1,6 +1,5 @@
 <script lang="ts">
   import Cta from '@/components/ui/Cta.svelte';
-  import PortableText from '@/lib/@portabletext/PortableText.svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import GradientPurpleBlue from './GradientPurpleBlue.svelte';
@@ -9,6 +8,7 @@
   import { onMount } from 'svelte';
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+  import { PortableText } from '@portabletext/svelte';
 
   export let props: CtaProps;
   $: ({ title, description, link, image } = props);
@@ -45,7 +45,6 @@
           value={title}
           components={{
             marks: {
-              // @ts-ignore
               gradientPurpleBlue: GradientPurpleBlue,
             },
           }}

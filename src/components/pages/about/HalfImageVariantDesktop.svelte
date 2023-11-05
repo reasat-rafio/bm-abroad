@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PortableText from '@/lib/@portabletext/PortableText.svelte';
+  import { PortableText } from '@portabletext/svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
@@ -100,7 +100,7 @@
         class="body-1 font-light transition-colors duration-500 ease-in-out group-hover:text-white"
         data-animate
       >
-        <PortableText value={description} />
+        <PortableText value={description} components={{}} />
       </div>
     </div>
   </div>

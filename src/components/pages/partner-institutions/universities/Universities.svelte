@@ -1,6 +1,6 @@
 <script lang="ts">
   import GradientPurpleBlue from '@/components/GradientPurpleBlue.svelte';
-  import { PortableText } from '@/lib/@portabletext/index';
+  import { PortableText } from '@portabletext/svelte';
   import type { UniversitiesProps } from '@/lib/types/partner-institutions';
   import University from './university/University.svelte';
 
@@ -15,7 +15,6 @@
         value={title}
         components={{
           marks: {
-            // @ts-ignore
             gradientPurpleBlue: GradientPurpleBlue,
           },
         }}

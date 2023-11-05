@@ -1,7 +1,7 @@
 <script lang="ts">
   import GradientPurpleBlue from '@/components/GradientPurpleBlue.svelte';
   import Seo from '@/components/Seo.svelte';
-  import PortableText from '@/lib/@portabletext/PortableText.svelte';
+  import { PortableText } from '@portabletext/svelte';
   import gsap from 'gsap';
   import { onMount } from 'svelte';
 
@@ -29,13 +29,12 @@
     <div class="overflow-hidden">
       <h1
         bind:this={headerEl}
-        class="heading-2xl translate-y-full py-2 text-center"
+        class="py-2 text-center translate-y-full heading-2xl"
       >
         <PortableText
           value={title}
           components={{
             marks: {
-              // @ts-ignore
               gradientPurpleBlue: GradientPurpleBlue,
             },
           }}
@@ -44,9 +43,9 @@
     </div>
 
     <div
-      class="prose mt-10 max-w-none lg:prose-xl prose-headings:text-space-blue prose-a:text-space-blue"
+      class="mt-10 prose max-w-none lg:prose-xl prose-headings:text-space-blue prose-a:text-space-blue"
     >
-      <PortableText value={privacyPolicy} />
+      <PortableText value={privacyPolicy} components={{}} />
     </div>
   </div>
 </section>

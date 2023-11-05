@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PortableText from '@/lib/@portabletext/PortableText.svelte';
+  import { PortableText } from '@portabletext/svelte';
   import SanityImage from '@/lib/sanity/sanity-image/sanity-image.svelte';
   import { imageBuilder } from '@/lib/sanity/sanityClient';
   import type { About } from '@/lib/types/about';
@@ -67,7 +67,7 @@
       <h3 class="heading-lg-secondary" data-animate>{subtitle}</h3>
     </header>
     <div class="text-1 font-light" data-animate>
-      <PortableText value={description} />
+      <PortableText value={description} components={{}} />
     </div>
   </div>
 </article>
