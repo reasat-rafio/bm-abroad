@@ -4,12 +4,6 @@ import { error, type ServerLoad } from '@sveltejs/kit';
 import groq from 'groq';
 import type { PortableTextBlock } from 'sanity';
 
-export const config = {
-  isr: {
-    expiration: 120,
-  }
-}
-
 type TermsAndConditionsPageProps = {
   seo: SeoProps;
   title: PortableTextBlock[];
