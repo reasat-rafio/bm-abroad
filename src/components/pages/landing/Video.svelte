@@ -32,7 +32,7 @@
   >
     <video
       bind:this={videoEl}
-      class="absolute inset-0 object-cover w-full h-full"
+      class="absolute inset-0 h-full w-full object-cover"
       width="100%"
       height="100%"
       preload="false"
@@ -40,7 +40,6 @@
       controlsList="nodownload noplaybackrate"
       controls={false}
       playsInline
-      autoPlay
       muted
       loop
     >
