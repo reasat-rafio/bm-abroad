@@ -27,24 +27,24 @@ export default defineConfig([
       types: schemaTypes as SchemaTypeDefinition[],
     },
   },
-  {
-    name: 'bm-abroad-staging-workspace',
-    title: 'BM-Abroad Staging',
+  // {
+  //   name: 'bm-abroad-staging-workspace',
+  //   title: 'BM-Abroad Staging',
 
-    basePath: '/studio/staging',
+  //   basePath: '/studio/staging',
 
-    projectId: PUBLIC_SANITY_PROJECT_ID,
-    dataset: 'staging',
+  //   projectId: PUBLIC_SANITY_PROJECT_ID,
+  //   dataset: 'staging',
 
-    plugins: [
-      deskTool({
-        structure: AppStructure,
-      }),
-      visionTool(),
-      table(),
-    ],
-    schema: {
-      types: schemaTypes as SchemaTypeDefinition[],
-    },
-  },
+  //   plugins: [
+  //     deskTool({
+  //       structure: AppStructure,
+  //     }),
+  //     visionTool(),
+  //     table(),
+  //   ],
+  //   schema: {
+  //     types: schemaTypes as SchemaTypeDefinition[],
+  //   },
+  // },
 ]);
