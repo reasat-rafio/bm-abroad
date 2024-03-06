@@ -18,7 +18,7 @@
     <div
       class="container grid grid-cols-12 py-[26px] max-xl:space-y-[48px] lg:py-[46px]"
     >
-      <div class="col-span-12 grid grid-cols-4 xl:col-span-4">
+      <div class="grid grid-cols-4 col-span-12 xl:col-span-4">
         <div class="col-span-4 space-y-[24px] xl:col-span-3">
           <figure>
             <SanityImage
@@ -33,7 +33,7 @@
             {title}
           </p>
         </div>
-        <div class="col-span-1 hidden xl:block" />
+        <div class="hidden col-span-1 xl:block" />
       </div>
       <Links class="col-span-12 lg:col-span-6 xl:col-span-3" {menu} />
       <Contact class="col-span-12 lg:col-span-6 xl:col-span-5" {contact} />
@@ -49,7 +49,7 @@
         <span class="font-medium">BM ABROAD DREAMERS</span></span
       >
       <span
-        >Developed by <a class="font-medium" href="mailto:edistys.dev@gmail.com"
+        >Developed by <a class="font-medium" href="https://edistys.dev"
           >EDISTYS</a
         ></span
       >
