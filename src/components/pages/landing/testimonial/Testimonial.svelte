@@ -34,7 +34,11 @@
       <div
         class="col-span-1 hidden items-center justify-center lg:flex xl:col-span-2"
       >
-        <button class="xl:translate-x-full" on:click={slidePrev}>
+        <button
+          aria-label="Previous Slide"
+          class="xl:translate-x-full"
+          on:click={slidePrev}
+        >
           <ChevronLeftRounded />
         </button>
       </div>

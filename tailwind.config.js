@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         'space-blue': '#1B1464',
-        'dark-gray': '#A8A8A8',
+        'dark-gray': '#6E6E6E',
         'slate-blue': '#764AF1',
       },
       letterSpacing: {

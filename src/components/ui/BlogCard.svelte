@@ -41,7 +41,7 @@
           alt="calender"
           class="h-max w-max object-contain"
         />
-        <span>{formatDate(date)}</span>
+        <span class="text-dark-gray">{formatDate(date)}</span>
       </div>
 
       <h3

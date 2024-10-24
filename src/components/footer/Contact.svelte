@@ -44,7 +44,7 @@
       </a>
     </div>
     <div class="col-span-5 space-y-[24px] lg:col-span-2">
-      <h4 class="font-poppins text-[14px] opacity-40">Social Media</h4>
+      <h4 class="font-poppins text-[14px] text-dark-gray">Social Media</h4>
       <ul class="flex space-x-[24px]">
         {#each socials as { icon, link }}
           <li>
